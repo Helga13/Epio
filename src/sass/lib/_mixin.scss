@@ -24,7 +24,7 @@
 	}
 };
 @mixin clearfix {
-	::after {
+	&::after {
 		clear: both;
 		display: table;
 		content: '';
@@ -226,7 +226,7 @@ $font-stack-monaco: (
 
 //Transitions
 
-@mixin transition($name...) {
+@mixin transition($name) {
 	transition: $name 0.3s ease 0s;
 }
 @function transition-property-names($props) {

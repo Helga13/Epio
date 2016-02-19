@@ -1,5 +1,11 @@
 $(document).ready(function () {
     
+    // preloader
+    
+    $(window).load(function() {
+      $('body').addClass('ready');
+    });
+    
     // fullPage slider on index page
     
     var SCROLLING_SPEED = 0;
@@ -8,6 +14,7 @@ $(document).ready(function () {
         navigation: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
+        easing: 'swing',
         
         scrollingSpeed: SCROLLING_SPEED,
         

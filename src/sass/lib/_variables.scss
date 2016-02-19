@@ -1,1 +1,10 @@
-$blue: blue;
+@include font-face('FuturaNewBook', "../fonts/FuturaNewBook" ,null, null, ttf eot woff svg);
+@include font-face('FuturaNewLight', "../fonts/FuturaNewLight" ,null, null, ttf eot woff svg);
+@include font-face('FuturaNewMedium', "../fonts/FuturaNewMedium" ,null, null, ttf eot woff svg);
+@include font-face('MinionPro-It', "../fonts/MinionPro-It" ,null, null, ttf eot woff svg);
+@include font-face('MinionPro-Regular', "../fonts/MinionPro-Regular" ,null, null, ttf eot woff svg);
+@include font-face('MinionPro-Semibold', "../fonts/MinionPro-Semibold" ,null, null, ttf eot woff svg);
+
+
+
+$mainTextColor: #f2efe9; /* text color light */
