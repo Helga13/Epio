@@ -16,6 +16,12 @@ body {
 //        @include transition (all); /* opacity, transform */
         transition-delay: 2s;
     }
+    #footer{
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 1s ease, transform 1s ease;
+        transition-delay: 2s;
+    }
 }
 ul{
     margin: 0;
@@ -45,7 +51,9 @@ p{
 /* --- end of general styles --- */
 
 body.ready{
-    #header{
+    #header,
+    #footer,
+    #fp-nav.nav-slider{
         opacity: 1;
         transform: translateY(0); 
     }   
@@ -67,7 +75,7 @@ body.ready{
     padding-top: 2.625%; /* 42px/1600px */
 }
 #header .left-col{
-    width: 42.1%; /* 640px/1520px */
+    width: 40.3%; /* 530px/1300px */
     float: left;
     margin-left: -18px;  /* сдвигаем на отступ меню */
 }
@@ -82,6 +90,7 @@ body.ready{
     width: 50px;
     float: left;
     margin-right: 2.76%; /* 60px-18px(отступ у ссылки)/(1600-40*2) */
+    margin-left: -6.875%; /* 110px/1600px */
     svg path{
         fill: #d9c39c;
     }
@@ -113,6 +122,27 @@ nav ul li a{
     a{
         font-family: 'FuturaNewLight'; 
     }
+}
+
+.personal{
+    float: right;
+    margin-top: 0.77%;
+//    margin-right: 7.94%;
+    a{
+        color: $mainTextColor;
+        @include font-size($sizeValue: 1.8);
+        display: block;
+        font-family: 'FuturaNewLight';
+    }
+    svg{
+        fill: $mainTextColor;
+        display: inline-block;
+        padding-right: 7px;
+        width: 20px;
+        position: relative;
+        top: 3px;
+    }
+    
 }
 
 /* slider begin */
@@ -147,19 +177,67 @@ nav ul li a{
             content: '';
             width: 42.5%; /* 680px/1600px */
             height: 100%;
-            opacity: 0.37;
+            opacity: 0;
             background-color: #1d242e;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 0;
+            transition: opacity 1s ease;
+        }   
+    }   
+}
+.content{
+            text-align: left;
+            padding-top: 12.7%;
+            position: relative;
         }
-    }
-    .content{
-        position: absolute;
-        top: 50%;
-        left: 10%;
-    }
+        a{
+            display: inline-block;
+            color: $addTextColor;
+        }
+        .cat-number{
+            font-family: 'FuturaNewBook';
+            @include font-size(9.001);
+            float: left;
+            padding-right: 20px;
+        }
+        .cat-content{
+            overflow: hidden;
+            .heading{
+                color: $greyTextColor;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
+                @include font-size(1.2);
+                line-height: 1.804rem;
+                padding-bottom: 10px;
+            }
+            .cat-text{
+                font-family: 'FuturaNewBook';
+                @include font-size(2.6);
+                line-height: 3rem;
+            }
+        }
+        .left-content{
+            float: left;
+            margin-top: 23.4%;
+            width: 38.9%;
+//            position: absolute;
+        }
+        .right-content{
+            float: left;
+            
+        }
+
+.icon-arr{
+    display: inline-block;
+    width: 23px;
+    position: relative;
+    top: 7px;
+}
+body.ready .section .slider-content::before{
+    opacity: 0.4;
+    transition-delay: 3s;
 }
 
 .section .bg-img {
@@ -172,10 +250,19 @@ nav ul li a{
     transform: rotate(0deg) scale(1);
     transition: opacity 0.3s ease, transform 4s ease;
 }
+
+body{
+    #fp-nav.nav-slider{
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 1s ease, transform 1s ease;
+        transition-delay: 2s;
+    }   
+}
 #fp-nav.nav-slider{
     position: fixed;
     bottom: 4.67%; /* 45px/962px */
-    right: 9.375%; /* 150px/1600px */
+    right: 19.7%;
     ul li{
         float: left;
         width: 30px;
@@ -219,7 +306,7 @@ nav ul li a{
     }
     a.active span{
        height: 48px;
-       background-color: #d9c39c;
+       background-color: $addTextColor;
     }
 }
 
@@ -250,13 +337,13 @@ body.ready{
 .main-fix-content{
     position: absolute;
     width: 100%;
-    height: 100%;
+//    height: 100%;
     top: 22.9%; /* 212px */
     left: 0;
     @include clearfix;
     .left-col{
         float: left;
-        width: 40.77%; /* 530px/1300px */
+        width: 38.9%; /* 530px/1300px */
     }
     .heading p{
         font-family: 'FuturaNewMedium'; 
@@ -271,5 +358,90 @@ body.ready{
             transition-delay: 4.2s;
             background-color: $mainTextColor;
         }
+    }
+}
+
+/* footer */
+
+#footer {
+    position: fixed;
+    right: 2.5%;
+    left: 2.5%; 
+    bottom: 4.67%; /* 42px/1600px */
+}
+.social,
+.lang,
+.copyright{
+   display: inline-block; 
+}
+.social{
+    margin: -7px;
+    position: relative;
+    bottom: -5px;
+    margin-left: -7.3125%; /* (110px+7px)/1600px */
+    @include font-size(0);
+    li{
+        
+        display: inline-block; 
+        a{
+            display: inline-block;
+            width: 27px;
+            padding: 7px;
+        }
+        svg{
+            fill: $mainTextColor;
+        }
+    }    
+}
+.lang{
+    margin-left: 8.22%;
+    span{
+       font-family: 'MinionPro-It';
+        @include font-size(1.8);
+    }
+    span::after{
+        content: '';
+        display: inline-block;
+        margin: 0 4px 0 7px;
+        position: relative;
+        bottom: 3px;
+        height: 2px;
+        width: 26px;
+        background-color: #c3c4c5;
+    }
+    a.eng{
+        color: $addTextColor; 
+        font-family: 'MinionPro-Regular';
+        @include font-size(1.8);
+    }
+}
+.copyright{
+    margin-left: 34.85%; /* 453px/1300px */ 
+    font-family: 'FuturaNewBook';
+    @include font-size(1.2);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #b7b5b1;
+    span{
+        border-right: 2px solid #787878;
+        padding: 0 11px;
+    } 
+    a.terms-of-use{
+        color: $greyTextColor;
+        padding: 0 11px;
+    }
+}
+.flxmd{
+//    position: fixed;
+    text-transform: uppercase;
+    color: $greyTextColor;
+    transform: rotate(270deg) translateX(44%);
+    right: 2.5%;
+//    bottom: 4.68%;
+    font-family: 'FuturaNewBook';
+    
+    @include font-size(1.2);
+    span{
+        color: $addTextColor;
     }
 }
