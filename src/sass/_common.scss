@@ -64,7 +64,7 @@ body.ready{
     min-width: 890px;
     width: 100%;
     margin: 0 auto;
-    @include clearfix;
+//    @include clearfix;
 }
 
 #header {
@@ -127,7 +127,8 @@ nav ul li a{
 .personal{
     float: right;
     margin-top: 0.77%;
-//    margin-right: 7.94%;
+    position: relative;
+    right: -22px;
     a{
         color: $mainTextColor;
         @include font-size($sizeValue: 1.8);
@@ -204,7 +205,7 @@ nav ul li a{
         }
         .cat-content{
             overflow: hidden;
-            .heading{
+            .tags{
                 color: $greyTextColor;
                 text-transform: uppercase;
                 letter-spacing: 0.2rem;
@@ -228,7 +229,116 @@ nav ul li a{
             float: left;
             
         }
+.slider-content .right-content{
+    margin-top: 12.99%;
+    width: 61.1%;
+    float: left;
+    .row{
+        @include font-size(2.4);
+        line-height: 3.2rem; 
+        width: 70.52%; /* 543/770 */
+        margin-left: 6.5%;
+        float: left;
+        display: inline-table;
+        margin-bottom: 7.28%; /* 70/962 */
+    }
+}
 
+time{
+    font-family: 'FuturaNewBook';
+    color: $greyTextColor;
+    @include font-size(1.8);
+    line-height: 2.4rem;
+    float: left;
+    text-align: right;
+    top: 10px;
+    display: table-cell;
+    padding-right: 20px;
+    position: relative;
+    top: 9px;
+    span{
+        color: $mainTextColor; 
+        @include font-size(4.001);
+        line-height: 2.4rem;
+        display: block;
+        padding-bottom: 5px;
+    }
+}
+
+.news-cont{
+    font-family: 'MinionPro-Semibold';
+    color: $mainTextColor;
+    @include font-size(2.4);
+    line-height: 3.2rem;
+    display: table-cell;
+    vertical-align: top;
+}
+.row.col-2{
+    .news-cont{
+    font-family: 'MinionPro-Regular';
+    color: $mainTextColor;
+    @include font-size(1.797);
+    line-height: 2.395rem;
+    a{
+        
+        vertical-align: top;
+    }
+    time{
+        font-family: 'FuturaNewBook';
+        color: $greyTextColor;
+        @include font-size(1.797);
+        line-height: 2.395rem; 
+        top: 7px;
+        span{
+            @include font-size(3.992);
+            line-height: 2.395rem;
+        }
+    }
+    }  
+}
+.row.col-2 > a:first-child{
+    width: 45.54%;
+    box-sizing: border-box;
+}
+.row.col-2 > a:last-child{
+    width: 47%;
+    vertical-align: top;
+    margin-left: 7.46%;
+}
+
+.tags{
+    color: $greyTextColor;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    @include font-size(1.2);
+    line-height: 1.8rem;
+    padding-top: 10px;
+}
+
+.team-user{
+    float: right;
+    position: relative;
+    right: -77px;
+    width: 21.43%;
+    .custom-user__avatar{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .username{
+        color: $mainTextColor;
+        font-family: 'MinionPro-Semibold';
+        @include font-size(2.395);
+        line-height: 3.2rem;
+    }
+    .custom-user__desk{
+        color: $mainTextColor;
+        font-family: 'MinionPro-Regular';
+        @include font-size(1.797);
+        line-height: 2.395rem;
+    }
+}
 .icon-arr{
     display: inline-block;
     width: 23px;
@@ -337,13 +447,19 @@ body.ready{
 .main-fix-content{
     position: absolute;
     width: 100%;
-//    height: 100%;
+    height: 0; /* иначе перекрывает контент слайдов */
     top: 22.9%; /* 212px */
     left: 0;
     @include clearfix;
     .left-col{
         float: left;
         width: 38.9%; /* 530px/1300px */
+    }
+    .right-col{
+        float: left;
+        width: 61.1%; /* 100%-38.9% */
+        margin-right: -8%;
+        overflow: visible!important;
     }
     .heading p{
         font-family: 'FuturaNewMedium'; 
@@ -358,6 +474,23 @@ body.ready{
             transition-delay: 4.2s;
             background-color: $mainTextColor;
         }
+    }
+}
+.main-fix-content .right-col{
+    overflow: hidden;
+    .news{
+        width: 54.55%;
+        margin-left: 14.77%;
+        float: left;
+//        margin-right: 2.27%;
+        
+    }
+    .team{
+//        width: 13.98%;
+        float: right;
+        margin-left: 8.07%;
+        position: relative;
+        right: -30px;
     }
 }
 
@@ -432,12 +565,12 @@ body.ready{
     }
 }
 .flxmd{
-//    position: fixed;
+    position: fixed;
     text-transform: uppercase;
     color: $greyTextColor;
     transform: rotate(270deg) translateX(44%);
     right: 2.5%;
-//    bottom: 4.68%;
+    bottom: 4.68%;
     font-family: 'FuturaNewBook';
     
     @include font-size(1.2);
