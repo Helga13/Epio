@@ -14,13 +14,13 @@ body {
         transform: translateY(-100px);
         transition: opacity 1s ease, transform 1s ease;
 //        @include transition (all); /* opacity, transform */
-        transition-delay: 2s;
+        transition-delay: 2.5s;
     }
     #footer{
         opacity: 0;
         transform: translateY(100px);
         transition: opacity 1s ease, transform 1s ease;
-        transition-delay: 2s;
+        transition-delay: 2.5s;
     }
 }
 ul{
@@ -56,7 +56,11 @@ body.ready{
     #fp-nav.nav-slider{
         opacity: 1;
         transform: translateY(0); 
-    }   
+    } 
+    .flxmd{
+        opacity: 1;
+        transform: translateY(-374%); 
+    } 
 }
 
 .wrap{
@@ -73,6 +77,20 @@ body.ready{
     right: 2.5%;
     left: 2.5%; 
     padding-top: 2.625%; /* 42px/1600px */
+//    text-align: center;
+    .wrap{
+        display: inline-block;
+    }
+    .hamburger{
+        background:none;
+        line-height:45px;
+        padding:0px 15px 0px 15px;
+        color:#fff;
+        border:0;
+        font-size:1.4em;
+        cursor:pointer;
+        outline:none;
+    }   
 }
 #header .left-col{
     width: 40.3%; /* 530px/1300px */
@@ -82,7 +100,8 @@ body.ready{
 #header .right-col{
     overflow: hidden; /* width: 880px */
     nav{
-        margin-left: 12.73%; /* 130px-18px/880px */        
+//        margin-left: 12.73%; /* 130px-18px/880px */
+        margin-left: 15.3%;
     }
 }
 .logo{
@@ -146,6 +165,23 @@ nav ul li a{
     
 }
 
+// popup
+
+.popup_menu{
+        display: none;
+    }
+    .popup_menu.menu-open{
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #1e252f;
+        z-index: 999;
+    }
+
 /* slider begin */
 
 #fullpage {
@@ -165,9 +201,10 @@ nav ul li a{
         height: 100%;
         z-index: 0;
         img{
-           width: 100%;
+            width: 100%;
             height: 100%;
-            object-fit: cover; 
+            object-fit: cover;
+            opacity: 0.5;
         }
     }
     .slider-content {
@@ -186,6 +223,17 @@ nav ul li a{
             z-index: 0;
             transition: opacity 1s ease;
         }   
+    }   
+}
+.section.fp-section.active.completely {
+    .bg-img {
+        img{
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+    }
+    .slider-content{
+        transition-delay: 1s;  
     }   
 }
 .content{
@@ -224,23 +272,29 @@ nav ul li a{
             margin-top: 23.4%;
             width: 38.9%;
 //            position: absolute;
+            a{
+                width: 75%;
+                opacity: 0;
+            }
         }
         .right-content{
             float: left;
             
         }
 .slider-content .right-content{
-    margin-top: 12.99%;
+    margin-top: 5.15%; /* 9.55 */
     width: 61.1%;
     float: left;
     .row{
+        margin-top: 4.40%; /* 9.55-5.15=4.40 */
         @include font-size(2.4);
         line-height: 3.2rem; 
         width: 70.52%; /* 543/770 */
         margin-left: 6.5%;
         float: left;
         display: inline-table;
-        margin-bottom: 7.28%; /* 70/962 */
+        margin-bottom: 8.8%; /* 70/962 */
+        opacity: 0;
     }
 }
 
@@ -301,7 +355,7 @@ time{
     box-sizing: border-box;
 }
 .row.col-2 > a:last-child{
-    width: 47%;
+    width: 45.8%;
     vertical-align: top;
     margin-left: 7.46%;
 }
@@ -320,23 +374,27 @@ time{
     position: relative;
     right: -77px;
     width: 21.43%;
+    opacity: 0;
     .custom-user__avatar{
         width: 70px;
         height: 70px;
         border-radius: 50%;
         overflow: hidden;
+        margin-bottom: 20px;
     }
     .username{
         color: $mainTextColor;
         font-family: 'MinionPro-Semibold';
         @include font-size(2.395);
         line-height: 3.2rem;
+        margin-bottom: 3px;
     }
     .custom-user__desk{
         color: $mainTextColor;
         font-family: 'MinionPro-Regular';
         @include font-size(1.797);
         line-height: 2.395rem;
+        margin-top: 20px;
     }
 }
 .icon-arr{
@@ -345,10 +403,39 @@ time{
     position: relative;
     top: 7px;
 }
-body.ready .section .slider-content::before{
-    opacity: 0.4;
-    transition-delay: 3s;
-}
+body.ready{
+    .section .slider-content::before{
+        opacity: 0.4;
+        transition-delay: 3s;
+    }
+    .section .left-content a{
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        transition-delay: 2.5s;
+    }
+//    .section.active .left-content a{
+//        transition-delay: 0.3s;
+//    }
+    .slider-content .right-content{
+        .row,
+        .team-user{
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            transition-delay: 2.7s;
+        }
+        .row.col-2{
+            a:first-child{
+                transition-delay: 2.9s;
+            }
+            a:last-child{
+                transition-delay: 3s;
+            }  
+        }
+        .team-user{
+            transition-delay: 3.2s;
+        }
+    }
+} 
 
 .section .bg-img {
     opacity: 0;
@@ -358,21 +445,36 @@ body.ready .section .slider-content::before{
 .section.active .bg-img {
     opacity: 1;
     transform: rotate(0deg) scale(1);
-    transition: opacity 0.3s ease, transform 4s ease;
+    transition: opacity 0.3s ease, transform 4s linear;
 }
 
-body{
-    #fp-nav.nav-slider{
-        opacity: 0;
-        transform: translateY(100px);
-        transition: opacity 1s ease, transform 1s ease;
-        transition-delay: 2s;
-    }   
-}
 #fp-nav.nav-slider{
     position: fixed;
-    bottom: 4.67%; /* 45px/962px */
+    bottom: 5.3%; /* 45px/962px + отступ */
     right: 19.7%;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 2.5s;
+    .js-nav-curent{
+        color: $addTextColor;
+        font-family: 'FuturaNewBook';
+        @include font-size(2.6);
+        line-height: 3.4rem;
+        position: relative;
+        bottom: 15px;
+        left: 25px;
+        &::before{
+            content: '';
+            display: inline-block;
+            position: relative;
+            bottom: 5px;
+            right: 9px;
+            height: 2px;
+            width: 17px;
+            background-color: $addTextColor;
+        }
+    }
     ul li{
         float: left;
         width: 30px;
@@ -441,6 +543,17 @@ body.ready{
                 transition-delay: 4.2s;
             }  
         }
+        .right-col{
+            .news,
+            .team{
+                opacity: 1;
+                transition: opacity 0.5s ease;
+                transition-delay: 2.4s;
+            }
+            .team{
+                transition-delay: 3s;
+            }
+        }
     }
 }
 
@@ -460,6 +573,7 @@ body.ready{
         width: 61.1%; /* 100%-38.9% */
         margin-right: -8%;
         overflow: visible!important;
+        margin-top: 20px;
     }
     .heading p{
         font-family: 'FuturaNewMedium'; 
@@ -482,6 +596,7 @@ body.ready{
         width: 54.55%;
         margin-left: 14.77%;
         float: left;
+        opacity: 0;
 //        margin-right: 2.27%;
         
     }
@@ -491,6 +606,7 @@ body.ready{
         margin-left: 8.07%;
         position: relative;
         right: -30px;
+        opacity: 0;
     }
 }
 
@@ -549,7 +665,8 @@ body.ready{
     }
 }
 .copyright{
-    margin-left: 34.85%; /* 453px/1300px */ 
+//    margin-left: 34.85%; /* 453px/1300px */ 
+    margin-left: 32.7%; 
     font-family: 'FuturaNewBook';
     @include font-size(1.2);
     text-transform: uppercase;
@@ -568,13 +685,20 @@ body.ready{
     position: fixed;
     text-transform: uppercase;
     color: $greyTextColor;
-    transform: rotate(270deg) translateX(44%);
+    //transform: translateX(44%);
     right: 2.5%;
     bottom: 4.68%;
     font-family: 'FuturaNewBook';
-    
+    opacity: 0;
+//    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 2.7s;
     @include font-size(1.2);
-    span{
-        color: $addTextColor;
+    a{
+      transform: rotate(270deg); 
+        span{
+            color: $addTextColor;
+        }
     }
+    
 }
