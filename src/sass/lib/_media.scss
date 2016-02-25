@@ -1,31 +1,110 @@
 @media only screen and (max-width : 1600px) {
     .wrap{
-//        padding-left: 30px;
-//        padding-right: 30px;
+/*         padding-left: 30px;
+        padding-right: 30px; */
     }
-    .logo {
+    .left-content{
+        padding-left: 30px;
+    }
+    /* .logo {
         margin-left: -3.875%;
-    }
-    .personal {
+    } */
+    /* .personal {
         right: 0px;
-    }
+    } */
 }
 
 
 @media only screen and (max-width : 1366px) {
+    .main-fix-content .heading p {
+        @include font-size(4.201);
+        @include line-height(5.001);
+    }
+    .team-user{
+        right: -45px;
+        .custom-user__desk{
+            @include font-size(1.7);
+            @include line-height(2.395);
+        }
+    }
     
 }
 
 @media only screen and (max-width : 1279px) {
-
+    .main-fix-content .heading p {
+        @include font-size(4.001);
+        @include line-height(4.801);
+    }
+    nav ul li a{
+        @include font-size(1.7);
+        padding: 0 12px;
+    }
 }
 
 @media only screen and (max-width : 1023px) {
-
+    
 }
 
 @media only screen and (max-width : 992px) {
-
+    .main-fix-content .heading p {
+        @include font-size(3.6);
+        @include line-height(4.001);
+    }
+    .cat-number{
+        @include font-size(6.001);
+    }
+    .cat-content{
+        .cat-text{
+            @include font-size(2.2);
+            @include line-height(2.8);
+        }
+    }
+    .news-cont{
+        @include font-size(2);
+        @include line-height(2.8);
+    }
+    time{
+        span{
+            @include font-size(3);
+            @include line-height(2.4);
+        }
+    }
+    .row.col-2{
+        .news-cont{
+        @include font-size(1.6);
+        @include line-height(2.2);
+        time{
+            span{
+                @include font-size(3.0);
+                @include line-height(2.395);
+            }
+        }
+        }  
+    }
+    .row.col-2>a:first-child{
+        width: 100%;
+    }
+    .row.col-2>a:last-child{
+        display: none;
+    }
+    .team-user{
+        right: -45px;
+        .custom-user__desk{
+            @include font-size(1.6);
+            @include line-height(2.2);
+        }
+        .username{
+            @include font-size(2);
+            @include line-height(3.2);
+        }
+    }
+    
+    #hamburger{
+        //display: inline-block;
+    }
+    .menu-inner{
+        //display: none;
+    }
 }
 
 @media only screen and (max-width : 767px) {

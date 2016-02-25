@@ -10,16 +10,16 @@ body {
     width: 100%;
     color: $mainTextColor;
     #header{
+        text-align: center;
         opacity: 0;
         transform: translateY(-100px);
-        transition: opacity 1s ease, transform 1s ease;
-//        @include transition (all); /* opacity, transform */
+        transition: opacity 2s ease, transform 1s ease;
         transition-delay: 2.5s;
     }
     #footer{
         opacity: 0;
         transform: translateY(100px);
-        transition: opacity 1s ease, transform 1s ease;
+        transition: opacity 2s ease, transform 1s ease;
         transition-delay: 2.5s;
     }
 }
@@ -81,16 +81,6 @@ body.ready{
     .wrap{
         display: inline-block;
     }
-    .hamburger{
-        background:none;
-        line-height:45px;
-        padding:0px 15px 0px 15px;
-        color:#fff;
-        border:0;
-        font-size:1.4em;
-        cursor:pointer;
-        outline:none;
-    }   
 }
 #header .left-col{
     width: 40.3%; /* 530px/1300px */
@@ -99,6 +89,7 @@ body.ready{
 }
 #header .right-col{
     overflow: hidden; /* width: 880px */
+    text-align: left;
     nav{
 //        margin-left: 12.73%; /* 130px-18px/880px */
         margin-left: 15.3%;
@@ -109,7 +100,7 @@ body.ready{
     width: 50px;
     float: left;
     margin-right: 2.76%; /* 60px-18px(отступ у ссылки)/(1600-40*2) */
-    margin-left: -6.875%; /* 110px/1600px */
+    /* margin-left: -6.875%; */ /* 110px/1600px */
     svg path{
         fill: #d9c39c;
     }
@@ -146,11 +137,11 @@ nav ul li a{
 .personal{
     float: right;
     margin-top: 0.77%;
-    position: relative;
-    right: -22px;
+    /* position: relative; */
+    /* right: -22px; */
     a{
         color: $mainTextColor;
-        @include font-size($sizeValue: 1.8);
+        @include font-size(1.8);
         display: block;
         font-family: 'FuturaNewLight';
     }
@@ -166,6 +157,17 @@ nav ul li a{
 }
 
 // popup
+#hamburger{
+        line-height:45px;
+        padding:0px 15px 0px 15px;
+        color:#fff;
+        font-size:1.4em;
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: none;
+        z-index: 100;
+    }   
 
 .popup_menu{
         display: none;
@@ -203,8 +205,12 @@ nav ul li a{
         img{
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            /* object-fit: cover; */
             opacity: 0.5;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
     .slider-content {
@@ -237,41 +243,43 @@ nav ul li a{
     }   
 }
 .content{
-            text-align: left;
-            padding-top: 12.7%;
-            position: relative;
-        }
-        a{
-            display: inline-block;
-            color: $addTextColor;
-        }
-        .cat-number{
-            font-family: 'FuturaNewBook';
-            @include font-size(9.001);
-            float: left;
-            padding-right: 20px;
-        }
-        .cat-content{
-            overflow: hidden;
-            .tags{
-                color: $greyTextColor;
-                text-transform: uppercase;
-                letter-spacing: 0.2rem;
-                @include font-size(1.2);
-                line-height: 1.804rem;
-                padding-bottom: 10px;
-            }
-            .cat-text{
-                font-family: 'FuturaNewBook';
-                @include font-size(2.6);
-                line-height: 3rem;
-            }
-        }
+    text-align: left;
+    padding-top: 12.7%;
+    position: relative;
+}
+a{
+    display: inline-block;
+    color: $addTextColor;
+}
+.cat-number{
+    font-family: 'FuturaNewBook';
+    @include font-size(9.001);
+    float: left;
+    padding-right: 20px;
+}
+.cat-content{
+    overflow: hidden;
+    .tags{
+        font-family: 'FuturaNewBook';
+        color: $greyTextColor;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        @include font-size(1.2);
+        @include line-height(1.804);
+        padding-bottom: 10px;
+    }
+    .cat-text{
+        font-family: 'FuturaNewBook';
+        @include font-size(2.6);
+        @include line-height(3);
+    }
+}
         .left-content{
             float: left;
             margin-top: 23.4%;
             width: 38.9%;
-//            position: absolute;
+            box-sizing: border-box;
+//      position: absolute;
             a{
                 width: 75%;
                 opacity: 0;
@@ -286,14 +294,14 @@ nav ul li a{
     width: 61.1%;
     float: left;
     .row{
-        margin-top: 4.40%; /* 9.55-5.15=4.40 */
+        margin-top: 6.40%; 
         @include font-size(2.4);
-        line-height: 3.2rem; 
+        @include line-height(3.2);
         width: 70.52%; /* 543/770 */
         margin-left: 6.5%;
         float: left;
         display: inline-table;
-        margin-bottom: 8.8%; /* 70/962 */
+        margin-bottom: 2.5%;
         opacity: 0;
     }
 }
@@ -302,7 +310,7 @@ time{
     font-family: 'FuturaNewBook';
     color: $greyTextColor;
     @include font-size(1.8);
-    line-height: 2.4rem;
+    @include line-height(2.4);
     float: left;
     text-align: right;
     top: 10px;
@@ -313,7 +321,7 @@ time{
     span{
         color: $mainTextColor; 
         @include font-size(4.001);
-        line-height: 2.4rem;
+        @include line-height(2.4);
         display: block;
         padding-bottom: 5px;
     }
@@ -323,16 +331,38 @@ time{
     font-family: 'MinionPro-Semibold';
     color: $mainTextColor;
     @include font-size(2.4);
-    line-height: 3.2rem;
+    @include line-height(3.2);
     display: table-cell;
     vertical-align: top;
+    p:not(.tags){
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: -20px;
+            background-color: #6f7881;
+        }
+    }
 }
 .row.col-2{
     .news-cont{
     font-family: 'MinionPro-Regular';
     color: $mainTextColor;
     @include font-size(1.797);
-    line-height: 2.395rem;
+    @include line-height(2.395);
+        p:not(.tags){
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                top: -20px;
+                background-color: #6f7881;
+            }
+        }
     a{
         
         vertical-align: top;
@@ -341,11 +371,11 @@ time{
         font-family: 'FuturaNewBook';
         color: $greyTextColor;
         @include font-size(1.797);
-        line-height: 2.395rem; 
+        @include line-height(2.395);
         top: 7px;
         span{
             @include font-size(3.992);
-            line-height: 2.395rem;
+            @include line-height(2.395);
         }
     }
     }  
@@ -353,19 +383,22 @@ time{
 .row.col-2 > a:first-child{
     width: 45.54%;
     box-sizing: border-box;
+    opacity: 0;
 }
 .row.col-2 > a:last-child{
     width: 45.8%;
     vertical-align: top;
     margin-left: 7.46%;
+    opacity: 0;
 }
 
 .tags{
+    font-family: 'FuturaNewBook';
     color: $greyTextColor;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     @include font-size(1.2);
-    line-height: 1.8rem;
+    @include line-height(1.8);
     padding-top: 10px;
 }
 
@@ -386,53 +419,67 @@ time{
         color: $mainTextColor;
         font-family: 'MinionPro-Semibold';
         @include font-size(2.395);
-        line-height: 3.2rem;
+        @include line-height(3.2);
         margin-bottom: 3px;
+    }
+    .custom-user__position{
+        @include font-size(1.198);
+        @include line-height(1.8);
+        letter-spacing: 0.199em;
     }
     .custom-user__desk{
         color: $mainTextColor;
         font-family: 'MinionPro-Regular';
         @include font-size(1.797);
-        line-height: 2.395rem;
+        @include line-height(2.395);
         margin-top: 20px;
     }
 }
 .icon-arr{
     display: inline-block;
-    width: 23px;
+    width: 21px;
     position: relative;
     top: 7px;
 }
-body.ready{
+body.ready #fullpage.loaded{
     .section .slider-content::before{
-        opacity: 0.4;
-        transition-delay: 3s;
+        opacity: 0.5;
+        /* transition-delay: 2s; */
     }
-    .section .left-content a{
+    .section.active .left-content a{
         opacity: 1;
         transition: opacity 0.5s ease;
-        transition-delay: 2.5s;
+        /* transition-delay: 2.5s; */
+         transition-delay: .1s; 
     }
 //    .section.active .left-content a{
 //        transition-delay: 0.3s;
 //    }
-    .slider-content .right-content{
+    .section.active .slider-content .right-content{
         .row,
         .team-user{
             opacity: 1;
             transition: opacity 0.5s ease;
-            transition-delay: 2.7s;
+            /* transition-delay: 2.7s; */
+            transition-delay: .3s;
         }
         .row.col-2{
             a:first-child{
-                transition-delay: 2.9s;
+                /* transition-delay: 2.9s; */
+                opacity: 1;
+                transition: opacity 0.5s ease;
+                transition-delay: .5s;
             }
             a:last-child{
-                transition-delay: 3s;
+                /* transition-delay: 3s; */
+                opacity: 1;
+                transition: opacity 0.5s ease;
+                transition-delay: 0.7s;
             }  
         }
         .team-user{
-            transition-delay: 3.2s;
+            /* transition-delay: 3.2s; */
+             transition-delay: 0.9s; 
         }
     }
 } 
@@ -451,16 +498,17 @@ body.ready{
 #fp-nav.nav-slider{
     position: fixed;
     bottom: 5.3%; /* 45px/962px + отступ */
-    right: 19.7%;
+    /* right: 19.7%; */
+    right: 18.6%;
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 2s ease, transform 1s ease; /* прозрачность при появлениии */
     transition-delay: 2.5s;
     .js-nav-curent{
         color: $addTextColor;
         font-family: 'FuturaNewBook';
         @include font-size(2.6);
-        line-height: 3.4rem;
+        @include line-height(3.4);
         position: relative;
         bottom: 15px;
         left: 25px;
@@ -473,7 +521,7 @@ body.ready{
             height: 2px;
             width: 17px;
             background-color: $addTextColor;
-        }
+        } 
     }
     ul li{
         float: left;
@@ -510,7 +558,8 @@ body.ready{
         background-color: #fff;
         width: 2px;
 //        bottom: 0;
-        @include transition(all); /* height, background-color */
+        transition: height 1s ease, background-color 1s ease;
+        /* @include transition(all); */ /* height, background-color */
     }
     a:hover span{
         height: 8px;
@@ -539,7 +588,7 @@ body.ready{
                 height: 5px;
                 opacity: 1;
                 transform: scaleX(1);
-                transition: opacity 0.3s ease, transform 0.3s ease;
+                transition: opacity 0s ease, transform 0.3s ease;
                 transition-delay: 4.2s;
             }  
         }
@@ -567,6 +616,7 @@ body.ready{
     .left-col{
         float: left;
         width: 38.9%; /* 530px/1300px */
+        box-sizing: border-box;
     }
     .right-col{
         float: left;
@@ -578,13 +628,13 @@ body.ready{
     .heading p{
         font-family: 'FuturaNewMedium'; 
         @include font-size(4.801);
-        line-height: 5.201rem;
+        @include line-height(5.201);
         position: relative;
         opacity: 0;
         &::before{
             content: '';
             opacity: 0;
-            transform: scaleX(0.5);
+            transform: scaleX(0.1);
             transition-delay: 4.2s;
             background-color: $mainTextColor;
         }
@@ -627,7 +677,7 @@ body.ready{
     margin: -7px;
     position: relative;
     bottom: -5px;
-    margin-left: -7.3125%; /* (110px+7px)/1600px */
+    /* margin-left: -7.3125%; */ /* (110px+7px)/1600px */
     @include font-size(0);
     li{
         
@@ -666,7 +716,8 @@ body.ready{
 }
 .copyright{
 //    margin-left: 34.85%; /* 453px/1300px */ 
-    margin-left: 32.7%; 
+    /* margin-left: 32.7%; */ 
+    margin-left: 30.5%; 
     font-family: 'FuturaNewBook';
     @include font-size(1.2);
     text-transform: uppercase;
@@ -695,7 +746,9 @@ body.ready{
     transition-delay: 2.7s;
     @include font-size(1.2);
     a{
-      transform: rotate(270deg); 
+        transform: rotate(270deg);
+        position: relative;
+        right: -45%;
         span{
             color: $addTextColor;
         }

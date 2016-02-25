@@ -64,6 +64,12 @@
   font-size: $sizeValue + rem;
 }
 
+@mixin line-height($heightValue: 1.6) {
+  line-height: ($heightValue * 10) + px;
+  line-height: $heightValue + rem;
+}
+
+
 ///timing functions
 $ease-in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);
 $ease-in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190);
