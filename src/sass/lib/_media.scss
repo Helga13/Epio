@@ -1,31 +1,67 @@
 @media only screen and (max-width : 1600px) {
-    .wrap{
-/*         padding-left: 30px;
-        padding-right: 30px; */
+    
+    #header .left-col {
+        width: 38.8%;
+        padding-left: 2.9%;
     }
-    .left-content{
-        padding-left: 30px;
+    #header .right-col nav {
+        padding-left: 13.5%;
     }
-    /* .logo {
-        margin-left: -3.875%;
-    } */
-    /* .personal {
-        right: 0px;
-    } */
+    
+    .personal {
+        padding-left: 4.7%;
+    }
+    .main-fix-content .right-col .news {
+        padding-left: 14.5%;
+    }
+    
+    #fp-nav.nav-slider {
+        right: 12.2%;
+    }
 }
 
 
 @media only screen and (max-width : 1366px) {
+    
+    #header .left-col {
+        width: 38.3%;
+        padding-left: 2%;
+    }
+    
+    .personal {
+        padding-left: 4.7%;
+    }
+    
+    nav ul li a {
+        padding: 0 11px;
+    }
+    
+    .main-fix-content {
+        top: 15.2%;
+    }
+    
+    #fp-nav.nav-slider {
+        right: 12.2%;
+    }
+    
     .main-fix-content .heading p {
         @include font-size(4.201);
         @include line-height(5.001);
     }
+    
+    .slider-content .right-content .row{
+        padding-left: 6.3%;
+    }
     .team-user{
-        right: -45px;
+//        right: -45px;
         .custom-user__desk{
             @include font-size(1.7);
             @include line-height(2.395);
         }
+    }
+    
+    #fp-nav.nav-slider {
+        right: 11.5%;
     }
     
 }
