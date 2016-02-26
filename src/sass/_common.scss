@@ -66,42 +66,41 @@ body.ready{
 #header {
     position: fixed;
     top: 0;
-    right: 2.5%;
-    left: 2.5%; 
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
     padding-top: 2.625%; /* 42px/1600px */
-    .wrap{
-        display: inline-block;
-    }
 }
 #header .left-col{
-    width: 39.35%; /* ? */
+    width: 42.5%;
     box-sizing: border-box;
     float: left;
     text-align: left;
-    padding-left: 3.59%;
+    padding-left: 9.375%;
 }
 #header .right-col{
     width: 57.5%;
     float: left;
     text-align: left;
     box-sizing: border-box;
-    nav{
-        padding-left: 12.5%;
-        width: 69.5%;
-        float: left;
-        box-sizing: border-box;
-    }
+}
+.menu-inner{
+    @include clearfix;
 }
 .logo{
     height: 50px;
     width: 50px;
     float: left;
+    left: 2.5%;
+    position: absolute;
     svg path{
         fill: #d9c39c;
     }
 }
+
 nav{
     display: inline-block;
+    float: left;
 }
 nav ul{
     @include font-size(0);
@@ -116,13 +115,13 @@ nav ul li a{
 }
 .left-menu{
     margin-top: 2.8%;
+    margin-left: -18px;
     a{
         font-family: 'FuturaNewMedium'; 
     }
 }
 .right-menu{
     margin-top: 2.4%;
-
     a{
         font-family: 'FuturaNewLight'; 
     }

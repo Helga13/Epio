@@ -27,6 +27,7 @@ $(document).ready(function () {
         css3: true,
         loopTop: true,
         loopBottom: true,
+        resize: true,
         scrollingSpeed: SCROLLING_SPEED,
         afterRender: function() {
             $('.nav-slider').prepend('<div class="js-nav-curent">01</div>');
