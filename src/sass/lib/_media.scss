@@ -53,7 +53,6 @@
         padding-left: 6.3%;
     }
     .team-user{
-//        right: -45px;
         .custom-user__desk{
             @include font-size(1.7);
             @include line-height(2.395);
@@ -67,6 +66,16 @@
 }
 
 @media only screen and (max-width : 1279px) {
+    
+    .team,
+    .team-user{
+        display: none;
+    }
+    .slider-content .right-content .row{
+        width: 100%;
+        padding-right: 9.78%;
+    }
+    
     .main-fix-content .heading p {
         @include font-size(4.001);
         @include line-height(4.801);

@@ -10,7 +10,6 @@ $(document).ready(function () {
     
     timeout = setTimeout(function () {
             $('#fullpage').addClass('loaded');
-                            //.parents('.ready').removeClass('ready');
         }, 3200);
  
     
@@ -26,9 +25,10 @@ $(document).ready(function () {
         fixedElements: '#header, #footer',
         easing: 'swing',
         css3: true,
+        loopTop: true,
+        loopBottom: true,
         scrollingSpeed: SCROLLING_SPEED,
         afterRender: function() {
-            //$('.section').delay(20000).addClass('done');
             $('.nav-slider').prepend('<div class="js-nav-curent">01</div>');
             
         },
@@ -37,26 +37,13 @@ $(document).ready(function () {
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
             $.fn.fullpage.setScrollingSpeed(0);
-            //$('.section.active .slider-content .left-content a').fadeOut(2000);
-            console.log('out1');
         },
         onLeave: function(index, nextIndex, direction){ 
             if (countSliders > 9){
                 $('.js-nav-curent').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
             }else{
                $('.js-nav-curent').text('0' + nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow'); 
-            }
-            
-            
-            //$('#fullpage.loaded .section .slider-content .left-content a').css('opacity', '0').animate({'opacity': '1'}, 'slow');
-            //console.log('out3');
-           //console.log($(this));
-                //$(this).addClass('ol').siblings().removeClass("ol")
-            
-            
-            
-           
-            
+            } 
         },
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
             $.fn.fullpage.setScrollingSpeed(SCROLLING_SPEED);
