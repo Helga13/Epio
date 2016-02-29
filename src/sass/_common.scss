@@ -63,28 +63,45 @@ body.ready{
     } 
 }
 
-#header {
+#header,
+#footer{
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
     box-sizing: border-box;
+}
+#header{
+    top: 0;
     padding-top: 2.625%; /* 42px/1600px */
+}
+#footer{
+    bottom: 0;
+    padding-bottom: 2.8125%; /* 42px/1600px */
 }
 #header .left-col{
     width: 42.5%;
     box-sizing: border-box;
-    float: left;
+    /* float: left; */
+    display: inline-block;
     text-align: left;
     padding-left: 9.375%;
 }
 #header .right-col{
     width: 57.5%;
-    float: left;
+    /* float: left; */
+    display: inline-block;
     text-align: left;
     box-sizing: border-box;
+    padding-left: 8.125%; /* 130/1600 */
+    nav{
+        margin-left: -18px;
+    }
 }
 .menu-inner{
+    height: 30px;
+    display: inline-block;
+    width: 100%;
+    @include font-size(0);
     @include clearfix;
 }
 .logo{
@@ -99,7 +116,7 @@ body.ready{
 }
 
 nav{
-    display: inline-block;
+    /* display: inline-block; */
     float: left;
 }
 nav ul{
@@ -109,43 +126,45 @@ nav ul li{
     display: inline-block;
 }
 nav ul li a{
-    @include font-size(1.8); 
+    @include font-size(1.8);
+    @include line-height(4.6);
+    vertical-align: bottom;
     color: $mainTextColor;
     padding: 0 18px;
 }
 .left-menu{
-    margin-top: 2.8%;
     margin-left: -18px;
     a{
         font-family: 'FuturaNewMedium'; 
     }
 }
 .right-menu{
-    margin-top: 2.4%;
     a{
         font-family: 'FuturaNewLight'; 
+        @include line-height(4.7);  /* выравнивание меню */
     }
 }
 
 .personal{
-    float: left;
-    margin-top: 1%;
+    float: right;
     width: 30.3%;
     box-sizing: border-box;
-    padding-left: 5.4%;
     a{
         color: $mainTextColor;
         @include font-size(1.8);
-        display: block;
+        @include line-height(4.7);
+        display: inline-block;
         font-family: 'FuturaNewLight';
+        margin-left: -27px;
     }
     svg{
         fill: $mainTextColor;
-        display: inline-block;
+        float: left;
         padding-right: 7px;
         width: 20px;
         position: relative;
-        top: 3px;
+        top: 7px;
+        height: 30px;
     }
     
 }
@@ -238,8 +257,8 @@ nav ul li a{
 }
 .content{
     text-align: left;
-    padding-top: 12.7%;
-    position: relative;
+    top: 22.9%;
+    position: absolute;
 }
 a{
     display: inline-block;
@@ -296,8 +315,9 @@ a{
         display: inline-table;
         margin-bottom: 2.5%;
         opacity: 0;
-        padding-left: 7.61%;
+        padding-left: 14.13%; 
         box-sizing: border-box;
+        margin-left: -65px;
     }
 }
 
@@ -309,10 +329,11 @@ time{
     float: left;
     text-align: right;
     top: 10px;
-    display: table-cell;
     padding-right: 20px;
     position: relative;
+    float: left;
     top: 9px;
+    width: 45px;
     span{
         color: $mainTextColor; 
         @include font-size(4.001);
@@ -327,19 +348,10 @@ time{
     color: $mainTextColor;
     @include font-size(2.4);
     @include line-height(3.2);
-    display: table-cell;
     vertical-align: top;
-    p:not(.tags){
-        position: relative;
-        &::before{
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            top: -20px;
-            background-color: #6f7881;
-        }
-    }
+    overflow: hidden;
+    border-top: 1px solid #6f7881;
+    padding-top: 20px;
 }
 .row.col-2{
     .news-cont{
@@ -347,17 +359,7 @@ time{
     color: $mainTextColor;
     @include font-size(1.797);
     @include line-height(2.395);
-        p:not(.tags){
-            position: relative;
-            &::before{
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 1px;
-                top: -20px;
-                background-color: #6f7881;
-            }
-        }
+    padding-top: 15px;
     a{
         
         vertical-align: top;
@@ -376,18 +378,20 @@ time{
     }  
 }
 .row.col-2 > a:first-child{
-    width: 45.54%;
+    width: 46.5%;
     box-sizing: border-box;
     opacity: 0;
     vertical-align: top;
-    display: table-cell;
+    display: inline-block;
+    margin-right: 3.5%;
 }
 .row.col-2 > a:last-child{
-    width: 45.8%;
+    width: 46.5%;
     vertical-align: top;
-    margin-left: 7.46%;
+    /* margin-left: 7.46%; */
     opacity: 0;
-    display: table-cell;
+    display: inline-block;
+    margin-left: 3.5%;
 }
 
 .tags{
@@ -634,7 +638,7 @@ body.ready{
     .news{
         width: 66.30%;
         box-sizing: border-box;
-        padding-left: 13.5%;
+        padding-left: 14.13%; /* 130/920 */
         float: left;
         opacity: 0;
         
@@ -652,12 +656,12 @@ body.ready{
 
 /* footer */
 
-#footer {
+/* #footer {
     position: fixed;
     right: 2.5%;
     left: 2.5%; 
-    bottom: 4.67%; /* 42px/1600px */
-}
+    bottom: 4.67%; 42px/1600px
+} */
 .social,
 .lang,
 .copyright{
@@ -665,8 +669,10 @@ body.ready{
 }
 .social{
     margin: -7px;
-    position: relative;
-    bottom: -5px;
+    /* position: relative; */
+    position: absolute;
+    left: 2.5%;
+    /* bottom: 2.5%; */
     @include font-size(0);
     li{
         
@@ -682,7 +688,10 @@ body.ready{
     }    
 }
 .lang{
-    margin-left: 8.22%;
+    /* margin-left: 8.22%; */
+    width: 42.5%;
+    box-sizing: border-box;
+    padding-left: 9.375%;
     span{
        font-family: 'MinionPro-It';
         @include font-size(1.8);
@@ -704,19 +713,26 @@ body.ready{
     }
 }
 .copyright{
-    margin-left: 30.5%; 
+    /* margin-left: 30.5%; */ 
     font-family: 'FuturaNewBook';
-    @include font-size(1.2);
+    @include font-size(0);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     color: #b7b5b1;
+    width: 57.5%;
+    box-sizing: border-box;
+    float: right;
+    padding-left: 8.125%;
     span{
         border-right: 2px solid #787878;
         padding: 0 11px;
+        @include font-size(1.2);
+        margin-left: -11px;
     } 
     a.terms-of-use{
         color: $greyTextColor;
         padding: 0 11px;
+        @include font-size(1.2);
     }
 }
 .flxmd{

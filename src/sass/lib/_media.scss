@@ -1,47 +1,20 @@
 @media only screen and (max-width : 1600px) {
     
-    #header .left-col {
-        width: 38.8%;
-        padding-left: 2.9%;
-    }
-    #header .right-col nav {
-        padding-left: 13.5%;
-    }
-    
-    .personal {
-        padding-left: 4.7%;
-    }
-    .main-fix-content .right-col .news {
-        padding-left: 14.5%;
-    }
-    
     #fp-nav.nav-slider {
-        right: 12.2%;
+        /* right: 12.2%; */
     }
 }
 
 
 @media only screen and (max-width : 1366px) {
     
-    #header .left-col {
-        width: 38.3%;
-        padding-left: 2%;
-    }
-    
-    .personal {
-        padding-left: 4.7%;
-    }
-    
     nav ul li a {
         padding: 0 11px;
     }
-    
-    .main-fix-content {
-        top: 15.2%;
-    }
+
     
     #fp-nav.nav-slider {
-        right: 12.2%;
+    /*     right: 12.2%; */
     }
     
     .main-fix-content .heading p {
@@ -49,9 +22,6 @@
         @include line-height(5.001);
     }
     
-    .slider-content .right-content .row{
-        padding-left: 6.3%;
-    }
     .team-user{
         .custom-user__desk{
             @include font-size(1.7);
@@ -60,7 +30,7 @@
     }
     
     #fp-nav.nav-slider {
-        right: 11.5%;
+        /* right: 11.5%; */
     }
     
 }
