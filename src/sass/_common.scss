@@ -289,7 +289,7 @@ a{
 }
         .left-content{
             float: left;
-            margin-top: 19.06%; /* 305/1600 */
+            /* margin-top: 19.06%; */ /* 305/1600 */
             width: 42.5%;
             padding-left: 9.375%;
             box-sizing: border-box;
@@ -303,25 +303,46 @@ a{
             width: 57.5%;
         }
 .slider-content .right-content{
-    margin-top: 5.15%; /* 9.55 */
+    /* margin-top: 5.15%; */ /* 9.55 */
     width: 57.5%;
     float: left;
-    .row{
-        margin-top: 6.40%; 
-        @include font-size(2.4);
-        @include line-height(3.2);
-        width: 66.30%; /* 610/920 */
-        float: left;
-        display: inline-table;
-        margin-bottom: 2.5%;
-        opacity: 0;
-        padding-left: 14.13%; 
-        box-sizing: border-box;
-        margin-left: -65px;
+}
+
+
+.row{
+    /* margin-top: 6.40%; */ 
+    @include font-size(2.4);
+    @include line-height(3.2);
+    width: 66.30%; /* 610/920 */
+    float: left;
+    display: inline-table;
+    /* margin-bottom: 2.5%; */
+    opacity: 0;
+    padding-left: 14.13%; 
+    box-sizing: border-box;
+    /* margin-left: -65px; */
+    a{
+        position: relative;
+    }
+}
+.slider-content .content-row{
+    @include clearfix;
+    .right-content{
+        float: right;
+        position: relative;
     }
 }
 
-time{
+.slider-content .content-row:first-child{
+    margin-top: 7.5%;
+}
+
+.slider-content .content-row:last-child{
+    margin-top: 3.75%;
+}
+
+
+.row time{
     font-family: 'FuturaNewBook';
     color: $greyTextColor;
     @include font-size(1.8);
@@ -329,11 +350,13 @@ time{
     float: left;
     text-align: right;
     top: 10px;
+    padding-top: 20px;
     padding-right: 20px;
-    position: relative;
+    position: absolute;
     float: left;
     top: 9px;
     width: 45px;
+    left: -65px;
     span{
         color: $mainTextColor; 
         @include font-size(4.001);
@@ -341,6 +364,9 @@ time{
         display: block;
         padding-bottom: 5px;
     }
+}
+.row.col-2 time{
+    padding-top: 15px;
 }
 
 .news-cont{
@@ -378,20 +404,20 @@ time{
     }  
 }
 .row.col-2 > a:first-child{
-    width: 46.5%;
+    width: 38.5%;
     box-sizing: border-box;
     opacity: 0;
     vertical-align: top;
     display: inline-block;
-    margin-right: 3.5%;
+    margin-right: 11.5%;
 }
 .row.col-2 > a:last-child{
-    width: 46.5%;
+    width: 38.5%;
     vertical-align: top;
     /* margin-left: 7.46%; */
     opacity: 0;
     display: inline-block;
-    margin-left: 3.5%;
+    margin-left: 11.5%;
 }
 
 .tags{
@@ -406,7 +432,10 @@ time{
 
 .team-user{
     float: right;
-    position: relative;
+    /* position: relative; */
+    position: absolute;
+    top: 0;
+    right: 0;
     opacity: 0;
     width: 33.70%;
     box-sizing: border-box;
