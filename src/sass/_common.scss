@@ -259,6 +259,7 @@ nav ul li a{
     text-align: left;
     top: 22.9%;
     position: absolute;
+    width: 100%;
 }
 a{
     display: inline-block;
@@ -289,7 +290,6 @@ a{
 }
         .left-content{
             float: left;
-            /* margin-top: 19.06%; */ /* 305/1600 */
             width: 42.5%;
             padding-left: 9.375%;
             box-sizing: border-box;
@@ -303,7 +303,6 @@ a{
             width: 57.5%;
         }
 .slider-content .right-content{
-    /* margin-top: 5.15%; */ /* 9.55 */
     width: 57.5%;
     float: left;
 }
@@ -338,9 +337,8 @@ a{
 }
 
 .slider-content .content-row:last-child{
-    margin-top: 3.75%;
+    margin-top: 2.2%;
 }
-
 
 .row time{
     font-family: 'FuturaNewBook';
@@ -665,7 +663,8 @@ body.ready{
 .main-fix-content .right-col{
     overflow: hidden;
     .news{
-        width: 66.30%;
+        /* width: 66.30%; */
+        width: 50%;
         box-sizing: border-box;
         padding-left: 14.13%; /* 130/920 */
         float: left;
@@ -719,6 +718,7 @@ body.ready{
 .lang{
     /* margin-left: 8.22%; */
     width: 42.5%;
+    height: 24px;
     box-sizing: border-box;
     padding-left: 9.375%;
     span{
@@ -752,6 +752,7 @@ body.ready{
     box-sizing: border-box;
     float: right;
     padding-left: 8.125%;
+    padding-top: 10px;
     span{
         border-right: 2px solid #787878;
         padding: 0 11px;

@@ -1,38 +1,74 @@
 @media only screen and (max-width : 1600px) {
-    
+    .main-fix-content .right-col .news{
+        width: 60%;
+    }
     #fp-nav.nav-slider {
-        /* right: 12.2%; */
+        right: 12.2%; 
     }
 }
 
+@media only screen and (max-width : 1391px) {
+    nav ul li a{
+        padding: 0 17px;
+    }
+    #header .right-col nav, .left-menu {
+        margin-left: -17px;
+    }
+}
 
 @media only screen and (max-width : 1366px) {
     
     nav ul li a {
         padding: 0 11px;
     }
-
-    
-    #fp-nav.nav-slider {
-    /*     right: 12.2%; */
+    #header .right-col nav,
+    .left-menu{
+        margin-left: -11px;
     }
-    
+    .team-user {
+        padding-right: 4.68%;
+    }
+    #fp-nav.nav-slider {
+        right: 11.54%;
+    }    
     .main-fix-content .heading p {
         @include font-size(4.201);
         @include line-height(5.001);
+    } 
+    .main-fix-content .right-col .news{
+        width: 66.30%;
     }
-    
+    body.ready .main-fix-content .heading p{
+        &::before{
+            content: '';
+            top: 26px;
+        }  
+    }
     .team-user{
         .custom-user__desk{
             @include font-size(1.7);
             @include line-height(2.395);
         }
     }
-    
-    #fp-nav.nav-slider {
-        /* right: 11.5%; */
+    .slider-content .content-row:first-child{
+        margin-top: 8.2%;
     }
-    
+    .slider-content .content-row:last-child{
+        margin-top: 1.9%;
+    }   
+}
+
+@media only screen and (max-width : 1300px) {
+    .main-fix-content .heading p {
+        @include font-size(4.001);
+        @include line-height(4.801);
+    }
+    body.ready .main-fix-content .heading p{
+        &::before{
+            content: '';
+            top: 25px;
+        }  
+    }
 }
 
 @media only screen and (max-width : 1279px) {
@@ -40,31 +76,87 @@
     .team,
     .team-user{
         display: none;
+    } 
+    #header .left-col{
+        width: auto;
+        float: left;
     }
-/*     .slider-content .right-content .row{
-        width: 100%;
-        padding-right: 9.78%;
-    } */
-    
+    #header .right-col{
+        padding-left: 0;
+        nav{
+            margin-left: 0;
+        }
+    }
     .main-fix-content .heading p {
-        @include font-size(4.001);
-        @include line-height(4.801);
+        @include font-size(3.701);
+        @include line-height(4.501);
+    } 
+    body.ready .main-fix-content .heading p{
+        &::before{
+            content: '';
+            top: 24px;
+        }  
     }
     nav ul li a{
         @include font-size(1.7);
         padding: 0 12px;
     }
+    .row {
+        width: 100%;
+        padding-right: 4.8%;
+    }
 }
 
-@media only screen and (max-width : 1023px) {
-    
+@media only screen and (max-width : 1211px) {
+    #header .right-col{
+        width: initial;
+        overflow: hidden;
+        display: block;
+    }
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width : 1194px) {
     .main-fix-content .heading p {
         @include font-size(3.6);
         @include line-height(4.001);
     }
+    body.ready .main-fix-content .heading p{
+        &::before{
+            content: '';
+            top: 20px;
+        }  
+    }
+}
+
+@media only screen and (max-width : 1120px) {
+    .main-fix-content .right-col .news {
+        width: 100%;
+        padding-right: 4.8%;
+    }
+    .slider-content .content-row:last-child {
+        margin-top: 3.1%;
+    }
+}
+@media only screen and (max-width : 1090px) {
+    .copyright span{
+        border-right: 0;
+    }
+    .copyright a.terms-of-use{
+        display: none;
+    } 
+}
+
+@media only screen and (max-width : 1023px) {
+    nav ul li a {
+        padding: 0 11px;
+    }
+    .lang {
+        padding-left: 14.375%;
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    
     .cat-number{
         @include font-size(6.001);
     }
@@ -103,7 +195,6 @@
         display: none;
     }
     .team-user{
-        /* right: -45px; */
         .custom-user__desk{
             @include font-size(1.6);
             @include line-height(2.2);
@@ -119,6 +210,116 @@
     }
     .menu-inner{
         //display: none;
+    }
+}
+
+@media only screen and (max-height : 768px) {
+    .main-fix-content,
+    .content{
+        top: 15.9%;
+    }
+    #fp-nav.nav-slider{
+        bottom: 6.2%;
+    }
+}
+
+@media only screen and (max-height : 720px) {
+    .main-fix-content,
+    .content{
+        top: 18.9%;
+    }
+    .slider-content .content-row:first-child {
+        margin-top: 6.5%;
+    }
+    .slider-content .content-row:last-child {
+        margin-top: 1.1%;
+    }
+    #fp-nav.nav-slider{
+        bottom: 6.5%;
+    }
+}
+@media only screen and (max-height : 690px) {
+    .slider-content .content-row:first-child {
+        margin-top: 7.5%;
+    }
+    .row.col-2>a:first-child{
+        width: 100%;
+    }
+    .row.col-2>a:last-child{
+        display: none;
+    }
+}
+
+@media only screen and (max-height : 600px) {
+    html {
+        font-size: 59.5%;
+    }
+    .main-fix-content,
+    .content{
+        top: 17.9%;
+    }
+}
+
+@media only screen and (max-width : 1550px) and (max-height : 864px)  {
+    .main-fix-content .heading p{
+        @include font-size(3.6);
+    }
+}
+
+@media only screen and (max-width : 1550px) and (max-height : 720px)  {
+    .main-fix-content .heading p{
+        @include font-size(4);
+    }
+}
+@media only screen and (max-width : 1391px) and (max-height : 720px)  {
+    nav ul li a{
+        padding: 0 12px;
+    }
+    #header .right-col nav, .left-menu {
+        margin-left: -12px;
+    }
+}
+@media only screen and (max-width : 1290px) and (max-height : 720px)  {
+    .main-fix-content .heading p {
+       @include font-size(3.6); 
+    }
+}
+
+@media only screen and (max-width : 1200px) and (max-height : 720px)  {
+    .content, 
+    .main-fix-content{
+        top: 15.9%;
+    }
+    .slider-content .content-row:first-child {
+        margin-top: 7.5%;
+    }
+    .slider-content .content-row:last-child {
+        margin-top: 2.1%;
+    }
+    .main-fix-content .heading p {
+       @include font-size(3.1); 
+    }
+}
+
+@media only screen and (max-width : 992px) and (max-height : 720px)  {
+    .content, 
+    .main-fix-content{
+        top: 16.9%;
+    }
+    .slider-content .content-row:first-child {
+        margin-top: 8.5%;
+    }
+    .slider-content .content-row:last-child {
+        margin-top: 3.1%;
+    }
+}
+
+@media only screen and (max-width : 1024px) and (max-height : 600px)  {
+    .main-fix-content .heading p{
+        @include font-size(3);
+    }
+    .left-content a {
+        width: 100%;
     }
 }
 
