@@ -577,7 +577,7 @@ body.ready #fullpage.loaded{
         transition: height 1s ease, background-color 1s ease;
     }
     a:hover span{
-        height: 8px;
+        height: 14px;
         width: 2px;
     }
     a.active span{
@@ -778,4 +778,78 @@ body.ready{
         }
     }
     
+}
+
+/* hovers all */
+
+nav ul li a,
+nav ul li a,
+.personal a,
+.personal a,
+.news-cont p:not(.tags),
+.news-cont p:not(.tags),
+.custom-user,
+.custom-user .username,
+.custom-user .custom-user__desk{
+    transition: color 0.25s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:active,
+.personal a:hover,
+.personal a:active,
+.news-cont p:not(.tags):hover,
+.news-cont p:not(.tags):active,
+.custom-user:hover .username,
+.custom-user:active .username,
+.custom-user:hover .custom-user__desk,
+.custom-user:active .custom-user__desk{
+    color: $addTextColor;
+}
+
+.social a svg path,
+.personal a svg path{
+    transition: fill 0.25s ease;
+}
+
+.social a:hover svg path,
+.personal a:hover svg path{
+    fill: $addTextColor;
+}
+
+.left-content a .cat-content .cat-text,
+.right-col .news a .cat-text,
+.right-col .team a .cat-text,
+.lang a.eng{
+    transition: color 0.25s ease; 
+}
+
+.left-content a:hover .cat-content .cat-text,
+.right-col .news a:hover .cat-text,
+.right-col .team a:hover .cat-text,
+.lang a.eng:hover{
+    color: $mainTextColor;
+}
+
+.left-content a .cat-content .cat-text .icon-arr svg path,
+.right-col .news a .cat-text .icon-arr svg path,
+.right-col .team a .cat-text .icon-arr svg path{
+    transition: stroke 0.25s ease;
+}
+.left-content a .cat-content .cat-text .icon-arr svg rect,
+.right-col .news a .cat-text .icon-arr svg rect,
+.right-col .team a .cat-text .icon-arr svg rect{
+    transition: fill 0.25s ease;
+}
+
+.left-content a:hover .cat-content .cat-text .icon-arr svg path,
+.right-col .news a:hover .cat-text .icon-arr svg path,
+.right-col .team a:hover .cat-text .icon-arr svg path{
+    stroke: $mainTextColor;
+}
+
+.left-content a:hover .cat-content .cat-text .icon-arr svg rect,
+.right-col .news a:hover .cat-text .icon-arr svg rect,
+.right-col .team a:hover .cat-text .icon-arr svg rect{
+    fill: $mainTextColor;
 }

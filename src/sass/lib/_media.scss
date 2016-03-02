@@ -316,6 +316,26 @@
         width: 100%;
     }
 }
+@media only screen and (max-width : 980px){
+    body,
+    .main-fix-content{
+        /* position: relative; */ 
+        overflow-x: scroll;
+        width: 980px;
+    }
+}
+@media only screen and (max-height : 600px)  {
+    body,
+    .main-fix-content{
+        /* position: relative; */ 
+        overflow-y: scroll;
+        height: 600px !important; 
+    }
+    .content, 
+    .main-fix-content{
+        top: 95px;
+    }
+}
 
 @media only screen and (max-width : 767px) {
 
