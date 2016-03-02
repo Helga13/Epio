@@ -73,6 +73,7 @@ body.ready{
 #header{
     top: 0;
     padding-top: 2.625%; /* 42px/1600px */
+    z-index: 1;
 }
 #footer{
     bottom: 0;
@@ -166,34 +167,6 @@ nav ul li a{
     }
     
 }
-
-/* // popup
-#hamburger{
-        line-height:45px;
-        padding:0px 15px 0px 15px;
-        color:#fff;
-        font-size:1.4em;
-        position: fixed;
-        top: 0;
-        right: 0;
-        display: none;
-        z-index: 100;
-    }   
-
-.popup_menu{
-        display: none;
-    }
-    .popup_menu.menu-open{
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #1e252f;
-        z-index: 999;
-    } */
 
 /* slider begin */
 
@@ -306,7 +279,7 @@ a{
 }
 
 
-.row{
+.custom-row{
     /* margin-top: 6.40%; */ 
     @include font-size(2.4);
     @include line-height(3.2);
@@ -338,7 +311,7 @@ a{
     margin-top: 2.2%;
 }
 
-.row time{
+.custom-row time{
     font-family: 'FuturaNewBook';
     color: $greyTextColor;
     @include font-size(1.8);
@@ -361,7 +334,7 @@ a{
         padding-bottom: 5px;
     }
 }
-.row.col-2 time{
+.custom-row.col-2 time{
     padding-top: 15px;
 }
 
@@ -375,7 +348,7 @@ a{
     border-top: 1px solid #6f7881;
     padding-top: 20px;
 }
-.row.col-2{
+.custom-row.col-2{
     .news-cont{
     font-family: 'MinionPro-Regular';
     color: $mainTextColor;
@@ -399,7 +372,7 @@ a{
     }
     }  
 }
-.row.col-2 > a:first-child{
+.custom-row.col-2 > a:first-child{
     width: 38.5%;
     box-sizing: border-box;
     opacity: 0;
@@ -407,7 +380,7 @@ a{
     display: inline-block;
     margin-right: 11.5%;
 }
-.row.col-2 > a:last-child{
+.custom-row.col-2 > a:last-child{
     width: 38.5%;
     vertical-align: top;
     opacity: 0;
@@ -478,13 +451,13 @@ body.ready #fullpage.loaded{
          transition-delay: .1s; 
     }
     .section.active .slider-content .right-content{
-        .row,
+        .custom-row,
         .team-user{
             opacity: 1;
             transition: opacity 0.5s ease;
             transition-delay: .3s;
         }
-        .row.col-2{
+        .custom-row.col-2{
             a:first-child{
                 opacity: 1;
                 transition: opacity 0.5s ease;
@@ -519,7 +492,7 @@ body.ready #fullpage.loaded{
     right: 12.6%;
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 2s ease, transform 1s ease; /* прозрачность при появлениии */
+    transition: opacity 2s ease, transform 1s ease; 
     transition-delay: 2.5s;
     .js-nav-curent{
         color: $addTextColor;
@@ -679,12 +652,6 @@ body.ready{
 
 /* footer */
 
-/* #footer {
-    position: fixed;
-    right: 2.5%;
-    left: 2.5%; 
-    bottom: 4.67%; 42px/1600px
-} */
 .social,
 .lang,
 .copyright{
@@ -780,7 +747,7 @@ body.ready{
     
 }
 
-/* hovers all */
+/* hovers main page */
 
 nav ul li a,
 nav ul li a,
@@ -852,4 +819,42 @@ nav ul li a:active,
 .right-col .news a:hover .cat-text .icon-arr svg rect,
 .right-col .team a:hover .cat-text .icon-arr svg rect{
     fill: $mainTextColor;
+}
+
+/* styles for inner pages */
+
+.wrap{
+    max-width: 1300px;
+    min-width: 980px;
+    width: auto;
+}
+
+body.inner{
+    background-color: $bgInnerColor;
+}
+section.head{
+    height: 421px;
+    position: relative;
+    padding: 0;
+    background-image: url('../img/bg-inner-pages/bg-about.jpg');
+    background-size: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    transition-delay: .25s;
+    &::before{
+        content: '';
+        width: 42.5%;
+        height: 100%;
+        opacity: .5;
+        background-color: #1d242e;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+}
+
+body.ready section.head{
+    opacity: 1;
 }
