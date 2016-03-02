@@ -88,7 +88,6 @@ body.ready{
 }
 #header .right-col{
     width: 57.5%;
-    /* float: left; */
     display: inline-block;
     text-align: left;
     box-sizing: border-box;
@@ -116,7 +115,6 @@ body.ready{
 }
 
 nav{
-    /* display: inline-block; */
     float: left;
 }
 nav ul{
@@ -169,7 +167,7 @@ nav ul li a{
     
 }
 
-// popup
+/* // popup
 #hamburger{
         line-height:45px;
         padding:0px 15px 0px 15px;
@@ -195,7 +193,7 @@ nav ul li a{
         right: 0;
         background-color: #1e252f;
         z-index: 999;
-    }
+    } */
 
 /* slider begin */
 
@@ -412,7 +410,6 @@ a{
 .row.col-2 > a:last-child{
     width: 38.5%;
     vertical-align: top;
-    /* margin-left: 7.46%; */
     opacity: 0;
     display: inline-block;
     margin-left: 11.5%;
@@ -430,7 +427,6 @@ a{
 
 .team-user{
     float: right;
-    /* position: relative; */
     position: absolute;
     top: 0;
     right: 0;
@@ -663,7 +659,6 @@ body.ready{
 .main-fix-content .right-col{
     overflow: hidden;
     .news{
-        /* width: 66.30%; */
         width: 50%;
         box-sizing: border-box;
         padding-left: 14.13%; /* 130/920 */
@@ -697,10 +692,8 @@ body.ready{
 }
 .social{
     margin: -7px;
-    /* position: relative; */
     position: absolute;
     left: 2.5%;
-    /* bottom: 2.5%; */
     @include font-size(0);
     li{
         
@@ -716,7 +709,6 @@ body.ready{
     }    
 }
 .lang{
-    /* margin-left: 8.22%; */
     width: 42.5%;
     height: 24px;
     box-sizing: border-box;
@@ -742,7 +734,6 @@ body.ready{
     }
 }
 .copyright{
-    /* margin-left: 30.5%; */ 
     font-family: 'FuturaNewBook';
     @include font-size(0);
     text-transform: uppercase;
