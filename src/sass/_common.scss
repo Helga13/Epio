@@ -33,11 +33,22 @@ ul{
 
 h1,
 .h1 {
-    @include font-size(3);
-    font-family: 'MinionPro-Semibold';
-    color: #fff;
+    @include font-size(4.001);
+    @include line-height(5.201);
+    font-family: 'FuturaNewMedium';
+    color: $mainTextColorDark;
     margin: 0;
-    padding: 30px;
+    padding: 0;
+}
+
+h2,
+.h2 {
+    @include font-size(3.6);
+    @include line-height(5.201);
+    font-family: 'FuturaNewMedium';
+    color: $mainTextColorDark;
+    margin: 0;
+    padding: 0;
 }
 
 a{
@@ -97,6 +108,13 @@ body.ready{
         margin-left: -18px;
     }
 }
+.left-col{
+    float: left;
+    width: 42.5%;
+    padding-left: 9.375%;
+    box-sizing: border-box;
+}
+
 .menu-inner{
     height: 30px;
     display: inline-block;
@@ -131,6 +149,22 @@ nav ul li a{
     color: $mainTextColor;
     padding: 0 18px;
 }
+nav ul li a.active::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: $mainTextColor;
+    display: block;
+    position: relative;
+    top: -10px;
+}
+nav ul.left-menu li a.active::after{
+    opacity: 1;
+}
+nav ul.right-menu li a.active::after{
+    opacity: .7;
+} 
+
 .left-menu{
     margin-left: -18px;
     a{
@@ -470,7 +504,7 @@ body.ready #fullpage.loaded{
             }  
         }
         .team-user{
-             transition-delay: 0.9s; 
+            transition-delay: 0.9s; 
         }
     }
 } 
@@ -547,7 +581,7 @@ body.ready #fullpage.loaded{
         height: 4px;
         background-color: #fff;
         width: 2px;
-        transition: height 1s ease, background-color 1s ease;
+        transition: height .25s ease, background-color 1s ease;
     }
     a:hover span{
         height: 14px;
@@ -580,18 +614,20 @@ body.ready{
                 transition-delay: 3.9s;
             }  
         }
-        .right-col{
-            .news,
-            .team{
-                opacity: 1;
-                transition: opacity 0.5s ease;
-                transition-delay: 2.4s;
-            }
-            .team{
-                transition-delay: 3s;
-            }
+        
+    }
+    .right-col{
+        .news,
+        .team{
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            transition-delay: 2.4s;
+        }
+        .team{
+            transition-delay: 3s;
         }
     }
+    
 }
 
 .main-fix-content{
@@ -747,6 +783,7 @@ body.ready{
     
 }
 
+
 /* hovers main page */
 
 nav ul li a,
@@ -827,10 +864,55 @@ nav ul li a:active,
     max-width: 1300px;
     min-width: 980px;
     width: auto;
+    margin: 0 auto;
+    .left-col{
+        float: left;
+        /* width: 40.77%; */
+    }
+    /* .right-col{
+        width: 59.23%;
+    } */ 
 }
 
 body.inner{
     background-color: $bgInnerColor;
+}
+#header.no-fixed{
+    position: absolute;
+}
+#footer.no-fixed{
+    position: relative;
+}
+.flxmd.no-fixed{
+    position: absolute;
+}
+
+.head-title p{
+    @include font-size(4.801);
+    @include line-height(5.201); 
+    font-family: 'FuturaNewMedium';
+}
+.breadcrumbs{
+    /* @include font-size(0); */
+    @include font-size(1.6);
+    @include line-height(3.6);
+    li{
+        display: inline-block;
+        padding: 0 8px;
+        /* @include font-size(1.6);
+        @include line-height(3.6); */
+        a::after{
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 19px;
+            transform: rotate(30deg);
+            background-color: $addTextColor;
+            position: relative;
+            left: 11px;
+            top: 4px;
+        }
+    }
 }
 section.head{
     height: 421px;
@@ -851,10 +933,207 @@ section.head{
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 0;
+        z-index: -1;
+    }
+    .right-col{
+        float: left;
+        width: 57.5%;
+    }
+    .head-title{
+        padding-top: 190px;
+        padding-bottom: 28px;
+        opacity: 0;
+        transition: opacity .5s ease;
+        transition-delay: .55s;
+    }
+    .breadcrumbs{
+        opacity: 0;
+        transition: opacity .5s ease;
+        transition-delay: 1.05s; 
+    }
+    .news{
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: 14.13%;
+        float: left;
+        margin-top: 213px;
+        opacity: 0;
+        transition: opacity .5s ease;
+        transition-delay: 1.05s !important; 
+    }
+
+}
+
+body.ready section.head,
+body.ready section.head .head-title,
+body.ready section.head .breadcrumbs,
+body.ready section.head .news{
+    opacity: 1;
+}
+body.ready section.head .breadcrumbs li{
+    color: rgba(242, 239, 233, .7);
+}
+
+.breadcrumbs li > a{
+    color: rgba(217, 195, 156, .7);
+    transition: color .25s ease;
+}
+.breadcrumbs li a:hover{
+    color: rgba(217, 195, 156, 1);
+}
+
+.inner-content{
+    .inner-row{
+        width: 100%;
+        @include clearfix;
+    }
+    .left-col{
+        width: 36.875%; 
+        box-sizing: border-box;
+    }
+    .right-col{
+        width: 63.125%;
+        float: right;
+        padding-right: 9.375%;
+        box-sizing: border-box;
+    }
+}
+.inner-content-menu{
+    @include font-size(1.8);
+    @include line-height(7.201);
+    font-family: 'FuturaNewMedium';
+    a{
+        transition: color 0.25s ease; 
+    }
+    a.active{
+        color: $mainTextColorDark;
+        &::after{
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $mainTextColorDark;
+            display: block;
+            position: relative;
+            top: -22px;
+        }
+    }
+    a:hover{
+       color: $mainTextColorDark; 
     }
 }
 
-body.ready section.head{
-    opacity: 1;
+.main-info{
+    .subject-title{
+        padding: 25px 0 35px;
+    } 
+}
+.inner-row{
+    padding-top: 77px;
+}
+.right-col.padding-modifier{
+    padding-right: 16.25%; 
+}
+.inner-row{
+    color: $mainTextColorDark;
+    .subject-title{
+        font-family: 'MinionPro-Semibold';
+        @include font-size(2.4);
+        @include line-height(3.2);
+        padding-top: 15px;
+        width: 67.13%;
+    }
+    .subject-text{
+        font-family: 'MinionPro-Regular';
+        @include font-size(1.8);
+        @include line-height(2.4);
+        padding-bottom: 25px;
+    }
+    .subject-text:nth-child(3){
+        width: 70.30%;
+    }
+    .additional-text{
+        font-family: 'MinionPro-Regular';
+        @include font-size(1.8);
+        @include line-height(2.6);
+        background-color: $addTextColorlight;
+        display: inline;
+    }
+}
+
+
+.inner-content-history{
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 81.25%;
+    @include font-size(0);
+    li{
+        display: inline-block;
+        box-sizing: border-box;
+        width: 33.333%;
+        vertical-align: top;
+        .count{
+            color: $addTextColor;
+            font-family: 'FuturaNewBook';
+            @include font-size(9.001);
+            @include line-height(5.001);
+            float: left;
+            margin-right: 20px;
+        }
+        .count-content{
+            color: $mainTextColorDark;
+            font-family: 'FuturaNewMedium';
+            @include font-size(2.6);
+            @include line-height(3.0);
+            overflow: hidden;
+        }
+    }
+    
+}
+.quote{
+    box-sizing: border-box;
+    width: 74.46%;
+    p{
+        color: $mainTextColorDark;
+        font-family: 'MinionPro-MediumIt';
+        @include font-size(2.4);
+        @include line-height(3.6); 
+    }
+    .team-user{
+        float: none;
+        position: static;
+        width: 100%;
+        padding: 0;
+        opacity: 1;
+        margin-top: 30px;
+    }
+    .custom-user .username,
+    .custom-user:hover .username,
+    .custom-user:active .username{
+        font-family: 'MinionPro-Semibold';
+        color: $addTextColor;     
+    }
+    .custom-user__info{
+        overflow: hidden;
+    }
+    .custom-user__avatar{
+        float: left;
+        margin-right: 28px;
+    }
+    .custom-user__position{
+        font-family: 'FuturaNewBook';
+        color: $mainTextColorDark;
+    }
+}
+.right-col.padding-modifier{
+    .subject-title{
+        width: 100%;
+    }
+    .subject-text{
+    }
+    .subject-text:nth-child(3){
+        width: 100%;
+    }
+    .additional-text{
+        
+    }
 }

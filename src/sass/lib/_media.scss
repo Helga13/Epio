@@ -317,16 +317,20 @@
     }
 }
 @media only screen and (max-width : 980px){
+    body{
+        overflow-x: scroll;
+    }
     body,
     .main-fix-content{
-        overflow-x: scroll;
         width: 980px;
     }
 }
 @media only screen and (max-height : 600px)  {
+    body{
+        overflow-y: scroll;
+    }
     body,
     .main-fix-content{
-        overflow-y: scroll;
         height: 600px !important; 
     }
     .content, 
