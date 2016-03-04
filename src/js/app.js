@@ -51,24 +51,24 @@ $(document).ready(function () {
         },
     });
     
-    // hamburger
+        
+    // about.html team-slider 
     
-    $('#hamburger').click(function (e) {
-        e.preventDefault();
-        $('.popup_menu').addClass('menu-open');
-        //	$('body').css('overflow', 'hidden');
-    })
-    $('.popup_menu').click(function (event) {
-        e = event || window.event
-        if (e.target == this) {
-            $('.popup_menu').removeClass('menu-open');
-            //	$('body').css('overflow', 'auto');    
-        }
-    })
-    $('.popup__close').click(function (e) {
-        e.preventDefault();
-        $('.popup_menu').removeClass('menu-open')
-            //	$('body').css('overflow', 'auto');
+    $('.team-slider').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        //centerPadding: '0px',
+        responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    }
+    ]
+        
     });
     
     
