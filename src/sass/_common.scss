@@ -868,19 +868,15 @@ nav ul li a:active,
 
 /* styles for inner pages */
 
-.wrap{
-    max-width: 1300px;
-    min-width: 980px;
-    width: auto;
-    margin: 0 auto;
-    .left-col{
-        float: left;
-        /* width: 40.77%; */
-    }
-    /* .right-col{
-        width: 59.23%;
-    } */ 
-}
+//.wrap{
+//    max-width: 1300px;
+//    min-width: 980px;
+//    width: auto;
+//    margin: 0 auto;
+//    .left-col{
+//        float: left;
+//    }
+//}
 
 body.inner{
     background-color: $bgInnerColor;
@@ -892,6 +888,7 @@ body.inner{
     position: relative;
     height: 620px;
     background-color: $addTextColorlight;
+    transition: none;
     .social li a svg path{
         fill: $addTextColor;
     }
@@ -900,6 +897,14 @@ body.inner{
     }
     .lang span{
         color: $mainTextColorDark;
+        &::after{
+            background-color: #565b61;
+            height: 1px;
+            border-bottom: 1px solid #bbb;
+        }
+    }
+    .lang a.eng:hover{
+            color: $mainTextColorDark;
     }
     .copyright span,
     .terms-of-use{
@@ -910,8 +915,75 @@ body.inner{
         /* border-right-style: double; */
     }
 }
+#footer.no-fixed .footer-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 2.8125%;
+}
+#footer.no-fixed .footer-menu{
+    box-sizing: border-box;
+    @include font-size(0);
+    margin: 0 auto;
+    padding: 80px 0 100px;
+    padding-top: 90px;
+    width: 81.25%;
+}
+#footer.no-fixed .footer-menu a{
+    color: $addTextColorDark;
+    transition: color 0.25s ease;
+    display: inline-block;
+    width: 100%;
+}
+#footer.no-fixed .footer-menu a:hover,
+#footer.no-fixed .footer-menu a:active{
+    color: $mainTextColorDark;
+}
+#footer.no-fixed .footer-menu > li{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+#footer.no-fixed .footer-menu > li:first-child{
+    padding-left: 8.38%;
+}
+#footer.no-fixed .footer-menu ul,
+#footer.no-fixed .footer-menu li{
+    font-family: 'FuturaNewBook';
+    @include font-size(1.8);
+    @include line-height(3.0);
+}
+#footer.no-fixed .footer-menu .font-modifier{
+    @include font-size(2.4);
+    @include line-height(6.001);
+}
+#footer.no-fixed .footer-menu li > ul > li:not(.font-modifier){ 
+    a{
+        padding: 17px 0;
+        padding-right: 18%;
+        box-sizing: border-box;
+    }
+}
+#footer.no-fixed .footer-menu li > ul > li:not(.font-modifier):nth-child(n+2){
+    a{
+        padding: 14px 0;
+        padding-right: 18%;
+        box-sizing: border-box;
+    }
+}
+
 .flxmd.no-fixed{
     position: absolute;
+    bottom: 60%;
+    transition: none;
+    a{
+        color: $mainTextColorDark;
+    }
+    span{
+        color: $addTextColorDark;
+    }
 }
 
 .head-title p{
@@ -1015,13 +1087,13 @@ body.ready section.head .breadcrumbs li{
         @include clearfix;
     }
     .left-col{
-        width: 36.875%; 
+        width: 36.875%; /* 590px/1600px */
         box-sizing: border-box;
     }
     .right-col{
-        width: 63.125%;
+        width: 63.125%; /* 1010px/1600px */
         float: right;
-        padding-right: 9.375%;
+        padding-right: 9.375%; /* 150px/1600px */
         box-sizing: border-box;
     }
 }
@@ -1150,6 +1222,26 @@ body.ready section.head .breadcrumbs li{
     .custom-user__position{
         font-family: 'FuturaNewBook';
         color: $mainTextColorDark;
+    }
+}
+
+.inner-row.expertise{
+    position: relative;
+    z-index: 0;
+    &::before{
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        background-image: url('../img/bg-inner-pages-content/world-map.png');
+        background-repeat: no-repeat;
+        left: 16.875%;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+    .block-title{
+//        padding-left: 18.47%;
+//        box-sizing: border-box;
     }
 }
 .right-col.padding-modifier{
@@ -1286,7 +1378,8 @@ body.ready section.head .breadcrumbs li{
         @include font-size(4.801);
         @include line-height(6.001); 
         padding-left: 10.89%; /* 110px/1010px */
-        padding-right: 25.74%; /* 260px/1010px */
+//        padding-right: 25.74%; /* 260px/1010px */
+        position: relative;
         &::before{
             content: '';
             display: inline-block;
@@ -1294,9 +1387,9 @@ body.ready section.head .breadcrumbs li{
             height: 40px;
             transform: rotate(45deg);
             background-color: $addTextColor;
-            position: relative;
-            left: -55px;
-            top: 5px;
+            position: absolute;
+            left: 35px;
+            top: 10px;
         }
     }
     
@@ -1308,7 +1401,7 @@ body.ready section.head .breadcrumbs li{
         position: absolute;
         background-color: $addTextColorlight;
         top: -90px;
-        left: -105px;
+        left: -13.2%;
         z-index: -1;
     }
 }
