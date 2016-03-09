@@ -1013,7 +1013,8 @@ body.inner{
         }
     }
 }
-section.head{
+section.head.about,
+section.head.contacts{
     height: 421px;
     position: relative;
     padding: 0;
@@ -1060,7 +1061,15 @@ section.head{
         transition: opacity .5s ease;
         transition-delay: 1.05s !important; 
     }
-
+    .news.with-tags{
+        margin-top: 173px;
+    }
+}
+section.head.about{
+    background-image: url('../img/bg-inner-pages/bg-about.jpg');
+}
+section.head.contacts{
+    background-image: url('../img/bg-inner-pages/bg-contacts.jpg');
 }
 
 body.ready section.head,
