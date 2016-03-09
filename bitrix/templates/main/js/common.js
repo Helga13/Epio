@@ -5524,19 +5524,21 @@ $(document).ready(function () {
     
     $('.team-slider').slick({
         infinite: false,
+        //arrows: false,
         slidesToShow: 4,
         slidesToScroll: 1,
         //centerPadding: '0px',
+        prevArrow:'.left-arr',
+        nextArrow:'.right-arr', 
         responsive: [
     {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
+        breakpoint: 992,
+        settings: {
+        slidesToShow: 3,
         slidesToScroll: 1,
       }
     }
-    ]
-        
+    ]  
     });
     
     
