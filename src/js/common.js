@@ -3,4 +3,6 @@
 
 //= lib/jquery.fullPage.js
 //= lib/slick.js
+
 //= app.js
+//= lib/map.js

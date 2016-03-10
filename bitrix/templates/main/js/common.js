@@ -5466,6 +5466,7 @@
     };
 
 }));
+
 $(document).ready(function () {
     
     // preloader
@@ -5544,3 +5545,216 @@ $(document).ready(function () {
     
     
 });
+$(function(){
+    //contactsMap();
+    //whereMaps();
+    //branchMap();
+})
+    var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"lightness":40},{"color":"#333333"},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#ffffff"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#e2e1e0"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":20},{"visibility":"on"},{"color":"#f4f2f0"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#fcfafa"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#fcfafa"},{"lightness":17}]}];
+
+// function contactsMap(){
+//    var googleMaps = $('#map-canvas');
+//    if(googleMaps.length){
+//        var mapOptions = {
+//            zoom: 3,
+//            center: new google.maps.LatLng(53.903897, 27.562357),
+//            disableDefaultUI: true,
+//            scrollwheel: false,
+//            zoomControl: true,
+//            zoomControlOptions: {
+//                    style: google.maps.ZoomControlStyle.SMALL,
+//                    position: google.maps.ControlPosition.RIGHT_CENTER
+//                },
+//            mapTypeControlOptions: {
+//                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
+//            }
+//        }
+//        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+//        var mapType = new google.maps.StyledMapType(styles, { name:"Grayscale" });    
+//        map.mapTypes.set('tehgrayz', mapType);
+//        map.setMapTypeId('tehgrayz');
+//        var image = '../../img/map-pointer/marker.png';
+//        var myLatLng1 = new google.maps.LatLng(53.903897, 27.562357);
+//        var marker1 = new google.maps.Marker({
+//                position: myLatLng1,
+//                map: map,
+//                //title: 'Uluru (Ayers Rock)', 
+//                icon: image
+//        });
+//    }
+// }
+
+// $('.js-tooltip').on('click', function(){
+//    setTimeout(function(){
+//        branchMap();
+//    })
+// })
+// function branchMap(){
+//    var googleMapCollection = $('.maps');
+//    $('.maps').each(function(){
+//        googleMapFunc($(this));
+//    });
+//    function googleMapFunc(googleMap){
+//        if(googleMap.length){
+//            var longitude = parseFloat(googleMap.attr('data-longitude')) || 53.894717,
+//                latitude = parseFloat(googleMap.attr('data-latitude')) || 27.562312;
+//            var latlng = new google.maps.LatLng(longitude, latitude);
+// 
+//            var myOptions = {
+//                zoom: 3,
+//                center: new google.maps.LatLng(53.903897, 27.562357),
+//                disableDefaultUI: true,
+//                scrollwheel: false,
+//                zoomControl: true,
+//                zoomControlOptions: {
+//                        style: google.maps.ZoomControlStyle.SMALL,
+//                        position: google.maps.ControlPosition.RIGHT_CENTER
+//                    },
+//                mapTypeControlOptions: {
+//                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
+//                }
+//            };
+//            
+//            var map = new google.maps.Map(document.getElementById(googleMap.attr('id')), myOptions);
+//            var mapType = new google.maps.StyledMapType(styles, { name:"Grayscale" });    
+//            map.mapTypes.set('tehgrayz', mapType);
+//            map.setMapTypeId('tehgrayz');
+//            
+//            var companyImage = new google.maps.MarkerImage();
+//            var companyPos = new google.maps.LatLng(longitude, latitude);
+//            var companyMarker = new google.maps.Marker({
+//                position: companyPos
+//            });
+// 
+//            var boxText = document.createElement("div");
+//            boxText.style.cssText = "background: url('../../img/map-pointer/marker.png') no-repeat; width: 34px; height: 54px;";
+//            var boxContent = '';
+//            boxText.innerHTML = boxContent;
+//            var myOptions = {
+//                content: boxText,
+//                disableAutoPan: false,
+//                maxWidth: 0,
+//                pixelOffset: new google.maps.Size(-11, -32),
+//                zIndex: null,
+//                infoBoxClearance: new google.maps.Size(1, 1),
+//                isHidden: false,
+//                pane: "floatPane",
+//                enableEventPropagation: false,
+//                closeBoxURL:''
+//            };
+//            var ib = new InfoBox(myOptions);
+//            ib.open(map, companyMarker);
+//        }
+//    };
+// }; 
+
+
+function initMap(){
+    var myOptions = {
+        zoom: 3,
+        center: new google.maps.LatLng(53.903897, 27.562357),
+        disableDefaultUI: true,
+        scrollwheel: false,
+        zoomControl: true,
+        zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.SMALL,
+                position: google.maps.ControlPosition.LEFT_CENTER
+            },
+        mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
+        }
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas-where'), myOptions);
+    var mapType = new google.maps.StyledMapType(styles, { name:"Grayscale" });    
+        map.mapTypes.set('tehgrayz', mapType);
+        map.setMapTypeId('tehgrayz');
+
+        setMarkers(map);
+}
+var beaches = [];
+$('.maps').each(function(index){
+    var cur_coords = [];
+        cur_coords[0] = $(this).data('longitude');
+        cur_coords[1] = $(this).data('latitude');
+        cur_coords[2] = $(this).find('.marker-popup').html();
+        beaches[index] = cur_coords;
+});
+var contentString = beaches[2];
+
+function setMarkers(map) {
+    var image = {
+        url: '../../img/map-pointer/marker.png',
+        size: new google.maps.Size(28, 38),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 38)
+    };
+    var imageHover = {
+        url: '../../img/map-pointer/marker-hover.png',
+        size: new google.maps.Size(31, 54),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(1, 38)
+    };
+    var infowindow = new google.maps.InfoWindow({
+        content: '',
+        maxWidth: 380
+    });
+    
+    var markersBounds = new google.maps.LatLngBounds();
+    for (var i = 0; i < beaches.length; i++) {
+        var beach = beaches[i];
+
+        var markerPosition = new google.maps.LatLng(beach[0], beach[1]);
+        markersBounds.extend(markerPosition);
+        var marker = new google.maps.Marker({
+          position: markerPosition,
+          map: map,
+          icon: image,
+          info: '<div class="marker-popup">' + beach[2] + '</div>'
+        });
+        
+        (function(marker, i) {
+            google.maps.event.addListener(marker, 'click', function() {                
+                infowindow.setContent(this.info)
+                infowindow.open(map, marker);
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                marker.setIcon(imageHover);
+            });
+            
+//            google.maps.event.addListener(marker, 'mouseout', function() {
+//                marker.setIcon(image);
+//            });
+//            google.maps.event.addListener(infowindow, 'domready', function() {
+//                var iwOuter = $('.gm-style-iw');
+//                var iwBackground = iwOuter.prev();
+//                var iwParent = iwOuter.parent(':nth-child(2)');
+//                iwParent.addClass('box-bg');
+//                iwBackground.children(':nth-child(1)').css({'display' : 'none'});
+//                iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+//                iwBackground.children(':nth-child(3)').addClass('ololo');
+//                iwBackground.children(':nth-child(3)').children(':nth-child(1)').css({'display' : 'none'});
+//                iwBackground.children(':nth-child(3)').children(':nth-child(2)').css({'display' : 'none'});
+//                iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+//                iwOuter.parent().parent().css({left: '115px'});
+//                iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+//                iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+//                iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
+//                var iwCloseBtn = iwOuter.next();
+//                iwCloseBtn.addClass('close-infobox');
+//                iwCloseBtn.find('img').css({'display' : 'none'})
+//                if($('.iw-content').height() < 140){
+//                    $('.iw-bottom-gradient').css({display: 'none'});
+//                }
+//                iwCloseBtn.mouseout(function(){
+//                    $(this).css({opacity: '1'});
+//                });
+//            });
+            
+        })(marker, i);
+
+    }
+    map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
+    //$('.box-bg').append('<img src="/bitrix/templates/kilix/img/pin-bg.png">');
+};
+
+initMap();

@@ -1467,3 +1467,44 @@ body.ready section.head .breadcrumbs li{
         }
     }
 }
+
+
+/* contacts.html matker-popup styles */
+
+.marker-popup{
+    padding: 20px 35px;
+    p:not(:last-child){
+        margin-bottom: 5px;
+    }
+    .tip_title{
+        font-family: 'FuturaNewMedium';
+        @include font-size(2.6);
+        @include line-height(3.6); 
+        color: $mainTextColorDark;
+    }
+    .tip_address,
+    .tip_link,
+    .tip_phone,
+    .tip_mail{
+        font-family: 'MinionPro-Regular';
+        @include font-size(1.8);
+        @include line-height(2.6); 
+        color: $mainTextColorDark;
+    }
+    .tip_link a,
+    .tip_mail a{ 
+        color: $addTextColorDark;
+        img{
+            width: 10px;
+            margin-right: 10px;
+        }
+        span{
+            border-bottom: 1px dotted;
+        }
+    }
+    .tip_mail{
+        a{
+          text-decoration: underline;  
+        }
+    }
+}
