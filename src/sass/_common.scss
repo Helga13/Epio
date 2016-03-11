@@ -1471,6 +1471,28 @@ body.ready section.head .breadcrumbs li{
 
 /* contacts.html matker-popup styles */
 
+.inner-content.map-container{
+    position: relative;
+}
+
+.marker-item-block{
+    position: absolute;
+    z-index: 2;
+    top: 95px;
+    left: 80px;
+    a{
+        display: block;
+        font-family: 'FuturaNewMedium';
+        @include font-size(1.8);
+        @include line-height(6.001); 
+        color: $addTextColorDark; 
+    }
+}
+
+.marker-block{
+    display: none;
+}
+
 .marker-popup{
     padding: 20px 35px;
     p:not(:last-child){

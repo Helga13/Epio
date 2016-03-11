@@ -130,8 +130,10 @@
     
     <!-- Main content for inner page -->
     
-    <section class="inner-content">
-        <div class="maps pin1" data-title="Россия" data-longitude="55.7498598" data-latitude="37.3523227">
+    <section class="inner-content map-container">
+       
+        <div class="marker-block">
+                    <div class="maps pin1" data-title="Россия" data-longitude="55.7498598" data-latitude="37.3523227">
             <div class="marker-popup">
                 <p class="tip_title">Россия</p>
                 <p class="tip_address">г. Москва,  ул. Ленина 5</p>
@@ -210,10 +212,22 @@
                 <p class="tip_phone">7 495 937-77-48</p> 
                 <p class="tip_mail"><a href="mailto:info@gmail.com">info@gmail.com</a></p> 
             </div>
+        </div>   
         </div>
         
-        <div id="map-canvas-where" style="height:1120px">
+        <div class="marker-item-block">
+            <a href="#" onclick="myClick(0);">Россия</a>
+            <a href="#" onclick="myClick(1);">Республика Беларусь</a>
+            <a href="#" onclick="myClick(2);">Украина</a>
+            <a href="#" onclick="myClick(3);">Казахстанa</a>
+            <a href="#" onclick="myClick(4);">Англия</a>
+            <a href="#" onclick="myClick(5);">Италия</a>
+            <a href="#" onclick="myClick(6);">США</a>
+            <a href="#" onclick="myClick(7);">Китай</a>
+        </div> 
             
+        <div id="map-canvas-where" style="height:1120px">
+              
         </div>
         
         

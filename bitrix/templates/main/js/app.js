@@ -73,6 +73,8 @@ $(document).ready(function () {
     ]  
     });
     
-    
+    $('.marker-item-block > a').click(function(e) {
+        e.preventDefault();
+    });
     
 });
