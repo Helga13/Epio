@@ -5542,7 +5542,11 @@ $(document).ready(function () {
     ]  
     });
     
+    // contacts.html google.map
     
+    $('.marker-item-block > a').click(function(e) {
+        e.preventDefault();
+    });
     
 });
 $(function(){})
@@ -5669,9 +5673,9 @@ function setMarkers(map) {
 
 initMap();
 
-    $('.marker-item-block > a').click(function(e) {
-        e.preventDefault();
-    });
+//    $('.marker-item-block > a').click(function(e) {
+//        e.preventDefault();
+//    });
     function myClick(id){
         google.maps.event.trigger(markers[id], 'click');
         

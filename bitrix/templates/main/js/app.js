@@ -73,6 +73,8 @@ $(document).ready(function () {
     ]  
     });
     
+    // contacts.html google.map
+    
     $('.marker-item-block > a').click(function(e) {
         e.preventDefault();
     });

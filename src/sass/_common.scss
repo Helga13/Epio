@@ -1429,7 +1429,6 @@ body.ready section.head .breadcrumbs li{
             top: 10px;
         }
     }
-    
     &::before{
         content: '';
         display: inline-block;
@@ -1440,6 +1439,42 @@ body.ready section.head .breadcrumbs li{
         top: -90px;
         left: -13.2%;
         z-index: -1;
+    }
+}
+
+.info-panel.with-button{
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    width: 54.875%;
+    background-color: #fff;
+    height: 330px;
+    p{
+        font-family: 'FuturaNewMedium';
+        @include font-size(3.6);
+        @include line-height(4.201);
+        color: $mainTextColorDark;
+        display: inline-block;
+        &::before{
+            left: 35px;
+            top: 0;
+        }
+    }
+    a.button{
+        display: inline-block;
+        width: 220px;
+        height: 53px;
+        line-height: 53px;
+        color: #fff;
+        font-family: 'FuturaNewHeavy';
+        background-color: $addTextColor;
+        @include font-size(1.198);
+        text-transform: uppercase;
+        letter-spacing: .199em;
+        text-align: center;
+    }
+    &::before{
+        display: none;
     }
 }
 
@@ -1469,7 +1504,9 @@ body.ready section.head .breadcrumbs li{
 }
 
 
-/* contacts.html matker-popup styles */
+
+
+/* contacts.html matker-popup and other styles */
 
 .inner-content.map-container{
     position: relative;
@@ -1530,3 +1567,16 @@ body.ready section.head .breadcrumbs li{
         }
     }
 }
+
+.write-to-us{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    bottom: -35px;
+    .info-panel.with-button{
+        display: inline-block;
+    }
+}
+
+/* end contacts.html styles */
