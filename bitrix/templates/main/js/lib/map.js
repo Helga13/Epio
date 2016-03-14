@@ -70,12 +70,22 @@ function setMarkers(map) {
           info: '<div class="marker-popup">' + beach[2] + '</div>'
         });
         
+        // устанавливает маркер по клику и возвращает остальные к первоначальному виду
+        var markerCallback = function() {
+            for (var i=0; i< markers.length; i++) {
+                markers[i].setIcon(image);
+            }
+            this.setIcon(imageHover);
+        }
+
+google.maps.event.addListener(marker, 'click', markerCallback); 
+        
         (function(marker, i) {  
             google.maps.event.addListener(marker, 'click', function() {               
                 //infowindow.close();
                 infowindow.setContent(this.info);
                 infowindow.open(map, marker);
-                marker.setIcon(imageHover);
+                //marker.setIcon(imageHover);
                 //console.log(i);
                 $('.marker-item-block > a').removeClass('marked');
                 $('.marker-item-block > a[onclick="myClick('+i+');"]').addClass('marked');
