@@ -32,26 +32,28 @@ $('.maps').each(function(index){
         cur_coords[0] = $(this).data('longitude');
         cur_coords[1] = $(this).data('latitude');
         cur_coords[2] = $(this).find('.marker-popup').html();
+        //console.log(this);
         beaches[index] = cur_coords;
 });
 var contentString = beaches[2];
 
 function setMarkers(map) {
     var image = {
-        url: '../../img/map-pointer/marker.png',
+        url: 'img/map-pointer/marker.png',
         size: new google.maps.Size(28, 38),
         origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(0, 38)
+        anchor: new google.maps.Point(14, 38)
     };
     var imageHover = {
-        url: '../../img/map-pointer/marker-hover.png',
+        url: 'img/map-pointer/marker-hover.png',
         size: new google.maps.Size(31, 54),
         origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(1, 38)
+        anchor: new google.maps.Point(14, 38)
     };
     var infowindow = new google.maps.InfoWindow({
         content: '',
-        maxWidth: 380
+        //maxWidth: 300
+        //maxHeight: 275,
     });
     
     var markersBounds = new google.maps.LatLngBounds();
@@ -64,18 +66,22 @@ function setMarkers(map) {
           position: markerPosition,
           map: map,
           icon: image,
-          //animation: google.maps.Animation.DROP,
+          animation: google.maps.Animation.DROP,
           info: '<div class="marker-popup">' + beach[2] + '</div>'
         });
         
-        (function(marker, i) {
-                
+        (function(marker, i) {  
             google.maps.event.addListener(marker, 'click', function() {               
                 //infowindow.close();
-                infowindow.setContent(this.info)
+                infowindow.setContent(this.info);
                 infowindow.open(map, marker);
                 marker.setIcon(imageHover);
                 //console.log(i);
+                $('.marker-item-block > a').removeClass('marked');
+                $('.marker-item-block > a[onclick="myClick('+i+');"]').addClass('marked');
+             
+                //$(this).addClass('marked');
+                
 //                if (marker.getAnimation() !== null) {
 //                    marker.setAnimation(null);
 //              } else {
@@ -83,40 +89,47 @@ function setMarkers(map) {
 //              }
                 
             });
+            
                 google.maps.event.addListener(infowindow,'closeclick',function(){
-                marker.setIcon(image);
-            });
+                    marker.setIcon(image);
+                    $('.marker-item-block > a').removeClass('marked');
+                });
 
-//            google.maps.event.addListener(infowindow, 'domready', function() {
-//                var iwOuter = $('.gm-style-iw');
-//                var iwBackground = iwOuter.prev();
-//                var iwParent = iwOuter.parent(':nth-child(2)');
-//                iwParent.addClass('box-bg');
-//                iwBackground.children(':nth-child(1)').css({'display' : 'none'});
-//                iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-//                iwBackground.children(':nth-child(3)').addClass('ololo');
-//                iwBackground.children(':nth-child(3)').children(':nth-child(1)').css({'display' : 'none'});
-//                iwBackground.children(':nth-child(3)').children(':nth-child(2)').css({'display' : 'none'});
-//                iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-//                iwOuter.parent().parent().css({left: '115px'});
-//                iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-//                iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-//                iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
-//                var iwCloseBtn = iwOuter.next();
-//                iwCloseBtn.addClass('close-infobox');
-//                iwCloseBtn.find('img').css({'display' : 'none'})
+            google.maps.event.addListener(infowindow, 'domready', function() {
+                var iwOuter = $('.gm-style-iw');
+                var iwBackground = iwOuter.prev();
+                var iwParent = iwOuter.parent(':nth-child(2)');
+                iwParent.addClass('box-bg');
+                iwBackground.children(':nth-child(1)').css({'display' : 'none'});
+                iwBackground.children(':nth-child(2)').css({'display' : 'none', height: '0'});
+                iwBackground.children(':nth-child(2)').addClass('height-mod');
+                iwBackground.children(':nth-child(3)').addClass('ololo');
+                iwBackground.children(':nth-child(3)').children(':nth-child(1)').css({'display' : 'none'});
+                iwBackground.children(':nth-child(3)').children(':nth-child(2)').css({'display' : 'none'});
+                iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+                iwOuter.parent().parent().css({left: '15px'});
+                iwOuter.parent().parent().css({top: '0'});
+                iwOuter.parent().parent().css({bottom: '0'});
+                iwBackground.children(':nth-child(2)').parent().parent().addClass('ololo2');
+                //iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+                //iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+                //iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
+                var iwCloseBtn = iwOuter.next();
+                iwCloseBtn.addClass('close-infobox');
+                iwCloseBtn.find('img').css({'display' : 'none'})
 //                if($('.iw-content').height() < 140){
 //                    $('.iw-bottom-gradient').css({display: 'none'});
 //                }
 //                iwCloseBtn.mouseout(function(){
 //                    $(this).css({opacity: '1'});
 //                });
-//            });
+            });
             markers.push(marker);
             
         })(marker, i);
 
     }
+    
     map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
 };
 

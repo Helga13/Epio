@@ -1535,6 +1535,9 @@ body.ready section.head .breadcrumbs li{
         @include line-height(6.001); 
         color: $addTextColorDark; 
     }
+    a.marked{
+        color: $mainTextColorDark; 
+    }
 }
 
 .marker-block{
@@ -1582,6 +1585,33 @@ body.ready section.head .breadcrumbs li{
           text-decoration: underline;  
         }
     }
+}
+.gm-style-iw {
+    width: 100%!important;
+    top: 0 !important;
+    left: 0 !important;
+    //height: 275px!important;
+    //bottom: 0!important;
+    //right: 0!important;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+}
+
+.height-mod,
+.ololo2{
+    //height: 0!important;
+    //margin-left: 120px;
+}
+.marker-popup {
+    min-width: 200px;
+}
+
+.close-infobox{
+    background-image: url('../img/map-pointer/close-iw.png');
+    background-size: cover;
+    width: 17px;
+    height: 17px;
+    overflow: hidden;
 }
 
 .write-to-us{

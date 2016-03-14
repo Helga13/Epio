@@ -77,6 +77,8 @@ $(document).ready(function () {
     
     $('.marker-item-block > a').click(function(e) {
         e.preventDefault();
+        $('.marker-item-block > a').removeClass('marked');
+        $(this).addClass('marked');
     });
     
 });
