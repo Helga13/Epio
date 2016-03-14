@@ -1448,16 +1448,26 @@ body.ready section.head .breadcrumbs li{
     margin-right: auto;
     width: 54.875%;
     background-color: #fff;
-    height: 330px;
+    height: 252px;
+    //padding: 0 108px;
     p{
         font-family: 'FuturaNewMedium';
         @include font-size(3.6);
         @include line-height(4.201);
         color: $mainTextColorDark;
         display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        padding: 84px 0;
+        padding-left: 25%;
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        height: 100%;
         &::before{
-            left: 35px;
-            top: 0;
+            left: -45px;
+            top: -10px;
+            position: relative;
         }
     }
     a.button{
@@ -1472,6 +1482,7 @@ body.ready section.head .breadcrumbs li{
         text-transform: uppercase;
         letter-spacing: .199em;
         text-align: center;
+        margin: 100px 0;
     }
     &::before{
         display: none;
@@ -1559,6 +1570,11 @@ body.ready section.head .breadcrumbs li{
         }
         span{
             border-bottom: 1px dotted;
+        }
+    }
+    .tip_link a:hover{
+        span{
+            border-bottom: none;
         }
     }
     .tip_mail{
