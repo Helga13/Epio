@@ -42,7 +42,7 @@ h1,
     font-family: 'FuturaNewMedium';
     color: $mainTextColorDark;
     margin: 0;
-    padding: 0;
+    padding: 2px 0;
 }
 
 h2,
@@ -118,8 +118,8 @@ body.ready{
 }
 .left-col{
     float: left;
-    width: 42.5%;
-    padding-left: 9.375%;
+    width: 42.5%; /* 680px/1600px */
+    padding-left: 9.375%; /* 150px/1600px */
     box-sizing: border-box;
 }
 
@@ -136,9 +136,19 @@ body.ready{
     float: left;
     left: 2.5%;
     position: absolute;
-    svg path{
-        fill: #d9c39c;
-    }
+	a{
+		display: block;
+		svg path{
+			fill: #d9c39c;
+			transition: fill .25s ease;
+		}
+	}
+	a:hover{
+		svg path{
+			fill: $mainTextColor;
+		}
+	}
+    
 }
 
 nav{
@@ -1079,8 +1089,14 @@ body.ready section.head .breadcrumbs,
 body.ready section.head .news{
     opacity: 1;
 }
-body.ready section.head .breadcrumbs li{
-    color: rgba(242, 239, 233, .7);
+body.ready section.head .breadcrumbs{
+	margin-left: -8px;
+	li{
+		color: rgba(242, 239, 233, .7);
+		font-family: 'FuturaNewLight';
+		@include font-size(1.6);
+		@include line-height(3.6);
+	}	
 }
 
 .breadcrumbs li > a{
@@ -1111,6 +1127,7 @@ body.ready section.head .breadcrumbs li{
     @include font-size(1.8);
     @include line-height(7.201);
     font-family: 'FuturaNewMedium';
+	margin-top: 77px; // отступ равный отступу inner-row
     a{
         transition: color 0.25s ease; 
     }
@@ -1134,6 +1151,7 @@ body.ready section.head .breadcrumbs li{
 .main-info{
     position: relative;
     margin-bottom: 135px;
+	//@include clearfix;
     &::after{
         content: '18';
         position: absolute;
