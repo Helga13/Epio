@@ -1460,15 +1460,19 @@ body.ready section.head .breadcrumbs li{
         vertical-align: middle;
         text-align: left;
         padding: 84px 0;
-        padding-left: 25%;
+//        padding-left: 25%;
+        padding-left: 24%;
         box-sizing: border-box;
         float: left;
         width: 50%;
         height: 100%;
+		position: relative;
         &::before{
-            left: -45px;
-            top: -10px;
-            position: relative;
+//            left: -45px;
+//            top: -10px;
+			left: 38%;
+            top: 67px;
+            position: absolute;
         }
     }
     a.button{

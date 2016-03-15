@@ -5562,7 +5562,7 @@ function initMap(){
         center: new google.maps.LatLng(53.903897, 27.562357),
         disableDefaultUI: true,
         scrollwheel: false,
-        zoomControl: true,
+        navigationControl: false,
         zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.SMALL,
                 position: google.maps.ControlPosition.LEFT_CENTER
@@ -5622,6 +5622,7 @@ function setMarkers(map) {
           animation: google.maps.Animation.DROP,
           info: '<div class="marker-popup">' + beach[2] + '</div>'
         });
+		
         
         // устанавливает маркер по клику и возвращает остальные к первоначальному виду
         var markerCallback = function() {
@@ -5630,28 +5631,28 @@ function setMarkers(map) {
             }
             this.setIcon(imageHover);
         }
-
-google.maps.event.addListener(marker, 'click', markerCallback); 
+		google.maps.event.addListener(marker, 'click', markerCallback); 
         
         (function(marker, i) {  
             google.maps.event.addListener(marker, 'click', function() {               
                 //infowindow.close();
+				map.setCenter(marker.getPosition());
                 infowindow.setContent(this.info);
                 infowindow.open(map, marker);
                 //marker.setIcon(imageHover);
                 //console.log(i);
                 $('.marker-item-block > a').removeClass('marked');
                 $('.marker-item-block > a[onclick="myClick('+i+');"]').addClass('marked');
-             
-                //$(this).addClass('marked');
-                
-//                if (marker.getAnimation() !== null) {
-//                    marker.setAnimation(null);
-//              } else {
-//                    marker.setAnimation(google.maps.Animation.BOUNCE);
-//              }
+				
+       			
+//				if (this.getAnimation() != null) {
+//					this.setAnimation(null);
+//				} else {
+//					this.setAnimation(google.maps.Animation.BOUNCE);
+//				} 
                 
             });
+			
             
                 google.maps.event.addListener(infowindow,'closeclick',function(){
                     marker.setIcon(image);
