@@ -36,13 +36,13 @@ c-0.2-0.3-0.6-0.4-0.7-0.8c0-0.1,0,0,0.1-0.1C28.6,20.3,28.6,20.4,28.6,20.3z" />
 		</a>
 		</div>
 		<!-- <div class="wrap"> -->
-		<div class="menu-inner" id="navbar-collapse">
+		<div class="menu-inner">
 			<div class="left-col">
 				<nav>
 					<ul class="left-menu">
 						<li><a href="#">Проекты</a></li>
 						<li><a href="#">Инвестору</a></li>
-						<li><a href="#">Авторам проекта</a></li>
+						<li><a href="#">Авторам</a></li>
 						<li><a href="#">Бизнесу</a></li>
 					</ul>
 				</nav>
@@ -112,14 +112,14 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 	<section class="inner-content">
 		<div class="left-col">
 			<ul class="inner-content-menu">
-				<li><a href="#about" class="active">О компании</a></li>
-				<li><a href="#history">История и миссия</a></li>
-				<li><a href="#advantage">Преимущества</a></li>
-				<li><a href="#our-team">Наша команда</a></li>
-				<li><a href="#how-we-work">Как мы работаем</a></li>
+				<li><a href="#" data-href="#about" class="scrollto active">О компании</a></li>
+				<li><a href="#" data-href="#history" class="scrollto">История и миссия</a></li>
+				<li><a href="#" data-href="#advantage" class="scrollto">Преимущества</a></li>
+				<li><a href="#" data-href="#our-team" class="scrollto">Наша команда</a></li>
+				<li><a href="#" data-href="#how-we-work" class="scrollto">Как мы работаем</a></li>
 			</ul>
 		</div>
-		<div class="inner-row" id="about">
+		<div class="inner-row" id="about" name="about">
 <!--
 			<div class="left-col">
 				<ul class="inner-content-menu">
@@ -132,7 +132,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 			</div>
 -->
 			<div class="right-col">
-				<div class="main-info">
+				<div class="main-info animation opacity del">
 					<p class="h1">О компании ЭПИО</p>
 					<p class="subject-title">Группа компаний ЭПИО в ходе эволюции собрала компетенции в сфере торговли, производстве, оказании услуг и, наконец, в финансовом секторе.</p>
 					<p class="subject-text">Работа в разных сегментах и рынках позволила сформировать собственные бизнес-подходы и ценности, а диверсификация и внутренние проекты развития дали необходимый опыт в инвестиционной деятельности.
@@ -142,19 +142,19 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 				</div>
 			</div>
 		</div>
-		<div class="inner-row" id="history">
+		<div class="inner-row" id="history" name="history">
 			<ul class="inner-content-history">
-				<li>
+				<li class="animation opacity">
 					<span class="count">18</span>
 					<p class="count-content">Лет бесперерывной
 						<br>и продуктивной работы</p>
 				</li>
-				<li>
+				<li class="animation opacity del">
 					<span class="count">24</span>
 					<p class="count-content">Тщательно отобранных
 						<br>проекта</p>
 				</li>
-				<li>
+				<li class="animation opacity del2">
 					<span class="count">4</span>
 					<p class="count-content">Надежных и проверенных
 						<br>партнера</p>
@@ -163,7 +163,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 		</div>
 		<div class="inner-row">
 			<div class="right-col">
-				<div class="quote">
+				<div class="quote animation opacity">
 					<p>Наша миссия — содействие инновационному развитию личностей и организация через предоставление платформы и сети, где происходит рост компетенций, приобретение ресурсов и реализация выгодных союзов.</p>
 					<div class="team-user">
 						<div class="custom-user">
@@ -179,7 +179,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 				</div>
 			</div>
 		</div>
-		<div class="inner-row expertise" id="advantage">
+		<div class="inner-row expertise animation opacity" id="advantage" name="advantage">
 			<div class="left-col">
 				<div class="block-title">
 					<p class="h2">Экспертиза</p>
@@ -199,13 +199,13 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 				</div>
 			</div>
 		</div>
-		<div class="inner-row" id="our-team">
+		<div class="inner-row" id="our-team" name="our-team">
 			<div class="right-col">
-				<p class="h2">Наша команда</p>
+				<p class="h2 animation opacity">Наша команда</p>
 			</div>
 			<div class="team-slider-block">
 				<div class="team-slider">
-					<div class="team-user">
+					<div class="team-user animation opacity">
 						<div class="custom-user">
 							<div class="custom-user__avatar">
 								<img src="img/aboutPageSlider/avatar1.jpg" alt="">
@@ -217,7 +217,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 							</div>
 						</div>
 					</div>
-					<div class="team-user">
+					<div class="team-user animation opacity del">
 						<div class="custom-user">
 							<div class="custom-user__avatar">
 								<img src="img/aboutPageSlider/avatar2.jpg" alt="">
@@ -229,7 +229,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 							</div>
 						</div>
 					</div>
-					<div class="team-user">
+					<div class="team-user animation opacity del2">
 						<div class="custom-user">
 							<div class="custom-user__avatar">
 								<img src="img/aboutPageSlider/avatar3.jpg" alt="">
@@ -241,7 +241,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 							</div>
 						</div>
 					</div>
-					<div class="team-user">
+					<div class="team-user animation opacity del3">
 						<div class="custom-user">
 							<div class="custom-user__avatar">
 								<img src="img/aboutPageSlider/avatar4.jpg" alt="">
@@ -278,7 +278,7 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 						</div>
 					</div>
 				</div>
-				<div class="team-slider-nav">
+				<div class="team-slider-nav animation opacity del3">
 					<div class="left-arr"></div>
 					<div class="delimiter"></div>
 					<div class="right-arr"></div>
@@ -287,19 +287,19 @@ c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105
 		</div>
 		<div class="inner-row">
 			<div class="right-col">
-				<div class="info-panel">
+				<div class="info-panel animation opacity">
 					<p>Инновационная платформа
 						<br>для индивидуумов
 						<br>и организаций</p>
 				</div>
 			</div>
 		</div>
-		<div class="inner-row how-we-work" id="how-we-work">
+		<div class="inner-row how-we-work animation opacity" id="how-we-work" name="how-we-work">
 			<div class="right-col">
 				<p class="h2">Как мы работаем</p>
 				<p class="subject-title">Мы работаем для того, чтобы вы могли безопасно вкладывать свои инвестиции и бла-бла-бла</p>
 			</div>
-			<ul class="bunners-block">
+			<ul class="bunners-block animation opacity">
 				<li class="banners-item">
 					<i><img src="img/icons-banners/icon1.png" alt=""></i>
 					<p class="subject-text">Каждый проект, который публикуется на сайте, прошел предварительное изучение и отбор.</p>

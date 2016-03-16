@@ -5549,6 +5549,55 @@ $(document).ready(function () {
         $('.marker-item-block > a').removeClass('marked');
         $(this).addClass('marked');
     });
+	
+	// scrollto (плавная прокрутка по якорю без плагина)
+	
+	$('a.scrollto').click(function (e) {
+		e.preventDefault();
+		var elementClick = $(this).data('href')
+		var destination = $(elementClick).offset().top;
+		$('html:not(:animated),body:not(:animated)').animate({scrollTop: destination}, 1100);
+	});
+	
+	// animation blocks
+	
+	timeout = setTimeout(function () {
+            $('.inner-content').addClass('ready');
+        }, 2500);
+	
+	
+	    $('.animation').each(function() {
+        var win             = $(window),
+			el              = $(this),
+			scrollPosition  = win.scrollTop(),
+            elTop;
+
+            if ( el.hasClass('left-top') ||
+                 el.hasClass('right-top') ||
+                 el.hasClass('top')) {
+                elTop = el.offset().top + 100;
+            }
+            
+            else {
+                elTop = el.offset().top;
+            }
+
+            if ( scrollPosition + win.height() >= elTop ) {
+                el.addClass('done');
+            }
+
+            win.on('scroll', function() {
+				//console.log(win.scrollTop());
+//                if ( scrollPosition + win.height() >= elTop ) {
+                if ( win.scrollTop() + win.height() >= elTop ) {
+					//console.log(scrollPosition);
+                    el.addClass('done');
+                }
+            });
+
+    });
+	
+	
     
 });
 $(function(){})
@@ -5564,8 +5613,8 @@ function initMap(){
         scrollwheel: false,
         navigationControl: false,
         zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.SMALL,
-                position: google.maps.ControlPosition.LEFT_CENTER
+            style: google.maps.ZoomControlStyle.SMALL,
+            position: google.maps.ControlPosition.LEFT_CENTER
             },
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
@@ -5581,25 +5630,24 @@ function initMap(){
 }
 var beaches = [];
 $('.maps').each(function(index){
-    var cur_coords = [];
-        cur_coords[0] = $(this).data('longitude');
-        cur_coords[1] = $(this).data('latitude');
-        cur_coords[2] = $(this).find('.marker-popup').html();
-        //console.log(this);
+    var cur_coords     = [];
+        cur_coords[0]  = $(this).data('longitude');
+        cur_coords[1]  = $(this).data('latitude');
+        cur_coords[2]  = $(this).find('.marker-popup').html();
         beaches[index] = cur_coords;
 });
 var contentString = beaches[2];
 
 function setMarkers(map) {
     var image = {
-        url: 'img/map-pointer/marker.png',
-        size: new google.maps.Size(28, 38),
+        url   : 'img/map-pointer/marker.png',
+        size  : new google.maps.Size(28, 38),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(14, 38)
     };
     var imageHover = {
-        url: 'img/map-pointer/marker-hover.png',
-        size: new google.maps.Size(31, 54),
+        url   : 'img/map-pointer/marker-hover.png',
+        size  : new google.maps.Size(31, 54),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(14, 38)
     };
@@ -5608,6 +5656,36 @@ function setMarkers(map) {
         //maxWidth: 300
         //maxHeight: 275,
     });
+	
+//	var neighborhoods = [
+//  {lat: 37.3523227, lng: 55.7498598},
+//  {lat: 30.3926089, lng: 50.4021702},
+//  {lat: 71.1902822, lng: 51.1480774},
+//  {lat: -7.9267209, lng: 55.287365}
+//];
+//	
+//	function drop() {
+//  clearMarkers();
+//  for (var i = 0; i < neighborhoods.length; i++) {
+//    addMarkerWithTimeout(neighborhoods[i], i * 200);
+//  }
+//}
+//	function addMarkerWithTimeout(position, timeout) {
+//  window.setTimeout(function() {
+//    marker.push(new google.maps.Marker({
+//      position: position,
+//      map: map,
+//      animation: google.maps.Animation.DROP
+//    }));
+//  }, timeout);
+//}
+
+function clearMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+}
     
     var markersBounds = new google.maps.LatLngBounds();
     for (var i = 0; i < beaches.length; i++) {
@@ -5616,11 +5694,11 @@ function setMarkers(map) {
         var markerPosition = new google.maps.LatLng(beach[0], beach[1]);
         markersBounds.extend(markerPosition);
         var marker = new google.maps.Marker({
-          position: markerPosition,
-          map: map,
-          icon: image,
-          animation: google.maps.Animation.DROP,
-          info: '<div class="marker-popup">' + beach[2] + '</div>'
+        	position : markerPosition,
+        	map      : map,
+        	icon     : image,
+        	animation: google.maps.Animation.DROP,
+        	info     : '<div class="marker-popup">' + beach[2] + '</div>'
         });
 		
         
@@ -5699,9 +5777,6 @@ function setMarkers(map) {
 
 initMap();
 
-//    $('.marker-item-block > a').click(function(e) {
-//        e.preventDefault();
-//    });
     function myClick(id){
         google.maps.event.trigger(markers[id], 'click');
         

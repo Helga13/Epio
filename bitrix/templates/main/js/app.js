@@ -80,5 +80,54 @@ $(document).ready(function () {
         $('.marker-item-block > a').removeClass('marked');
         $(this).addClass('marked');
     });
+	
+	// scrollto (плавная прокрутка по якорю без плагина)
+	
+	$('a.scrollto').click(function (e) {
+		e.preventDefault();
+		var elementClick = $(this).data('href')
+		var destination = $(elementClick).offset().top;
+		$('html:not(:animated),body:not(:animated)').animate({scrollTop: destination}, 1100);
+	});
+	
+	// animation blocks
+	
+	timeout = setTimeout(function () {
+            $('.inner-content').addClass('ready');
+        }, 2500);
+	
+	
+	    $('.animation').each(function() {
+        var win             = $(window),
+			el              = $(this),
+			scrollPosition  = win.scrollTop(),
+            elTop;
+
+            if ( el.hasClass('left-top') ||
+                 el.hasClass('right-top') ||
+                 el.hasClass('top')) {
+                elTop = el.offset().top + 100;
+            }
+            
+            else {
+                elTop = el.offset().top;
+            }
+
+            if ( scrollPosition + win.height() >= elTop ) {
+                el.addClass('done');
+            }
+
+            win.on('scroll', function() {
+				//console.log(win.scrollTop());
+//                if ( scrollPosition + win.height() >= elTop ) {
+                if ( win.scrollTop() + win.height() >= elTop ) {
+					//console.log(scrollPosition);
+                    el.addClass('done');
+                }
+            });
+
+    });
+	
+	
     
 });
