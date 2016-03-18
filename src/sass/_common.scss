@@ -180,6 +180,9 @@ nav ul li a{
     color: $mainTextColor;
     padding: 0 18px;
 }
+.header-inner nav ul li a:not(.active){
+	opacity: 0.5;	
+}
 nav ul li a.active::after{
     content: '';
     width: 100%;
@@ -414,6 +417,7 @@ a{
     padding-top: 20px;
 }
 .custom-row.col-2{
+	@include font-size(0);
     .news-cont{
     font-family: 'MinionPro-Regular', $font-stack-helvetica;
     color: $mainTextColor;
@@ -631,7 +635,8 @@ body.ready{
         .heading p{
             opacity: 1;
             transition: opacity 0.5s ease;
-            transition-delay: 1.9s;
+            //transition-delay: 1.9s;
+            transition-delay: 1s;
             &::before{
                 content: '';
                 position: absolute;
@@ -642,7 +647,8 @@ body.ready{
                 opacity: 1;
                 transform: scaleX(1);
                 transition: opacity 0s ease, transform 0.3s ease;
-                transition-delay: 3.9s;
+                //transition-delay: 3.9s;
+                transition-delay: 2.9s;
             }  
         }
         
@@ -912,7 +918,8 @@ body.inner{
     position: relative;
     height: 620px;
     background-color: $addTextColorlight;
-    transition: none;
+    /* transition: none; */
+	transition: opacity .4s ease;
     .social li a svg path{
         fill: $addTextColor;
     }
@@ -1559,13 +1566,12 @@ body.ready section.head .breadcrumbs{
 /* animation blocks */
 
  .animation {
-    transition: opacity 0.2s ease;
-	
+    transition: opacity 0.4s ease;	
 }
 
 .animation.opacity {
     transition-delay: .5s;
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .animation.opacity.del{
@@ -1577,10 +1583,12 @@ body.ready section.head .breadcrumbs{
 .animation.opacity.del3{
 	transition-delay: 2s;
 }
-
+.animation.opacity.del4{
+	transition-delay: 2.5s;
+} 
 .animation.done {
     transform: none;
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 

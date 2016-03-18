@@ -10,7 +10,7 @@ $(document).ready(function () {
     
     timeout = setTimeout(function () {
             $('#fullpage').addClass('loaded');
-        }, 3200);
+        }, 2000);
  
     
     // fullPage slider on index page
@@ -27,7 +27,11 @@ $(document).ready(function () {
         css3: true,
         loopTop: true,
         loopBottom: true,
-        resize: true,
+//        resize: true,
+		fitToSection: false,
+		touchSensitivity: 15,
+		scrollDelay: 600,
+		normalScrollElementTouchThreshold: 5,
         scrollingSpeed: SCROLLING_SPEED,
         afterRender: function() {
             $('.nav-slider').prepend('<div class="js-nav-curent">01</div>');
@@ -83,8 +87,8 @@ $(document).ready(function () {
 	
 	// scrollto (плавная прокрутка по якорю без плагина)
 	
-	$('a.scrollto').click(function (e) {
-		e.preventDefault();
+	$('a.scrollto').click(function () {
+//		e.preventDefault();
 		var elementClick = $(this).data('href')
 		var destination = $(elementClick).offset().top;
 		$('html:not(:animated),body:not(:animated)').animate({scrollTop: destination}, 1100);
