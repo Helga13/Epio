@@ -19,7 +19,7 @@ $(document).ready(function () {
     
     $('#fullpage').fullpage({
        
-        'verticalCentered': false,
+        verticalCentered: false,
         navigation: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
@@ -27,11 +27,11 @@ $(document).ready(function () {
         css3: true,
         loopTop: true,
         loopBottom: true,
-//        resize: true,
+        resize: true,
 		fitToSection: false,
-		touchSensitivity: 15,
-		scrollDelay: 600,
-		normalScrollElementTouchThreshold: 5,
+		touchSensitivity: 1,
+		fitToSectionDelay: 2000,
+		normalScrollElementTouchThreshold: 1,
         scrollingSpeed: SCROLLING_SPEED,
         afterRender: function() {
             $('.nav-slider').prepend('<div class="js-nav-curent">01</div>');
@@ -88,7 +88,7 @@ $(document).ready(function () {
 	// scrollto (плавная прокрутка по якорю без плагина)
 	
 	$('a.scrollto').click(function () {
-//		e.preventDefault();
+//		e.preventDefault(); для отображения id в адресную строку
 		var elementClick = $(this).data('href')
 		var destination = $(elementClick).offset().top;
 		$('html:not(:animated),body:not(:animated)').animate({scrollTop: destination}, 1100);

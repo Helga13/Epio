@@ -5488,7 +5488,7 @@ $(document).ready(function () {
     
     $('#fullpage').fullpage({
        
-        'verticalCentered': false,
+        verticalCentered: false,
         navigation: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
@@ -5496,11 +5496,11 @@ $(document).ready(function () {
         css3: true,
         loopTop: true,
         loopBottom: true,
-//        resize: true,
+        resize: true,
 		fitToSection: false,
-		touchSensitivity: 15,
-		scrollDelay: 600,
-		normalScrollElementTouchThreshold: 5,
+		touchSensitivity: 1,
+		fitToSectionDelay: 2000,
+		normalScrollElementTouchThreshold: 1,
         scrollingSpeed: SCROLLING_SPEED,
         afterRender: function() {
             $('.nav-slider').prepend('<div class="js-nav-curent">01</div>');
@@ -5557,7 +5557,7 @@ $(document).ready(function () {
 	// scrollto (плавная прокрутка по якорю без плагина)
 	
 	$('a.scrollto').click(function () {
-//		e.preventDefault();
+//		e.preventDefault(); для отображения id в адресную строку
 		var elementClick = $(this).data('href')
 		var destination = $(elementClick).offset().top;
 		$('html:not(:animated),body:not(:animated)').animate({scrollTop: destination}, 1100);
@@ -5604,7 +5604,7 @@ $(document).ready(function () {
 	
     
 });
-$(function(){})
+$(function (){})
     var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"lightness":40},{"color":"#333333"},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#ffffff"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#e2e1e0"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":20},{"visibility":"on"},{"color":"#f4f2f0"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#fcfafa"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#fcfafa"},{"lightness":17}]}];
 
 
@@ -5780,6 +5780,8 @@ function clearMarkers() {
 };
 
 initMap();
+setTimeout(initMap, 3000)
+
 
     function myClick(id){
         google.maps.event.trigger(markers[id], 'click');
