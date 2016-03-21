@@ -5720,7 +5720,8 @@ function clearMarkers() {
         (function(marker, i) {  
             google.maps.event.addListener(marker, 'click', function() {               
                 //infowindow.close();
-				map.setCenter(marker.getPosition());
+				//map.setCenter(marker.getPosition()); // маркер резко в центр
+				map.panTo(marker.getPosition()); // с анимацией
                 infowindow.setContent(this.info);
                 infowindow.open(map, marker);
                 //marker.setIcon(imageHover);
@@ -5734,15 +5735,15 @@ function clearMarkers() {
 //				} else {
 //					this.setAnimation(google.maps.Animation.BOUNCE);
 //				} 
+				
+				
                 
             });
-			
-            
                 google.maps.event.addListener(infowindow,'closeclick',function(){
                     marker.setIcon(image);
                     $('.marker-item-block > a').removeClass('marked');
                 });
-
+			
             google.maps.event.addListener(infowindow, 'domready', function() {
                 var iwOuter = $('.gm-style-iw');
                 var iwBackground = iwOuter.prev();
@@ -5779,13 +5780,12 @@ function clearMarkers() {
     }
 	
 	
-	google.maps.event.addListener(map, 'zoom_changed', function(){
-		map.setCenter( marker.getPosition() );
-	});
-	
-	//map.panTo(new google.maps.LatLng(beach[0], beach[1]));
+//	google.maps.event.addListener(map, 'zoom_changed', function(){
+//		map.setCenter( marker.getPosition() );
+//	});
     
-    //map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
+//    map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
+	
 };
 
 
@@ -5795,6 +5795,5 @@ initMap();
 
     function myClick(id){
         google.maps.event.trigger(markers[id], 'click');
-        
         //console.log(id);
     }

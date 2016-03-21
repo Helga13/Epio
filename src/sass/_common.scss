@@ -151,17 +151,14 @@ body.ready{
     position: absolute;
 	a{
 		display: block;
+		transition: opacity .25s ease;
 		svg path{
 			fill: #d9c39c;
-			transition: fill .25s ease;
 		}
 	}
 	a:hover{
-		svg path{
-			fill: $mainTextColor;
-		}
+		opacity: .7;
 	}
-    
 }
 
 nav{
