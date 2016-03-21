@@ -193,7 +193,7 @@ nav li a{
 //.header-inner nav ul li a:not(.active){
 //	opacity: 0.5;	
 //}
-.header-inner nav li a:not(.active){
+.header-inner nav li a.disabled{
 	opacity: 0.5;	
 }
 //nav ul li a.active::after{
