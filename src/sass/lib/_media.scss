@@ -6,9 +6,17 @@
         right: 12.2%; 
     }
 }
+@media only screen and (max-width : 1593px) {
+    .main-fix-content {
+		.heading p{
+			@include font-size(4.601);
+        	@include line-height(5.101);
+		}
+	}
+}
 
 @media only screen and (max-width : 1391px) {
-    nav ul li a{
+    nav li a{
         padding: 0 17px;
     }
     #header .right-col nav, .left-menu {
@@ -18,7 +26,7 @@
 
 @media only screen and (max-width : 1366px) {
     
-    nav ul li a {
+    nav li a {
         padding: 0 11px;
     }
     #header .right-col nav,
@@ -97,7 +105,7 @@
             top: 24px;
         }  
     }
-    nav ul li a{
+    nav li a{
         @include font-size(1.7);
         padding: 0 12px;
     }
@@ -147,7 +155,7 @@
 }
 
 @media only screen and (max-width : 1023px) {
-    nav ul li a {
+    nav li a {
         padding: 0 11px;
     }
     .lang {
@@ -216,7 +224,7 @@
         bottom: 6.2%;
     }
 	.cat-content .cat-text{
-		@include font-size(2.4);
+		@include font-size(2.5);
 	}
 }
 
@@ -282,7 +290,7 @@
 
 @media only screen and (max-width : 1550px) and (max-height : 864px)  {
     .main-fix-content .heading p{
-        @include font-size(3.6);
+        @include font-size(3.8);
     }
 }
 @media only screen and (max-width : 1468px) and (max-height : 730px)  {
@@ -306,13 +314,8 @@
 	}
 }
 
-@media only screen and (max-width : 1550px) and (max-height : 720px)  {
-    .main-fix-content .heading p{
-        @include font-size(4);
-    }
-}
 @media only screen and (max-width : 1391px) and (max-height : 720px)  {
-    nav ul li a{
+    nav li a{
         padding: 0 12px;
     }
     #header .right-col nav, .left-menu {
@@ -388,6 +391,29 @@
     .main-fix-content{
         top: 95px;
     }
+}
+
+@media only screen and (max-width : 1260px) {
+    .main-fix-content .heading p {
+        @include font-size(3.701);
+    } 
+}
+@media only screen and (max-width : 1260px) {
+    .main-fix-content .heading p {
+        @include font-size(3.401);
+    } 
+}
+@media only screen and (max-width : 1128px) {
+    .main-fix-content .heading p {
+        @include font-size(3.0);
+		@include line-height(3.8);
+    } 
+}
+
+@media only screen and (max-width : 995px) {
+    .main-fix-content .heading p {
+        @include font-size(2.9);
+    } 
 }
 
 @media only screen and (max-width : 767px) {
