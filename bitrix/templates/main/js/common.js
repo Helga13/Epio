@@ -5499,6 +5499,7 @@ $(document).ready(function () {
         loopTop: true,
         loopBottom: true,
         resize: true,
+		responsive: 1,
 		fitToSection: false,
 		touchSensitivity: 1,
 		fitToSectionDelay: 2000,
@@ -5525,7 +5526,7 @@ $(document).ready(function () {
             $.fn.fullpage.setScrollingSpeed(SCROLLING_SPEED);
         },
     });
-    
+	
         
     // about.html team-slider 
     
