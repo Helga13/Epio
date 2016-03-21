@@ -169,12 +169,20 @@ function clearMarkers() {
         })(marker, i);
 
     }
+	
+	
+	google.maps.event.addListener(map, 'zoom_changed', function(){
+		map.setCenter( marker.getPosition() );
+	});
+	
+	//map.panTo(new google.maps.LatLng(beach[0], beach[1]));
     
-    map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
+    //map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
 };
 
+
 initMap();
-setTimeout(initMap, 3000)
+//setTimeout(initMap, 3000);
 
 
     function myClick(id){

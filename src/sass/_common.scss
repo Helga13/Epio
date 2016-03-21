@@ -167,23 +167,48 @@ body.ready{
 nav{
     float: left;
 }
-nav ul{
+//nav ul{
+//    @include font-size(0);
+//}
+nav{
     @include font-size(0);
 }
-nav ul li{
+//nav ul li{
+//    display: inline-block;
+//}
+nav li{
     display: inline-block;
 }
-nav ul li a{
+//nav ul li a{
+//    @include font-size(1.8);
+//    @include line-height(4.6);
+//    vertical-align: bottom;
+//    color: $mainTextColor;
+//    padding: 0 18px;
+//}
+nav li a{
     @include font-size(1.8);
     @include line-height(4.6);
     vertical-align: bottom;
     color: $mainTextColor;
     padding: 0 18px;
 }
-.header-inner nav ul li a:not(.active){
+//.header-inner nav ul li a:not(.active){
+//	opacity: 0.5;	
+//}
+.header-inner nav li a:not(.active){
 	opacity: 0.5;	
 }
-nav ul li a.active::after{
+//nav ul li a.active::after{
+//    content: '';
+//    width: 100%;
+//    height: 1px;
+//    background-color: $mainTextColor;
+//    display: block;
+//    position: relative;
+//    top: -10px;
+//}
+nav li a.active::after{
     content: '';
     width: 100%;
     height: 1px;
@@ -192,13 +217,18 @@ nav ul li a.active::after{
     position: relative;
     top: -10px;
 }
-nav ul.left-menu li a.active::after{
+//nav ul.left-menu li a.active::after{
+//    opacity: 1;
+//}
+nav.left-menu li a.active::after{
     opacity: 1;
 }
-nav ul.right-menu li a.active::after{
+//nav ul.right-menu li a.active::after{
+//    opacity: .7;
+//} 
+nav.right-menu li a.active::after{
     opacity: .7;
 } 
-
 .left-menu{
     margin-left: -18px;
     a{
@@ -824,8 +854,8 @@ body.ready{
 
 /* hovers main page */
 
-nav ul li a,
-nav ul li a,
+nav li a,
+nav li a,
 .personal a,
 .personal a,
 .news-cont p:not(.tags),
@@ -836,8 +866,8 @@ nav ul li a,
     transition: color 0.25s ease;
 }
 
-nav ul li a:hover,
-nav ul li a:active,
+nav li a:hover,
+nav li a:active,
 .personal a:hover,
 .personal a:active,
 .news-cont p:not(.tags):hover,
@@ -1574,7 +1604,7 @@ body.ready section.head .breadcrumbs{
     opacity: 0 !important;
 }
 
-.animation.opacity.del{
+.animation.opacity.del1{
 	transition-delay: 1s;
 }
 .animation.opacity.del2{
@@ -1602,7 +1632,6 @@ body.ready section.head .breadcrumbs{
     position: absolute;
     z-index: 2;
     top: 95px;
-    left: 80px;
     a{
         display: block;
         font-family: 'FuturaNewMedium', $font-stack-helvetica;
@@ -1694,9 +1723,10 @@ body.ready section.head .breadcrumbs{
     width: 100%;
     text-align: center;
     z-index: 1;
-    bottom: -35px;
+    bottom: 80px;
     .info-panel.with-button{
         display: inline-block;
+		margin: 0;
     }
 }
 

@@ -1,3 +1,5 @@
+// map.js used only on contacts.html page
+
 $(document).ready(function () {
     
     // preloader
