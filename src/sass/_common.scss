@@ -77,6 +77,11 @@ p{
     margin: 0;
     padding: 0;
 }
+.disabled{
+	opacity: .5;
+	cursor: default;
+	transition: none;
+}
 
 .fl-right{
     float: right;
@@ -178,9 +183,6 @@ nav li a{
     vertical-align: bottom;
     color: $mainTextColor;
     padding: 0 18px;
-}
-.header-inner nav li a.disabled{
-	opacity: 0.5;	
 }
 nav li a.active::after{
     content: '';
@@ -563,7 +565,7 @@ body.ready #fullpage.loaded{
     transform: translateY(100px);
     transition: opacity 2s ease, transform 1s ease; 
     transition-delay: 2.5s;
-    .js-nav-curent{
+    .js-nav-current{
         color: $addTextColor;
         font-family: 'FuturaNewBook', $font-stack-helvetica;
         @include font-size(2.6);

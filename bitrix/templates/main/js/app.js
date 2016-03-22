@@ -26,19 +26,20 @@ $(document).ready(function () {
 		controlArrows: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
-        easing: 'swing',
-        css3: true,
+        easing: 'easeInQuart',
+		easingcss3: 'ease-in-out',
+        //css3: true,
         loopTop: true,
         loopBottom: true,
-        resize: true,
+        //resize: true,
 		responsive: 1,
-		fitToSection: false,
-		touchSensitivity: 1,
-		fitToSectionDelay: 2000,
-		normalScrollElementTouchThreshold: 1,
+		//fitToSection: false,
+		//touchSensitivity: 1,
+		//fitToSectionDelay: 2000,
+		//normalScrollElementTouchThreshold: 1,
         scrollingSpeed: SCROLLING_SPEED,
         afterRender: function() {
-            $('.nav-slider').prepend('<div class="js-nav-curent">01</div>');
+            $('.nav-slider').prepend('<div class="js-nav-current">01</div>');
             
         },
         afterLoad:function(link,index) {
@@ -49,9 +50,9 @@ $(document).ready(function () {
         },
         onLeave: function(index, nextIndex, direction){ 
             if (countSliders > 9){
-                $('.js-nav-curent').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
+                $('.js-nav-current').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
             }else{
-               $('.js-nav-curent').text('0' + nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow'); 
+               $('.js-nav-current').text('0' + nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow'); 
             } 
         },
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
@@ -59,6 +60,10 @@ $(document).ready(function () {
         },
     });
 	
+	
+	$('a.disabled').click(function(e) {
+        e.preventDefault();
+	});
         
     // about.html team-slider 
     
