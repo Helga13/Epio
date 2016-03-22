@@ -554,7 +554,7 @@ body.ready #fullpage.loaded{
 .section.active .bg-img {
     opacity: 1;
     transform: rotate(0deg) scale(1);
-    transition: opacity 0.3s ease, transform 4s linear;
+    transition: opacity 2s ease, transform 4s linear;
 }
 
 #fp-nav.nav-slider{

@@ -43,11 +43,19 @@ $(document).ready(function () {
         },
         afterLoad:function(link,index) {
             $('.section .slider-content').fadeIn(1500);
+			setTimeout(function(){
+				$.fn.fullpage.setAllowScrolling(true);
+				console.log(true);
+			}, 2500);
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
             $.fn.fullpage.setScrollingSpeed(0);
         },
         onLeave: function(index, nextIndex, direction){ 
+//			setTimeout(function(){
+//				$.fn.fullpage.setAllowScrolling(true);
+//				console.log(true);
+//			}, 2500);
             if (countSliders > 9){
                 $('.js-nav-current').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
             }else{
