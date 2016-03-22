@@ -247,10 +247,16 @@ nav.right-menu li a.active::after{
 }
 
 .section {
-    position: relative;
+    position: absolute;
+	top: 0;
+	left: 0;	
     text-align: center;
     height: 100% !important;
     width: 100%;
+	z-index: 5;
+	&.active{
+		z-index: 6;
+	}
     .bg-img {
         position: absolute;
         width: 100%;
@@ -285,17 +291,17 @@ nav.right-menu li a.active::after{
         }   
     }   
 }
-.section.fp-section.active.completely {
-    .bg-img {
-        img{
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
-    }
-    .slider-content{
-        transition-delay: 1s;  
-    }   
-}
+//.section.fp-section.active.completely {
+//    .bg-img {
+//        img{
+//            opacity: 1;
+//            transition: opacity 1s ease;
+//        }
+//    }
+//    .slider-content{
+//        transition-delay: 1s;  
+//    }   
+//}
 .content{
     text-align: left;
     top: 22.9%;
@@ -443,19 +449,17 @@ a{
     }
     }  
 }
-.custom-row.col-2 > a:first-child{
-    width: 38.5%;
+.custom-row.col-2 > a{
+	width: 38.4%;
     box-sizing: border-box;
     opacity: 0;
     vertical-align: top;
     display: inline-block;
+}
+.custom-row.col-2 > a:first-child{
     margin-right: 11.5%;
 }
 .custom-row.col-2 > a:last-child{
-    width: 38.5%;
-    vertical-align: top;
-    opacity: 0;
-    display: inline-block;
     margin-left: 11.5%;
 }
 
@@ -554,7 +558,7 @@ body.ready #fullpage.loaded{
 .section.active .bg-img {
     opacity: 1;
     transform: rotate(0deg) scale(1);
-    transition: opacity 2s ease, transform 4s linear;
+    transition: opacity 2s ease, transform 2.5s linear;
 }
 
 #fp-nav.nav-slider{
@@ -618,7 +622,7 @@ body.ready #fullpage.loaded{
         height: 4px;
         background-color: #fff;
         width: 2px;
-        transition: height .25s ease, background-color 1s ease;
+        transition: height 1s ease, background-color 1s ease;
     }
     a:hover span{
         height: 14px;
@@ -660,10 +664,10 @@ body.ready{
         .team{
             opacity: 1;
             transition: opacity 0.5s ease;
-            transition-delay: 2.4s;
+            transition-delay: 1.2s;
         }
         .team{
-            transition-delay: 3s;
+            transition-delay: 1.8s;
         }
     }
     
@@ -1699,9 +1703,10 @@ body.ready section.head .breadcrumbs{
 }
 
 .height-mod,
-.ololo2{
+.infowindow{
     height: 0!important;
     //margin-left: 120px;
+	max-width: 400px;
 }
 .marker-popup {
     min-width: 200px;

@@ -16,7 +16,7 @@ $(document).ready(function () {
  
     
     // fullPage slider on index page
-    var SCROLLING_SPEED = 0;
+    //var SCROLLING_SPEED = 3500;
     var countSliders = $('#fullpage').find('.section').length;
     
     $('#fullpage').fullpage({
@@ -25,8 +25,8 @@ $(document).ready(function () {
 		controlArrows: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
-        easing: 'easeInQuart',
-		easingcss3: 'ease-in-out',
+        //easing: 'easeInQuart',
+		//easingcss3: 'ease-in-out',
         //css3: true,
         loopTop: true,
         loopBottom: true,
@@ -36,35 +36,24 @@ $(document).ready(function () {
 		//touchSensitivity: 1,
 		//fitToSectionDelay: 2000,
 		//normalScrollElementTouchThreshold: 1,
-        scrollingSpeed: SCROLLING_SPEED,
+        scrollingSpeed: 2188,
         afterRender: function() {
             $('.nav-slider').prepend('<div class="js-nav-current">01</div>');
             
         },
         afterLoad:function(link,index) {
             $('.section .slider-content').fadeIn(1500);
-			setTimeout(function(){
-				$.fn.fullpage.setAllowScrolling(true);
-				console.log(true);
-			}, 2500);
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
             $.fn.fullpage.setScrollingSpeed(0);
         },
         onLeave: function(index, nextIndex, direction){ 
-//			setTimeout(function(){
-//				$.fn.fullpage.setAllowScrolling(true);
-//				console.log(true);
-//			}, 2500);
             if (countSliders > 9){
                 $('.js-nav-current').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
             }else{
                $('.js-nav-current').text('0' + nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow'); 
             } 
-        },
-        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
-            $.fn.fullpage.setScrollingSpeed(SCROLLING_SPEED);
-        },
+        }
     });
 	
 	

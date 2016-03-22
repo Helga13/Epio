@@ -7559,7 +7559,7 @@ $(document).ready(function () {
  
     
     // fullPage slider on index page
-    var SCROLLING_SPEED = 0;
+    //var SCROLLING_SPEED = 3500;
     var countSliders = $('#fullpage').find('.section').length;
     
     $('#fullpage').fullpage({
@@ -7568,8 +7568,8 @@ $(document).ready(function () {
 		controlArrows: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
-        easing: 'easeInQuart',
-		easingcss3: 'ease-in-out',
+        //easing: 'easeInQuart',
+		//easingcss3: 'ease-in-out',
         //css3: true,
         loopTop: true,
         loopBottom: true,
@@ -7579,35 +7579,24 @@ $(document).ready(function () {
 		//touchSensitivity: 1,
 		//fitToSectionDelay: 2000,
 		//normalScrollElementTouchThreshold: 1,
-        scrollingSpeed: SCROLLING_SPEED,
+        scrollingSpeed: 2188,
         afterRender: function() {
             $('.nav-slider').prepend('<div class="js-nav-current">01</div>');
             
         },
         afterLoad:function(link,index) {
             $('.section .slider-content').fadeIn(1500);
-			setTimeout(function(){
-				$.fn.fullpage.setAllowScrolling(true);
-				console.log(true);
-			}, 2500);
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
             $.fn.fullpage.setScrollingSpeed(0);
         },
         onLeave: function(index, nextIndex, direction){ 
-//			setTimeout(function(){
-//				$.fn.fullpage.setAllowScrolling(true);
-//				console.log(true);
-//			}, 2500);
             if (countSliders > 9){
                 $('.js-nav-current').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
             }else{
                $('.js-nav-current').text('0' + nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow'); 
             } 
-        },
-        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
-            $.fn.fullpage.setScrollingSpeed(SCROLLING_SPEED);
-        },
+        }
     });
 	
 	
@@ -7846,10 +7835,10 @@ function clearMarkers() {
                 iwBackground.children(':nth-child(3)').children(':nth-child(1)').css({'display' : 'none'});
                 iwBackground.children(':nth-child(3)').children(':nth-child(2)').css({'display' : 'none'});
                 iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-                iwOuter.parent().parent().css({left: '180px'});
-                iwOuter.parent().parent().css({top: ''});
-                iwOuter.parent().parent().css({bottom: '-40px'});
-                iwBackground.children(':nth-child(2)').parent().parent().addClass('ololo2');
+                //iwOuter.parent().parent().css({left: '180px'});
+                iwOuter.parent().parent().css({top: '20px'});
+                //iwOuter.parent().parent().css({bottom: '-40px'});
+                iwBackground.children(':nth-child(2)').parent().parent().addClass('infowindow');
                 //iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
                 //iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
                 //iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});

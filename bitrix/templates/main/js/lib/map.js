@@ -150,10 +150,10 @@ function clearMarkers() {
                 iwBackground.children(':nth-child(3)').children(':nth-child(1)').css({'display' : 'none'});
                 iwBackground.children(':nth-child(3)').children(':nth-child(2)').css({'display' : 'none'});
                 iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-                iwOuter.parent().parent().css({left: '180px'});
-                iwOuter.parent().parent().css({top: ''});
-                iwOuter.parent().parent().css({bottom: '-40px'});
-                iwBackground.children(':nth-child(2)').parent().parent().addClass('ololo2');
+                //iwOuter.parent().parent().css({left: '180px'});
+                iwOuter.parent().parent().css({top: '20px'});
+                //iwOuter.parent().parent().css({bottom: '-40px'});
+                iwBackground.children(':nth-child(2)').parent().parent().addClass('infowindow');
                 //iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
                 //iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
                 //iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
