@@ -5489,7 +5489,6 @@ $(document).ready(function () {
     var countSliders = $('#fullpage').find('.section').length;
     
     $('#fullpage').fullpage({
-       
         verticalCentered: false,
         navigation: true,
 		controlArrows: true,
