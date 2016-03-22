@@ -1045,7 +1045,8 @@ body.inner{
     }
 }
 section.head.about,
-section.head.contacts{
+section.head.contacts,
+section.head.avtoram{
     height: 421px;
     position: relative;
     padding: 0;
@@ -1101,6 +1102,9 @@ section.head.about{
 }
 section.head.contacts{
     background-image: url('../img/bg-inner-pages/bg-contacts.jpg');
+}
+section.head.avtoram{
+    background-image: url('../img/bg-inner-pages/bg-avtoram.jpg');
 }
 
 body.ready section.head,
@@ -1192,6 +1196,20 @@ body.ready section.head .breadcrumbs{
     .subject-title{
         padding: 25px 0 35px;
     } 
+}
+#avtoram .main-info{
+    &::after{
+        content: ' ';
+        background-image: url('../img/svg/logo_epio_bg.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: block;
+		width: 300px;
+		height: 300px;
+		top: 186px;
+		left: -107px;
+		opacity: .5;
+    }
 }
 #history{
     margin-bottom: 90px;
@@ -1308,7 +1326,8 @@ body.ready section.head .breadcrumbs{
     }
 }
 
-.inner-row.expertise{
+.inner-row.expertise,
+.inner-row#investments{
     position: relative;
     z-index: 0;
     margin-bottom: 30px;
@@ -1328,6 +1347,12 @@ body.ready section.head .breadcrumbs{
 //        padding-left: 18.47%; /* 109px/590px */
         padding-left: 27.47%; /* 109px/590px */
         box-sizing: border-box;
+    }
+}
+.inner-row#investments{
+	&::before{
+        content: '';
+		display: none;
     }
 }
 .right-col.padding-modifier{

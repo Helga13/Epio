@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<title>Avtoram</title>
+//= includes/head.html
+<body class="inner">
+	<header id="header" class="no-fixed header-inner">
+		<div class="logo">
+		<a href="#">
+			<svg viewBox="0 0 50 50">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M12.3,0c1.5,0,3,0,4.5,0c0,0.1,0,0.1,0.1,0.2c0,0.1,0,0,0.1,0.2
+c-0.6,0.4-1.3,0.7-1.9,1.2C12.4,3.4,10.6,6,9.7,9.6c-0.3,1.2-0.3,2.7-0.3,4.2c0,2.2,0,4.4,0,6.7c0,1.7,0,3.5,0,5.2
+c0,0.8-0.1,1.8,0.1,2.4c0.3,1,1,1.8,1.9,2.2c0.9,0.4,3,0.2,4.2,0.2c2.4,0,4.8,0,7.2,0c1.1,0,2.6,0.2,3.5-0.1c1-0.3,1.8-0.8,2.5-1.4
+c0.1-0.1,0.5-0.6,0.7-0.4c0.1,0.1,0.1,0.4,0.1,0.6c0,0.6,0,1.2,0,1.7c0,2.3,0,4.7,0,7c-0.1,0.1-0.1,0.3-0.2,0.5
+c-0.2,0.4-0.7,1-1.1,1.2c-0.6,0.3-1.5,0.2-2.3,0.2c-1.4,0-2.8,0-4.2,0c-2.4,0-4.9,0-7.3,0c-1.5,0-3.1,0.1-4.4-0.2
+c-1.5-0.4-2.8-0.8-4-1.5c-2.4-1.5-4.2-3.7-5.3-6.4c-0.9-2.2-0.7-5.3-0.7-8.4c0-2.5,0-5.1,0-7.6c0-1.2-0.1-2.9,0.1-4
+c0.5-2,0.9-3.7,1.8-5.2C3.6,4,5.8,2.1,8.5,0.9c0.8-0.3,1.7-0.5,2.6-0.7C11.5,0.1,12,0.2,12.3,0z" />
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6,0c2.6,0,5.2,0,7.8,0c2,0,4,0,6,0c1.2,0,2.5-0.1,3.5,0.2
+c5.6,1.4,9.1,4.7,10.6,10.2c0.5,1.8,0.3,4.2,0.3,6.3c-0.1,0.1-0.1,0.1-0.4,0.2c-0.4-0.7-0.8-1.4-1.3-2.1c-1.8-2.6-4.5-4.3-8-5.2
+C39,9.2,37.5,9.3,36,9.3c-2.2,0-4.4,0-6.6,0c-1.7,0-3.3,0-5,0c-0.8,0-1.8-0.1-2.4,0.1c-0.7,0.2-1.4,0.6-1.8,1.2
+c-0.7,1-0.6,2.4-0.6,4.1c0,2.6,0,5.2,0,7.8c0,1.3-0.2,2.9,0.2,4c0.2,0.7,0.6,1.4,1,2c0.3,0.3,0.8,0.5,0.8,1.1
+c-0.5,0.3-2.1,0.1-2.8,0.1c-2.2,0-4.4,0-6.6,0c-0.2-0.1-0.4-0.1-0.6-0.2c-0.5-0.2-0.9-0.7-1.1-1.2c-0.2-0.6-0.1-1.7-0.1-2.5
+c0-1.9,0-3.7,0-5.6c0-2.1,0-4.2,0-6.3c0-1.4-0.1-2.7,0.2-3.9c1-3.7,2.9-6.4,5.7-8.1c1-0.6,2.2-1,3.5-1.4C20.3,0.2,21,0.1,21.6,0z" />
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M22.3,10.2c3.8,0,7.7,0,11.5,0c2,0,4.4-0.2,6.1,0.2c4.3,1.1,7.3,3.5,8.9,7.3
+c1.2,2.8,1,6.9,1,10.9c0,2.1,0,4.3,0,6.4c0,1.5,0.1,3-0.3,4.3c-1.5,5.6-4.9,9-10.5,10.4c-1.7,0.4-3.9,0.2-5.9,0.2
+c0-0.1-0.1-0.2-0.2-0.2c0-0.1,0-0.1,0.1-0.1c0.1-0.3,0.4-0.3,0.7-0.4c0.5-0.3,1-0.6,1.5-1c1.4-1,2.6-2.4,3.5-3.8
+c1-1.5,1.4-3.3,1.8-5.3c0.2-1,0.1-2.4,0.1-3.5c0-2.4,0-4.8,0-7.2c0-2.1,0-4.2,0-6.3c-0.3-1.2-1-2.1-2.1-2.5
+c-0.8-0.3-2.2-0.2-3.3-0.2c-2.2,0-4.4,0-6.6,0c-1.9,0-4.2-0.2-5.6,0.4c-0.9,0.4-1.7,1-2.3,1.7c0,0,0,0-0.1-0.1
+c-0.4-0.1-0.2-1.7-0.2-2.3c0-2.4,0-4.7,0-7.1c0.1-0.1,0-0.3,0.1-0.4c0.2-0.4,0.5-0.8,0.8-1.1C21.6,10.4,22,10.4,22.3,10.2z" />
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M28.6,20.3c2.3,0,4.7,0,7,0c1.6,0,2.9,0,3.6,0.9c0.5,0.6,0.4,1.6,0.4,2.7
+c0,1.7,0,3.5,0,5.2c0,2.3,0,4.5,0,6.8c0,1.5,0.1,3.1-0.3,4.3c-0.9,3.3-2.6,5.7-5,7.5c-1.4,1-3,1.6-4.9,2.1c-1,0.3-2.3,0.2-3.5,0.2
+c-2,0-4,0-6,0c-1.8,0-3.6,0-5.4,0c-1.3,0-2.6,0.1-3.6-0.2c-5.6-1.4-8.7-4.6-10.4-10c-0.4-1.3-0.4-3-0.4-4.7c0-0.6,0-1.4,0.1-1.9
+c0,0,0.1,0,0.1,0c0.1,0,0.1,0,0.3-0.1c1.8,3.9,5,6.3,9.6,7.4c1.1,0.3,2.5,0.2,3.9,0.2c2.1,0,4.1,0,6.2,0c1.7,0,3.4,0,5.2,0
+c0.8,0,1.8,0.1,2.6-0.1c0.5-0.1,1-0.4,1.4-0.7c1.1-0.8,1.1-2.4,1.1-4.4c0-2.7,0-5.4,0-8.1c0-1.4,0.1-3-0.2-4c-0.2-0.8-0.7-1.4-1.1-2
+c-0.2-0.3-0.6-0.4-0.7-0.8c0-0.1,0,0,0.1-0.1C28.6,20.3,28.6,20.4,28.6,20.3z" />
+			</svg>	
+		</a>
+		</div>
+		<!-- <div class="wrap"> -->
+		<div class="menu-inner">
+			<div class="left-col">
+				<nav class="left-menu">
+					<ul>
+						<li><a href="#" class="disabled">Проекты</a></li>
+						<li><a href="#" class="disabled">Инвестору</a></li>
+						<li><a href="#" class="active">Авторам</a></li>
+						<li><a href="#" class="disabled">Бизнесу</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="right-col">
+				<nav class="right-menu">
+					<ul>
+						<li><a href="#">О компании</a></li>
+						<li><a href="#" class="disabled">Медиацентр</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</nav>
+				<div class="personal">
+					<a href="#">
+						<svg viewBox="-226 350.2 141.7 141.2">
+							<g id="Livello_113">
+								<path d="M-131.8,383v22.9h-45.5V383c0-12.6,10.2-22.7,22.7-22.7C-142,360.3-131.8,370.4-131.8,383 M-163.6,434.3
+c0-5,4.1-9.1,9.1-9.1c5,0,9.1,4.1,9.1,9.1c0,3.9-2.4,7.2-5.9,8.5v29.3h-6.5v-29.3C-161.2,441.5-163.6,438.2-163.6,434.3
+M-105.1,486.9L-105.1,486.9l0-76.4h0c0,0,0,0,0,0c0-2.5-2-4.5-4.5-4.5c0,0,0,0,0,0v0h-12.1V383c0-18.1-14.7-32.9-32.9-32.9
+c-18.1,0-32.9,14.7-32.9,32.9v22.9h-12.1v0c0,0,0,0,0,0c-2.5,0-4.5,2-4.5,4.5c0,0,0,0,0,0h0v76.4h0c0,0,0,0,0,0
+c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0v0h89.9v0c0,0,0,0,0,0C-107.1,491.4-105,489.4-105.1,486.9C-105.1,486.9-105.1,486.9-105.1,486.9" />
+							</g>
+						</svg>
+						<span>Личный кабинет</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--             <div class="bg-image">
+<img src="img/bg-inner-pages/bg-about.jpg" alt="">
+</div> -->
+		<!-- </div> -->
+	</header>
+	<section class="head avtoram">
+		<div class="left-col">
+			<div class="head-title">
+				<p>ЭПИО — лучшее место</p>
+				<p>встречи идей и капитала</p>
+			</div>
+			<ul class="breadcrumbs">
+				<li><a href="#">Главная</a></li>
+				<li>Авторам проектов</li>
+			</ul>
+		</div>
+		<div class="right-col">
+			<div class="news">
+				<a href="#">
+					<div class="cat-content">
+					<p class="tags">проекты</p>
+						<p class="cat-text">Самые свежие и креативные проекты
+							<i class="icon-arr">
+								<svg viewBox="0 0 22 23">
+									<path display="none" fill-rule="evenodd" clip-rule="evenodd" d="M9,7.6L9.6,7l3.7,4.1l-0.6,0.6L9,7.6"/>
+									<path display="none" fill-rule="evenodd" clip-rule="evenodd" d="M12.8,10.5l0.6,0.6l-3.7,4.1L9,14.6L12.8,10.5"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#d9c39c" stroke-width="2" stroke-miterlimit="10" d="M11,1
+									c5.5,0,10,4.7,10,10.5C21,17.3,16.6,22,11,22S1,17.3,1,11.5C1,5.7,5.5,1,11,1z"/>
+									<rect x="8.6" y="9.2" transform="matrix(0.6942 0.7198 -0.7198 0.6942 10.9168 -5.3723)" fill-rule="evenodd" clip-rule="evenodd" fill="#d9c39c" width="6.4" height="2"/>
+									<rect x="8.6" y="12.3" transform="matrix(-0.7194 0.6946 -0.6946 -0.7194 29.528 14.7693)" fill-rule="evenodd" clip-rule="evenodd" fill="#d9c39c" width="6.4" height="2"/>
+								</svg>
+							</i>
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+	<!-- Main content for inner page -->
+	<section class="inner-content">
+		<div class="left-col">
+			<ul class="inner-content-menu">
+				<li><a href="#avtoram" data-href="#avtoram" class="scrollto active">Авторам проектов</a></li>
+				<li><a href="#investments" data-href="#investments" class="scrollto">Привелечение инвестиций</a></li>
+				<li><a href="#marketing" data-href="#marketing" class="scrollto">Маркетинговая подготовка и презентация</a></li>
+				<li><a href="#consulting" data-href="#consulting" class="scrollto">Консалтинг в стратегии и управлении</a></li>
+			</ul>
+		</div>
+		<div class="inner-row" id="avtoram" name="avtoram">
+			<div class="right-col">
+				<div class="main-info animation opacity del4">
+					<p class="h1">Авторам проектов</p>
+					<p class="subject-title">Эффективные решения всегда просты. Самый значимый опыт, который мы аккумулировали за годы развития в разных сегментах, также несложно сформулировать - это совместная эволюция вместе с клиентом.</p>
+					<p class="subject-text">Не будет преувеличением сказать, что долгосрочный успех компании определяется тем, какие взаимоотношения с партнерами, поставщиками, другими игроками рынка компания смогла создать, какую добавленную стоимость они приносят ее продукту.
+					</p>
+					<p class="subject-text">Однако чтобы удержаться на этом пути, необходимо решать все более сложные задачи, создавать инновационные продукты и предвосхищать ожидания клиентов.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="inner-row expertise animation opacity" id="investments" name="investments">
+			<div class="left-col">
+				<div class="block-title">
+					<p class="h2">Привлечение инвестиций</p>
+				</div>
+			</div>
+			<div class="right-col padding-modifier">
+				<p class="subject-title">Капитал — это энергия, которая необходима для жизни и развития любой бизнес-идеи, системы, в конце концов, для осуществления мечты.</p>
+				<div class="fl-right right-text">
+					<p class="additional-text">Площадка ЭПИО — место встречи идей и капитала, где все стороны инвестиционного проекта могут найти свой интерес и построить взаимовыгодное сотрудничество.
+					</p>
+				</div>
+				<div class="left-text">
+					<p class="subject-text">Но в сегодняшнем мире она неустойчива, склонна 
+к обесцениванию и растворению. Как ее собрать, направить на достижение цели и преумножить?
+					</p>
+					<p class="subject-text">Основная цель нашей инвестиционной деятельности — структурирование и финансирование инвестици- онных проектов и развитие сильных партнерских союзов. Присутствие в России, Беларуси, Украине и США обеспечивает полный спектр инвестицион- ных возможностей для клиентов и партнеров, кото- рые заинтересованы в инвестициях в качественные активы стран СНГ.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="inner-row">
+			<div class="right-col">
+				<div class="info-panel animation opacity">
+					<p>В начале любого дела
+						<br>всегда находится идея</p>
+				</div>
+			</div>
+		</div>
+		<div class="inner-row how-we-work animation opacity" id="marketing" name="marketing">
+			<div class="right-col">
+				<p class="h2">Маркетинговая подготовка проекта и презентация потенциальному инвестору</p>
+				<p class="subject-title">Мы не слишком ошибемся, если назовем маркетинг и его подходы основной движущей силой современного бизнеса. В помощь нашим клиентам мы предлагаем:</p>
+			</div>
+			<ul class="bunners-block">
+				<li class="banners-item animation opacity">
+					<i><img src="img/icons-banners/icon5.png" alt=""></i>
+					<p class="subject-text">Разработка позиционирования компании и определение ниши</p>
+				</li>
+				<li class="banners-item animation opacity del1">
+					<i><img src="img/icons-banners/icon6.png" alt=""></i>
+					<p class="subject-text">Бренд-код и управление брендом</p>
+				</li>
+				<li class="banners-item animation opacity del2">
+					<i><img src="img/icons-banners/icon7.png" alt=""></i>
+					<p class="subject-text">Организация функции маркетинга на предприятии</p>
+				</li>
+				<li class="banners-item animation opacity del3">
+					<i><img src="img/icons-banners/icon8.png" alt=""></i>
+					<p class="subject-text">Разработка маркетинговой стратегии</p>
+				</li>
+			</ul>
+		</div>
+		<div class="inner-row">
+			<div class="right-col">
+				<div class="quote animation opacity">
+					<p>Наша миссия — содействие инновационному развитию личностей и организация через предоставление платформы и сети, где происходит рост компетенций, приобретение ресурсов и реализация выгодных союзов.</p>
+					<div class="team-user">
+						<div class="custom-user">
+							<div class="custom-user__avatar">
+								<img src="img/userPic/avatar2.jpg" alt="">
+							</div>
+							<div class="custom-user__info">
+								<p class="username">Марк Вейзен</p>
+								<p class="custom-user__position tags">ведущий аналитик</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inner-row expertise animation opacity" id="investments" name="investments">
+			<div class="left-col">
+				<div class="block-title">
+					<p class="h2">Консалтинг в стратегии и управлении</p>
+				</div>
+			</div>
+			<div class="right-col padding-modifier">
+				<p class="subject-title">Стратегический консалтинг направлен на решение фундаментальных вопросов для любой организации. В условиях возрастающей конкуренции и динамичных рынков стратегическое планирование должно стать ключевой деятельностью собственника и тех менеджеров, которые наравне с ним отвечают за развитие бизнеса.</p>
+				<p class="subject-text">Для решения стратегических задач мы подбираем наиболее простые и эффективные инструменты и методики. Наше предложение по стратегическому консалтингу включает следующее:
+				</p>
+				
+			</div>
+		</div>
+	</section>
+	<!-- Emd main content for inner page -->
+	//= includes/footer.html
+	//= includes/popups.html
+	//= includes/scripts.html
+</body>
+</html>

@@ -5492,6 +5492,7 @@ $(document).ready(function () {
        
         verticalCentered: false,
         navigation: true,
+		controlArrows: true,
         navigationPosition: 'nav-slider',
         fixedElements: '#header, #footer',
         easing: 'swing',
