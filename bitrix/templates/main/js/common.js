@@ -5663,7 +5663,7 @@ function setMarkers(map) {
     };
     var infowindow = new google.maps.InfoWindow({
         content: '',
-        //maxWidth: 300
+        maxWidth: 375
         //maxHeight: 275,
     });
 	

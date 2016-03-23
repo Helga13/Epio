@@ -27,7 +27,8 @@ body {
         transition: opacity 2s ease, transform 1s ease;	
 	}
     #header:not(.header-inner){
-        transition-delay: 2.5s;
+        //transition-delay: 2.5s;
+        transition-delay: 2s;
 		will-change: transition;
     }
 	#header.header-inner{
@@ -38,7 +39,8 @@ body {
         opacity: 0;
         transform: translateY(100px);
         transition: opacity 2s ease, transform 1s ease;
-        transition-delay: 2.5s;
+        //transition-delay: 2.5s;
+        transition-delay: 2s;
 		will-change: transition;
     }
 }
@@ -116,7 +118,8 @@ body.ready{
 }
 #footer{
     bottom: 0;
-    padding-bottom: 2.8125%; /* 42px/1600px */
+    //padding-bottom: 2.8125%; /* 42px/1600px */
+	padding-bottom: 2.5%;
 }
 #header .left-col{
     width: 42.5%;
@@ -514,7 +517,7 @@ a{
     display: inline-block;
     width: 21px;
     position: relative;
-    top: 7px;
+    top: 5px;
 }
 body.ready #fullpage.loaded{
     .section .slider-content::before{
@@ -563,7 +566,9 @@ body.ready #fullpage.loaded{
 
 #fp-nav.nav-slider{
     position: fixed;
-    bottom: 5.3%; /* 45px/962px + отступ */
+    //bottom: 5.3%; /* 45px/962px + отступ */
+	bottom: 0;
+	padding-bottom: 2.9%;
     right: 12.6%;
     opacity: 0;
     transform: translateY(100px);
@@ -789,7 +794,9 @@ body.ready{
     box-sizing: border-box;
     float: right;
     padding-left: 8.125%;
-    padding-top: 10px;
+//    padding-top: 10px;
+	height: 24px;
+	line-height: 24px;
     span{
         border-right: 2px solid #787878;
         padding: 0 11px;
@@ -807,7 +814,8 @@ body.ready{
     text-transform: uppercase;
     right: 2.5%;
 //    bottom: 4.68%;
-    bottom: 54.68%;
+    //bottom: 54.68%;
+	bottom: 65%;
     font-family: 'FuturaNewBook', $font-stack-helvetica;
     letter-spacing: 0.2em;
     opacity: 0;
@@ -1013,7 +1021,7 @@ body.inner{
 
 .flxmd.no-fixed{
     position: absolute;
-    bottom: 60%;
+    bottom: 70%;
     transition: none;
     a{
         color: $mainTextColorDark;
@@ -1706,10 +1714,12 @@ body.ready section.head .breadcrumbs{
 .infowindow{
     height: 0!important;
     //margin-left: 120px;
-	max-width: 400px;
+	//max-width: 375px;
+//	width: 375px;
 }
 .marker-popup {
     min-width: 200px;
+	max-width: 375px;
 }
 
 .close-infobox{
