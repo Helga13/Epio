@@ -2,6 +2,7 @@
 
 * {
     outline: none;
+	//border: 1px solid;
 }
 
 html {
@@ -11,9 +12,7 @@ html {
 
 body {
     background-color: #1d242e;
-	min-height: 600px;
     height: 100%;
-	min-width: 992px;
     width: 100%;
     color: $mainTextColor;
 	font-smoothing: antialiased; 
@@ -243,9 +242,9 @@ nav.right-menu li a.active::after{
 
 #fullpage {
     background-color: #1d242e;
-	min-height: 600px;
+	//min-height: 600px;
     height: 100%;
-	min-width: 992px;
+	//min-width: 992px;
     width: 100%;
 }
 
@@ -356,7 +355,6 @@ a{
     width: 57.5%;
     float: left;
 }
-
 
 .custom-row{
     /* margin-top: 6.40%; */ 
@@ -573,7 +571,7 @@ body.ready #fullpage.loaded{
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 2s ease, transform 1s ease; 
-    transition-delay: 2.5s;
+    transition-delay: 2s;
     .js-nav-current{
         color: $addTextColor;
         font-family: 'FuturaNewBook', $font-stack-helvetica;
@@ -675,7 +673,6 @@ body.ready{
             transition-delay: 1.8s;
         }
     }
-    
 }
 
 .main-fix-content{
@@ -820,7 +817,7 @@ body.ready{
     letter-spacing: 0.2em;
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
-    transition-delay: 2.7s;
+    transition-delay: 2s;
     @include font-size(1.2);
     @include line-height(3.6);
     a{
@@ -910,17 +907,39 @@ nav li a:active,
     fill: $mainTextColor;
 }
 
-/* styles for inner pages */
+/* styles after destroyed fullpage slider (max-width: 992px) || (max-height: 600px) */
 
-//.wrap{
-//    max-width: 1300px;
-//    min-width: 980px;
-//    width: auto;
-//    margin: 0 auto;
-//    .left-col{
-//        float: left;
-//    }
-//}
+body.slider-destroyed{
+
+	.section .bg-img,
+	.custom-row,
+	.left-content a,
+	.custom-row.col-2>a{
+		opacity: 1;
+	}
+	.section .bg-img{
+		transform: none;
+	}
+	.section{
+		position: relative;
+	}
+	.custom-row.col-2>a{
+		margin-right: 0;
+	}
+	.section .slider-content{
+		&::before{
+			width: 100%;
+		}
+	}
+	#footer{
+		position: relative;
+	}
+}
+
+/* end styles after destroyed fullpage slider (max-width: 992px) || (max-height: 600px) */
+
+
+/* styles for inner pages */
 
 body.inner{
     background-color: $bgInnerColor;
@@ -971,7 +990,8 @@ body.inner{
     box-sizing: border-box;
     @include font-size(0);
     margin: 0 auto;
-    padding: 80px 0 100px;
+//    padding: 80px 0 100px;
+    padding: 80px 0 0 0;
     padding-top: 90px;
     width: 81.25%;
 }

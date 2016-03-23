@@ -134,6 +134,9 @@
             top: 20px;
         }  
     }
+	.lang {
+		padding-left: 14.375%;
+	}
 }
 
 @media only screen and (max-width : 1120px) {
@@ -157,9 +160,6 @@
 @media only screen and (max-width : 1023px) {
     nav li a {
         padding: 0 11px;
-    }
-    .lang {
-        padding-left: 14.375%;
     }
 }
 
@@ -221,7 +221,7 @@
         top: 15.9%;
     }
     #fp-nav.nav-slider{
-        bottom: 6.2%;
+        padding-bottom: 3%;
     }
 	.cat-content .cat-text{
 		@include font-size(2.5);
@@ -233,20 +233,20 @@
     .content{
         top: 18.9%;
     }
-    .slider-content .content-row:first-child {
-        margin-top: 6.5%;
-    }
+//    .slider-content .content-row:first-child {
+//        margin-top: 6.5%;
+//    }
     .slider-content .content-row:last-child {
         margin-top: 1.1%;
     }
     #fp-nav.nav-slider{
-        bottom: 6.5%;
+        padding-bottom: 3.1%;
     }
 }
 @media only screen and (max-height : 690px) {
-    .slider-content .content-row:first-child {
-        margin-top: 7.5%;
-    }
+//    .slider-content .content-row:first-child {
+//        margin-top: 7.5%;
+//    }
     .custom-row.col-2>a:first-child{
         width: 100%;
     }
@@ -294,9 +294,9 @@
     }
 }
 @media only screen and (max-width : 1468px) and (max-height : 730px)  {
-    .slider-content .content-row:first-child {
-		margin-top: 6.5%;
-	}
+//    .slider-content .content-row:first-child {
+//		margin-top: 6.5%;
+//	}
 	.slider-content .content-row:last-child {
 		margin-top: 1.0%;
 	}
@@ -319,7 +319,7 @@
         padding: 0 12px;
     }
     #header .right-col nav, .left-menu {
-        margin-left: -12px;
+        margin-left: 0;
     }
 }
 
@@ -327,11 +327,14 @@
     .main-fix-content .heading p {
        @include font-size(3.6); 
     }
+	.left-content a {
+        width: 100%;
+    }
 }
 @media only screen and (max-width : 1270px) and (max-height : 720px)  {
-    .slider-content .content-row:first-child {
-		margin-top: 7.5%;
-	}
+//    .slider-content .content-row:first-child {
+//		margin-top: 7.5%;
+//	}
 }
 @media only screen and (max-width : 1200px) and (max-height : 720px)  {
     .content, 
@@ -366,26 +369,23 @@
     .main-fix-content .heading p{
         @include font-size(3);
     }
-    .left-content a {
-        width: 100%;
-    }
 }
 @media only screen and (max-width : 980px){
     body{
-        overflow-x: scroll !important;
+        //overflow-x: scroll !important;
     }
     body,
     .main-fix-content{
-        width: 992px;
+        //width: 992px;
     }
 }
 @media only screen and (max-height : 600px)  {
     body.ready{
-        overflow-y: scroll !important;
+        //overflow-y: scroll !important;
     }
     body,
     .main-fix-content{
-        height: 600px !important; 
+        //height: 600px !important; 
     }
     .content, 
     .main-fix-content{
@@ -407,7 +407,10 @@
     .main-fix-content .heading p {
         @include font-size(3.0);
 		@include line-height(3.8);
-    } 
+    }
+	.slider-content .content-row:first-child {
+		margin-top: 8.2%;
+	}
 }
 
 @media only screen and (max-width : 995px) {
@@ -415,6 +418,9 @@
         @include font-size(2.9);
     } 
 }
+
+// styles after destroy fullpage slider on index page
+
 
 @media only screen and (max-width : 767px) {
 
