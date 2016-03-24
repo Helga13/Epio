@@ -421,6 +421,105 @@
 
 // styles after destroy fullpage slider on index page
 
+@media only screen and (max-width : 915px) {
+	.hamburger{
+		display: block;
+		position: fixed;
+		right: 2.5%;
+		a.navbar-toggle:hover span{
+			opacity: .7;
+		}
+		a.navbar-toggle.visible{
+			span:first-child{
+				transform: rotate(45deg) translate3d(3.5px, 9px, 0);
+			}
+			span:nth-child(2){
+				opacity: 0;
+			}
+			span:last-child{
+				transform: rotate(-45deg) translate3d(3.5px, -9px, 0);
+			}
+		}
+		a.navbar-toggle.visible{
+			span{
+				transition: transform 0.3s ease;
+			}
+		}
+	}
+	.menu-inner{
+		display: none;
+		//background-color: $mainTextColorDark;
+		height: 100%;
+		padding-top: 95px;
+		li{
+			display: block;
+			text-align: center;
+			a{
+				@include font-size(3.6);
+				@include line-height(4.001);
+				padding: 13px 0;
+			}
+		}
+		.left-col{
+			float: none !important;
+			padding-left: 0!important;
+		}
+		.right-menu{
+			width: 100%;
+			text-align: center;
+			a{
+				@include font-size(2.4);
+				@include line-height(3);
+			}
+		}
+		.personal{
+			float: none;
+			width: 100%;
+			text-align: center;
+			a{
+				margin-top: 40px;
+				@include font-size(2.4);
+				@include line-height(3);
+			}
+			svg{
+				width: 30px;
+				height: 40px;
+				top: -5px;
+			}
+		}
+		
+	}
+	.main-fix-content .left-col{
+		width: 100%;
+		padding-left: 14.13%;
+	}
+	.slider-content .content-row .right-content,
+	.main-fix-content .right-col{
+		float: none;
+		width: 100%;
+	}
+	.slider-content .content-row:first-child{
+		margin-top: 20%;
+	}
+	.right-col .news{
+		margin-top: 20px;
+	}
+	.left-content{
+		display: none;
+	}
+	.custom-row.col-2 .news-cont{
+		@include font-size(2.1);
+		@include line-height(2.8);
+	}
+	.custom-row.col-2 > a:last-child{
+		display: block;
+		margin: 0;
+		width: 100%;
+		margin-top: 3.1%;
+		margin-bottom: 50px;
+	}
+}
+
 
 @media only screen and (max-width : 767px) {
 

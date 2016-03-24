@@ -5532,6 +5532,21 @@ $(document).ready(function () {
 	$('a.disabled').click(function(e) {
         e.preventDefault();
 	});
+	$('a.navbar-toggle').click(function(e) {
+        e.preventDefault();
+		$('.menu-inner').toggle();
+		if($('a.navbar-toggle').hasClass("visible")){
+			$('a.navbar-toggle').removeClass("visible");
+			$('#header').css({'background-color': 'transparent', 'height': ''});
+		}else{
+			$('a.navbar-toggle').addClass("visible");
+			$('#header').css({
+				'background-color': '#1d242e', 
+				'height': '100%'
+			});
+		}
+		
+	});
         
     // about.html team-slider 
     

@@ -169,6 +169,19 @@ body.ready{
 		opacity: .7;
 	}
 }
+.hamburger{
+	display: none;
+	a.navbar-toggle{
+		span{
+			display: block;
+			height: 3px;
+			width: 32px;
+			margin: 6px 0;
+			background-color: $mainTextColor;
+			transition: opacity .3s ease;
+		}	
+	}
+}
 
 nav{
     float: left;
@@ -910,18 +923,28 @@ nav li a:active,
 /* styles after destroyed fullpage slider (max-width: 992px) || (max-height: 600px) */
 
 body.slider-destroyed{
-
+	@include clearfix;
 	.section .bg-img,
 	.custom-row,
 	.left-content a,
-	.custom-row.col-2>a{
+	.custom-row.col-2>a,
+	.main-fix-content .heading p,
+	.main-fix-content .heading p::before,
+	.right-col .news{
 		opacity: 1;
 	}
 	.section .bg-img{
 		transform: none;
 	}
+	#header,
+	.main-fix-content .heading p::before{
+		transition: none;
+	}
 	.section{
 		position: relative;
+	}
+	#fullpage > div:not(#section0){
+		display: none;
 	}
 	.custom-row.col-2>a{
 		margin-right: 0;
@@ -932,7 +955,14 @@ body.slider-destroyed{
 		}
 	}
 	#footer{
-		position: relative;
+		position: absolute;
+		transform: none;
+		transition: none;
+	}
+	.flxmd{
+		position: absolute;
+		//transform: none;
+		transition: none;
 	}
 }
 
