@@ -181,6 +181,18 @@ body.ready{
 			transition: opacity .3s ease;
 		}	
 	}
+	a.navbar-toggle{
+		transition: opacity .3s ease;
+	}
+	a.navbar-toggle:hover span{
+		opacity: .7;
+	}
+//	a.navbar-toggle.visible{
+//		transition: opacity .3s ease;
+//	}
+//	a.navbar-toggle.visible:hover span{
+//		opacity: .7;
+//	}
 }
 
 nav{
@@ -925,10 +937,11 @@ nav li a:active,
 #header.toggle{
 	background-color: #1d242e; 
 	height: 100%;
-	position: absolute;
+	//position: absolute;
 	//display: block;
 	.menu-inner{
 		display: block;
+		overflow: auto;
 	}
 }
 
