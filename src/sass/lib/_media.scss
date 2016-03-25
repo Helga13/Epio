@@ -85,14 +85,22 @@
     .team-user{
         display: none;
     } 
+	.personal {
+		width: auto;
+		position: absolute;
+		right: 2.5%;
+	}
     #header .left-col{
-        width: auto;
-        float: left;
+        //width: auto;
+        //float: left;
     }
+	.right-col nav, .left-menu {
+		margin-left: -11px;
+	}
     #header .right-col{
-        padding-left: 0;
+        //padding-left: 0;
         nav{
-            margin-left: 0;
+            //margin-left: 0;
         }
     }
     .main-fix-content .heading p {
@@ -107,7 +115,7 @@
     }
     nav li a{
         @include font-size(1.7);
-        padding: 0 12px;
+        padding: 0 11px;
     }
     .custom-row {
         width: 100%;
@@ -148,6 +156,9 @@
         margin-top: 3.1%;
     }
 }
+@media only screen and (max-width : 1072px) {
+    font-size: 59.5%; 
+}
 @media only screen and (max-width : 1090px) {
     .copyright span{
         border-right: 0;
@@ -156,12 +167,25 @@
         display: none;
     } 
 }
+//@media only screen and (max-width : 1028px) {
+//	font-size: 59.5%; 
+//}
 
 @media only screen and (max-width : 1023px) {
     nav li a {
-        padding: 0 11px;
+        padding: 0 10px;
+    }
+	.right-col nav, .left-menu {
+		margin-left: -10px;
+	}
+}
+
+@media only screen and (max-width : 1002px) {
+    nav li a {
+        padding: 0 10px;
     }
 }
+
 
 @media only screen and (max-width : 992px) {
     
@@ -229,6 +253,9 @@
 }
 
 @media only screen and (max-height : 720px) {
+	html {
+        font-size: 59.5%;
+    }
     .main-fix-content,
     .content{
         top: 18.9%;
@@ -279,9 +306,6 @@
 }
 
 @media only screen and (max-height : 600px) {
-    html {
-        font-size: 59.5%;
-    }
     .main-fix-content,
     .content{
         top: 17.9%;
@@ -319,7 +343,7 @@
         padding: 0 12px;
     }
     #header .right-col nav, .left-menu {
-        margin-left: 0;
+        //margin-left: 0;
     }
 }
 
@@ -421,7 +445,7 @@
 
 // styles after destroy fullpage slider on index page
 
-@media only screen and (max-width : 915px) {
+@media only screen and (max-width : 992px) {
 	
 	.hamburger{
 		display: block;
@@ -449,7 +473,6 @@
 	}
 	.menu-inner{
 		display: none;
-		//background-color: $mainTextColorDark;
 		height: 100%;
 		padding-top: 95px;
 		li{
@@ -461,9 +484,20 @@
 				padding: 13px 0;
 			}
 		}
+		.left-menu, 
+		.right-col nav {
+			margin-left: 0;
+		}
+		.right-col{
+			padding-left: 0 !important; 
+		}
 		.left-col{
 			float: none !important;
-			padding-left: 0!important;
+			width: 100% !important;
+			padding-left: 0 !important;
+			nav{
+				float: none;
+			}
 		}
 		.right-menu{
 			width: 100%;
@@ -477,6 +511,8 @@
 			float: none;
 			width: 100%;
 			text-align: center;
+			position: relative;
+			right: 0;
 			a{
 				margin-top: 40px;
 				@include font-size(2.4);
@@ -488,7 +524,6 @@
 				top: -5px;
 			}
 		}
-		
 	}
 	.main-fix-content .left-col{
 		width: 100%;

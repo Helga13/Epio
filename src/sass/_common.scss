@@ -920,6 +920,20 @@ nav li a:active,
     fill: $mainTextColor;
 }
 
+/* toggle menu hamburger */
+
+#header.toggle{
+	background-color: #1d242e; 
+	height: 100%;
+	position: absolute;
+	//display: block;
+	.menu-inner{
+		display: block;
+	}
+}
+
+/* end of toggle menu hamburger */
+
 /* styles after destroyed fullpage slider (max-width: 992px) || (max-height: 600px) */
 
 body.slider-destroyed{
