@@ -960,6 +960,62 @@ body.slider-destroyed{
 	.right-col .news{
 		opacity: 1;
 	}
+		.menu-inner{
+		display: none;
+		height: 100%;
+		padding-top: 95px;
+		li{
+			display: block;
+			text-align: center;
+			a{
+				@include font-size(3.6);
+				@include line-height(4.001);
+				padding: 13px 0;
+			}
+		}
+		nav{
+			float: none !important;
+		}
+		.left-menu, 
+		.right-col nav {
+			margin-left: 0;
+		}
+		.right-col{
+			padding-left: 0 !important;
+			height: 100%;
+		}
+		.left-col{
+			float: none !important;
+			width: 100% !important;
+			padding-left: 0 !important;
+		}
+		.right-menu{
+			width: 100%;
+			text-align: center;
+			a{
+				@include font-size(2.4);
+				@include line-height(3);
+			}
+		}
+		.personal{
+			//float: none;
+			width: 100%;
+			text-align: center;
+			position: relative;
+			right: 0;
+			a{
+				margin-top: 40px;
+				margin-bottom: 40px;
+				@include font-size(2.4);
+				@include line-height(3);
+			}
+			svg{
+				width: 30px;
+				height: 40px;
+				top: -5px;
+			}
+		}
+	}
 	#header {
         @include clearfix;
     }
@@ -1029,6 +1085,7 @@ body.inner{
     background-color: $addTextColorlight;
     /* transition: none; */
 	top: -100px;
+	opacity: 0!important;
 	transition: opacity .4s ease, top 1s ease;
 	transition-delay: .5s;
     .social li a svg path{
@@ -1059,6 +1116,7 @@ body.inner{
 }
 #footer.no-fixed.done{
 	top: 0;
+	opacity: 1 !important;
 }
 #footer.no-fixed .footer-bottom{
     position: absolute;
@@ -1297,18 +1355,35 @@ body.ready section.head .breadcrumbs{
     position: relative;
     margin-bottom: 135px;
 	//@include clearfix;
+//	.bg-block{
+//		position: absolute;
+//		will-change: transform;
+//        font-family: 'FuturaNewBold', $font-stack-helvetica;
+//        @include font-size(35.004);
+//        @include line-height(1.8);
+//        color: $mainTextColor;
+//        z-index: -1;
+//		bottom: 40px; /* 150px */
+//		transform: translateY(-150px);
+//        left: -155px;
+//		opacity: 0;
+//		transition: transform 1s ease-in, opacity .7s ease-in;
+//		transition-delay: 2.5s;
+//	}
     &::after{
         content: '18';
+		will-change: transform;
         position: absolute;
         font-family: 'FuturaNewBold', $font-stack-helvetica;
         @include font-size(35.004);
         @include line-height(1.8);
         color: $mainTextColor;
         z-index: -1;
-        //bottom: 40px;
-		bottom: 190px; /* 150px */
+		bottom: 40px; /* 150px */
+		transform: translateY(-150px);
         left: -155px;
-		transition: bottom  1s ease;
+		opacity: 0;
+		transition: transform 1s ease-in, opacity .7s ease-in;
 		transition-delay: 2.5s;
     }
     .subject-title{
@@ -1318,7 +1393,9 @@ body.ready section.head .breadcrumbs{
 .main-info.done{
     &::after{
 		content: '18';
-        bottom: 40px;
+		opacity: 1;
+        //bottom: 40px;
+		transform: translateY(0);
     } 
 }
 #avtoram .main-info{
@@ -1464,10 +1541,11 @@ body.ready section.head .breadcrumbs{
         left: 0;
         //top: 150px;
         top: 100px;
+		opacity: 0;
         height: 100%;
         width: 100%;
         z-index: -1;
-		transition: top 1s ease;
+		transition: top 1s ease-in, opacity .7s ease-in;
 		transition-delay: .5s;
     }
     .block-title{
@@ -1479,6 +1557,7 @@ body.ready section.head .breadcrumbs{
 .inner-row.expertise.done{
 	&::before{
 		top: 250px;
+		opacity: 1;
 	}
 }
 .inner-row#investments{
@@ -1621,7 +1700,8 @@ body.ready section.head .breadcrumbs{
         position: relative;
 		top: -100px; /* 100px */
 //		top: 0;
-		transition: top 1s ease;
+		opacity: 0;
+		transition: top 1s ease-in, opacity 0.7s ease-in;
 		transition-delay: .5s;
         &::before{
             content: '';
@@ -1650,6 +1730,7 @@ body.ready section.head .breadcrumbs{
 .info-panel.done p{
 //	top: -50px;
 	top: 0px;
+	opacity: 1;
 }
 
 .info-panel.with-button{
