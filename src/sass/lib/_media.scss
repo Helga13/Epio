@@ -616,3 +616,11 @@
 		padding-top: 57%;
 	}
 }
+
+/* media queries for inner pages */
+
+@media only screen and (max-width : 1225px) {
+	.head-title p{
+		@include font-size(4.201);
+	}
+}

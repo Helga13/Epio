@@ -1757,6 +1757,7 @@ body.ready section.head .breadcrumbs{
         width: 50%;
         height: 100%;
 		position: relative;
+		top: 0;
         &::before{
 //            left: -45px;
 //            top: -10px;
@@ -1807,6 +1808,13 @@ body.ready section.head .breadcrumbs{
             display: block;
         }
     }
+}
+.bunners-block.bunners-block_insert{
+	width: 100%;
+	p{
+		font-family: 'MinionPro-Semibold', $font-stack-helvetica;
+		@include line-height(2.6);
+	}
 }
 
 /* animation blocks */
