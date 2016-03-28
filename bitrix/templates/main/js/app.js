@@ -112,9 +112,12 @@ $(document).ready(function () {
 		if($('a.navbar-toggle').hasClass('visible')){
 			$('a.navbar-toggle').removeClass('visible');
 			$('#header').removeClass('toggle');
+			$('body').css({'overflow': 'auto'});
+			$('')
 		}else{
 			$('a.navbar-toggle').addClass('visible');
 			$('#header').addClass('toggle');
+			$('body').css({'overflow': 'hidden'});
 		}
 		
 	});

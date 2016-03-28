@@ -1007,7 +1007,7 @@ body.slider-destroyed{
     }
     .slider-content .content-row:first-child {
         margin-top: 0;
-        padding-top: 20%;
+        //padding-top: 20%;
     }
 }
 
@@ -1018,6 +1018,7 @@ body.slider-destroyed{
 
 body.inner{
     background-color: $bgInnerColor;
+	min-width: 1024px;
 }
 #header.no-fixed{
     position: absolute;
@@ -1027,8 +1028,8 @@ body.inner{
     height: 620px;
     background-color: $addTextColorlight;
     /* transition: none; */
-	top: -50px;
-	transition: opacity .4s ease, top .4s ease;
+	top: -100px;
+	transition: opacity .4s ease, top 1s ease;
 	transition-delay: .5s;
     .social li a svg path{
         fill: $addTextColor;
@@ -1305,9 +1306,9 @@ body.ready section.head .breadcrumbs{
         color: $mainTextColor;
         z-index: -1;
         //bottom: 40px;
-		bottom: 90px;
+		bottom: 190px; /* 150px */
         left: -155px;
-		transition: bottom  0.4s ease;
+		transition: bottom  1s ease;
 		transition-delay: 2.5s;
     }
     .subject-title{
@@ -1466,7 +1467,7 @@ body.ready section.head .breadcrumbs{
         height: 100%;
         width: 100%;
         z-index: -1;
-		transition: top 0.4s ease;
+		transition: top 1s ease;
 		transition-delay: .5s;
     }
     .block-title{
@@ -1477,7 +1478,7 @@ body.ready section.head .breadcrumbs{
 }
 .inner-row.expertise.done{
 	&::before{
-		top: 150px;
+		top: 250px;
 	}
 }
 .inner-row#investments{
@@ -1618,9 +1619,9 @@ body.ready section.head .breadcrumbs{
         padding-left: 10.89%; /* 110px/1010px */
 //        padding-right: 25.74%; /* 260px/1010px */
         position: relative;
-		top: -50px;
+		top: -100px; /* 100px */
 //		top: 0;
-		transition: top 0.4s ease;
+		transition: top 1s ease;
 		transition-delay: .5s;
         &::before{
             content: '';
