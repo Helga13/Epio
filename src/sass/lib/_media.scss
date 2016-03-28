@@ -502,6 +502,9 @@
 			}
 		}
 	}
+	.content{
+		position: relative;
+	}
 	.main-fix-content .left-col{
 		padding-left: calc(14.13% + 50px);
 	}
@@ -512,7 +515,7 @@
 		width: 100%;
 	}
 	.slider-content .content-row:first-child{
-		margin-top: 20%;
+		padding-top: 20%;
 	}
 	.right-col .news{
 		margin-top: 20px;
@@ -530,6 +533,11 @@
 		width: 100%;
 		margin-top: 3.1%;
 		margin-bottom: 50px;
+	}
+	#footer{
+		position: relative;
+        @include clearfix;
+        margin-top: -40px;
 	}
 }
 @media only screen and (max-width : 940px) {
@@ -551,25 +559,25 @@
 		padding-right: 8%;
 	}
 	.slider-content .content-row:first-child {
-		margin-top: 23%;
+		padding-top: 23%;
 	}
 }
 
 @media only screen and (max-width : 710px) {
 	.slider-content .content-row:first-child {
-		margin-top: 26%;
+		padding-top: 26%;
 	}
 }
 
 @media only screen and (max-width : 663px) {
 	.slider-content .content-row:first-child {
-		margin-top: 32%;
+		padding-top: 32%;
 	}
 }
 
 @media only screen and (max-width : 615px) {
 	.slider-content .content-row:first-child {
-		margin-top: 35%;
+		padding-top: 35%;
 	}
 }
 
@@ -608,7 +616,7 @@
 
 @media only screen and (max-width : 480px) {
 	.slider-content .content-row:first-child {
-		margin-top: 37%;
+		padding-top: 37%;
 	}
 	.logo{
 		height: 40px;
@@ -625,17 +633,17 @@
 
 @media only screen and (max-width : 450px) {
 	.slider-content .content-row:first-child {
-		margin-top: 40%;
+		padding-top: 40%;
 	}
 }
 @media only screen and (max-width : 443px) {
 	.slider-content .content-row:first-child {
-		margin-top: 47%;
+		padding-top: 47%;
 	}
 }
 @media only screen and (max-width : 420px) {
 	.slider-content .content-row:first-child {
-		margin-top: 52%;
+		padding-top: 52%;
 	}
 }
 @media only screen and (max-width : 380px) {
@@ -652,7 +660,7 @@
 		padding-left: calc(14.13% + 30px);
 	}
 	.slider-content .content-row:first-child {
-		margin-top: 54%;
+		padding-top: 54%;
 	}
 }
 @media only screen and (max-width : 350px) {
@@ -660,6 +668,6 @@
 		font-size: 45%;
 	}
 	.slider-content .content-row:first-child {
-		margin-top: 57%;
+		padding-top: 57%;
 	}
 }

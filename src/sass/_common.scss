@@ -268,7 +268,7 @@ nav.right-menu li a.active::after{
 #fullpage {
     background-color: #1d242e;
 	//min-height: 600px;
-    height: 100%;
+    //height: 100%;
 	//min-width: 992px;
     width: 100%;
 }
@@ -960,8 +960,12 @@ body.slider-destroyed{
 	.right-col .news{
 		opacity: 1;
 	}
+	#header {
+        @include clearfix;
+    }
 	.section .bg-img{
 		transform: none;
+		display: none;
 	}
 	#header,
 	.main-fix-content .heading p::before{
@@ -985,7 +989,8 @@ body.slider-destroyed{
 		position: fixed;
 	}
 	#footer{
-		position: absolute;
+//		position: absolute;
+//		position: relative;
 		transform: none;
 		transition: none;
 	}
@@ -994,6 +999,16 @@ body.slider-destroyed{
 		//transform: none;
 		transition: none;
 	}
+	#fullpage {
+        background-color:transparent;
+        background: url(../img/mainSlider/slider-1.jpg) center no-repeat;
+        background-size: cover;
+        padding-bottom: 100px;
+    }
+    .slider-content .content-row:first-child {
+        margin-top: 0;
+        padding-top: 20%;
+    }
 }
 
 /* end styles after destroyed fullpage slider (max-width: 992px) || (max-height: 600px) */
@@ -1012,7 +1027,9 @@ body.inner{
     height: 620px;
     background-color: $addTextColorlight;
     /* transition: none; */
-	transition: opacity .4s ease;
+	top: -50px;
+	transition: opacity .4s ease, top .4s ease;
+	transition-delay: .5s;
     .social li a svg path{
         fill: $addTextColor;
     }
@@ -1038,6 +1055,9 @@ body.inner{
         border-right: 2px solid #a7a7a7;  
         /* border-right-style: double; */
     }
+}
+#footer.no-fixed.done{
+	top: 0;
 }
 #footer.no-fixed .footer-bottom{
     position: absolute;
@@ -1284,11 +1304,20 @@ body.ready section.head .breadcrumbs{
         @include line-height(1.8);
         color: $mainTextColor;
         z-index: -1;
-        bottom: 40px;
+        //bottom: 40px;
+		bottom: 90px;
         left: -155px;
+		transition: bottom  0.4s ease;
+		transition-delay: 2.5s;
     }
     .subject-title{
         padding: 25px 0 35px;
+    } 
+}
+.main-info.done{
+    &::after{
+		content: '18';
+        bottom: 40px;
     } 
 }
 #avtoram .main-info{
@@ -1432,16 +1461,24 @@ body.ready section.head .breadcrumbs{
         background-image: url('../img/bg-inner-pages-content/world-map.png');
         background-repeat: no-repeat;
         left: 0;
-        top: 150px;
+        //top: 150px;
+        top: 100px;
         height: 100%;
         width: 100%;
         z-index: -1;
+		transition: top 0.4s ease;
+		transition-delay: .5s;
     }
     .block-title{
 //        padding-left: 18.47%; /* 109px/590px */
         padding-left: 27.47%; /* 109px/590px */
         box-sizing: border-box;
     }
+}
+.inner-row.expertise.done{
+	&::before{
+		top: 150px;
+	}
 }
 .inner-row#investments{
 	&::before{
@@ -1581,6 +1618,10 @@ body.ready section.head .breadcrumbs{
         padding-left: 10.89%; /* 110px/1010px */
 //        padding-right: 25.74%; /* 260px/1010px */
         position: relative;
+		top: -50px;
+//		top: 0;
+		transition: top 0.4s ease;
+		transition-delay: .5s;
         &::before{
             content: '';
             display: inline-block;
@@ -1604,6 +1645,10 @@ body.ready section.head .breadcrumbs{
         left: -13.2%;
         z-index: -1;
     }
+}
+.info-panel.done p{
+//	top: -50px;
+	top: 0px;
 }
 
 .info-panel.with-button{
