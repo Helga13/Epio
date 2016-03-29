@@ -1328,10 +1328,12 @@ body.ready section.head .breadcrumbs{
 }
 .inner-content-menu{
     @include font-size(1.8);
-    @include line-height(7.201);
+    @include line-height(3.0);
     font-family: 'FuturaNewMedium', $font-stack-helvetica;
 	margin-top: 77px; // отступ равный отступу inner-row
+	width: 40%;
     a{
+		padding: 22px 0;
         transition: color 0.25s ease; 
     }
     a.active{
@@ -1342,8 +1344,6 @@ body.ready section.head .breadcrumbs{
             height: 1px;
             background-color: $mainTextColorDark;
             display: block;
-            position: relative;
-            top: -22px;
         }
     }
     a:hover{
@@ -1428,7 +1428,8 @@ body.ready section.head .breadcrumbs{
         @include font-size(2.4);
         @include line-height(3.2);
         padding-top: 15px;
-        width: 67.13%;
+        //width: 67.13%;
+        width: 80%;
     }
     .subject-text{
         font-family: 'MinionPro-Regular', $font-stack-helvetica;
@@ -1437,7 +1438,8 @@ body.ready section.head .breadcrumbs{
         padding-bottom: 25px;
     }
     .subject-text:nth-child(3){
-        width: 70.30%;
+//        width: 70.30%;
+        width: 80%;
     }
     .additional-text{
         font-family: 'MinionPro-Regular', $font-stack-helvetica;
@@ -1528,7 +1530,8 @@ body.ready section.head .breadcrumbs{
 }
 
 .inner-row.expertise,
-.inner-row#investments{
+.inner-row#investments,
+.inner-row#consulting{
     position: relative;
     z-index: 0;
     margin-bottom: 30px;
@@ -1552,6 +1555,7 @@ body.ready section.head .breadcrumbs{
 //        padding-left: 18.47%; /* 109px/590px */
         padding-left: 27.47%; /* 109px/590px */
         box-sizing: border-box;
+		padding-right: 7%;
     }
 }
 .inner-row.expertise.done{
@@ -1560,7 +1564,8 @@ body.ready section.head .breadcrumbs{
 		opacity: 1;
 	}
 }
-.inner-row#investments{
+.inner-row#investments,
+.inner-row#consulting{
 	&::before{
         content: '';
 		display: none;
@@ -1700,6 +1705,7 @@ body.ready section.head .breadcrumbs{
         position: relative;
 		top: -100px; /* 100px */
 //		top: 0;
+		height: 180px;
 		opacity: 0;
 		transition: top 1s ease-in, opacity 0.7s ease-in;
 		transition-delay: .5s;
@@ -1722,7 +1728,8 @@ body.ready section.head .breadcrumbs{
         width: 530px;
         position: absolute;
         background-color: $addTextColorlight;
-        top: -90px;
+//        top: -90px;
+		top: -50%;
         left: -13.2%;
         z-index: -1;
     }
@@ -1735,12 +1742,14 @@ body.ready section.head .breadcrumbs{
 
 .info-panel.with-button{
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+	margin: 0 auto 140px auto;
+//    margin-left: auto;
+//    margin-right: auto;
     width: 54.875%;
     background-color: #fff;
     height: 252px;
     //padding: 0 108px;
+	//text-align: center;
     p{
         font-family: 'FuturaNewMedium', $font-stack-helvetica;
         @include font-size(3.6);
@@ -1749,19 +1758,19 @@ body.ready section.head .breadcrumbs{
         display: inline-block;
         vertical-align: middle;
         text-align: left;
-        padding: 84px 0;
+        padding: 84px 20px;
 //        padding-left: 25%;
         padding-left: 24%;
         box-sizing: border-box;
         float: left;
-        width: 50%;
+        width: 61%;
         height: 100%;
 		position: relative;
 		top: 0;
         &::before{
 //            left: -45px;
 //            top: -10px;
-			left: 38%;
+			left: 31%;
             top: 67px;
             position: absolute;
         }
@@ -1802,7 +1811,7 @@ body.ready section.head .breadcrumbs{
         vertical-align: top;
         width: 25%;
         box-sizing: border-box;
-        padding-right: 8%;
+        padding-right: 7%;
         i{
             margin-bottom: 35px;
             display: block;
@@ -1811,6 +1820,7 @@ body.ready section.head .breadcrumbs{
 }
 .bunners-block.bunners-block_insert{
 	width: 100%;
+	padding: 42px 0 0;
 	p{
 		font-family: 'MinionPro-Semibold', $font-stack-helvetica;
 		@include line-height(2.6);
@@ -1954,6 +1964,7 @@ body.ready section.head .breadcrumbs{
     .info-panel.with-button{
         display: inline-block;
 		margin: 0;
+		text-align: initial;
     }
 }
 
