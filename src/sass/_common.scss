@@ -1219,7 +1219,8 @@ body.inner{
 }
 section.head.about,
 section.head.contacts,
-section.head.avtoram{
+section.head.avtoram,
+section.head.investoram{
     height: 421px;
     position: relative;
     padding: 0;
@@ -1279,6 +1280,9 @@ section.head.contacts{
 section.head.avtoram{
     background-image: url('../img/bg-inner-pages/bg-avtoram.jpg');
 }
+section.head.investoram{
+	background-image: url('../img/bg-inner-pages/bg-investoram.jpg');
+}
 
 body.ready section.head,
 body.ready section.head .head-title,
@@ -1333,8 +1337,13 @@ body.ready section.head .breadcrumbs{
 	margin-top: 77px; // отступ равный отступу inner-row
 	width: 40%;
     a{
+		color: $addTextColorDark;
 		padding: 22px 0;
-        transition: color 0.25s ease; 
+        transition: color 0.25s ease;
+		&::before{
+			content: '';
+			transition: color 0.25s ease; 
+		}
     }
     a.active{
         color: $mainTextColorDark;
@@ -1347,7 +1356,32 @@ body.ready section.head .breadcrumbs{
         }
     }
     a:hover{
-       color: $mainTextColorDark; 
+        color: $mainTextColorDark; 
+		&::before{
+			content: '';
+			color: $mainTextColorDark; 
+		}	
+    }
+}
+.inner-content-menu.inner-content-menu_list{
+	a:not(.active){
+		margin-left: 21px;
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			background: url('../img/bg-inner-pages-content/list.png') no-repeat;
+			left: -21px;
+			top: 34px;
+		}
+	}
+	a{
+		&::before{
+			content: '';
+			transition: color 0.25s ease; 
+		}
     }
 }
 
@@ -1412,6 +1446,20 @@ body.ready section.head .breadcrumbs{
 		opacity: .5;
     }
 }
+#investoram .main-info{
+	//margin-bottom: 80px;
+	&::after{
+		content: ' ';
+		background-image: url('../img/bg-inner-pages-content/map.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: block;
+		width: 570px;
+		height: 440px;
+		top: 80px;
+    	left: -125px;
+	}
+}
 #history{
     margin-bottom: 90px;
 }
@@ -1449,6 +1497,12 @@ body.ready section.head .breadcrumbs{
         display: inline;
         padding: 4px 0;
     }
+	.caption-text{
+		font-family: 'FuturaNewBook', $font-stack-helvetica;
+        @include font-size(2.4);
+        @include line-height(3.0);
+		padding-top: 15px;
+	}
 }
 
 
@@ -1565,7 +1619,9 @@ body.ready section.head .breadcrumbs{
 	}
 }
 .inner-row#investments,
-.inner-row#consulting{
+.inner-row#consulting,
+.inner-row#variant,
+.inner-row#competence{
 	&::before{
         content: '';
 		display: none;
@@ -1969,3 +2025,43 @@ body.ready section.head .breadcrumbs{
 }
 
 /* end contacts.html styles */
+
+/* styles investoram.html */
+
+.item-list{
+	font-family: 'MinionPro-Regular', $font-stack-helvetica;
+    @include font-size(1.8);
+    @include line-height(2.6);
+	padding-left: 65px;
+	position: relative;
+	li{
+		padding: 8px 0;
+		&::before{
+			content: '';
+			position: absolute;
+			width: 27px;
+			height: 4px;
+			background-color: $addTextColor;
+			left: 0;
+			margin-top: 12px;
+		}
+	}
+}
+.bunners-block.bunners-block_insert{
+	span+p{
+		font-family: 'MinionPro-Regular', $font-stack-helvetica;
+	}
+}
+.number{
+	display: inline-block;
+	font-family: 'FuturaNewBook', $font-stack-helvetica;
+    @include font-size(7.201);
+    @include line-height(5.001);
+	color: $addTextColor;
+	padding-bottom: 30px;
+}
+#competence{
+	.bunners-block.bunners-block_insert{
+		margin: 40px 0 20px;
+	}
+}
