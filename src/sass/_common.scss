@@ -1220,7 +1220,8 @@ body.inner{
 section.head.about,
 section.head.contacts,
 section.head.avtoram,
-section.head.investoram{
+section.head.investoram,
+section.head.for-business{
     height: 421px;
     position: relative;
     padding: 0;
@@ -1283,6 +1284,9 @@ section.head.avtoram{
 section.head.investoram{
 	background-image: url('../img/bg-inner-pages/bg-investoram.jpg');
 }
+section.head.for-business{
+	background-image: url('../img/bg-inner-pages/bg-for-business.jpg');
+}
 
 body.ready section.head,
 body.ready section.head .head-title,
@@ -1335,15 +1339,11 @@ body.ready section.head .breadcrumbs{
     @include line-height(3.0);
     font-family: 'FuturaNewMedium', $font-stack-helvetica;
 	margin-top: 77px; // отступ равный отступу inner-row
-	width: 40%;
+	width: 55%;
     a{
 		color: $addTextColorDark;
 		padding: 22px 0;
         transition: color 0.25s ease;
-		&::before{
-			content: '';
-			transition: color 0.25s ease; 
-		}
     }
     a.active{
         color: $mainTextColorDark;
@@ -1356,33 +1356,31 @@ body.ready section.head .breadcrumbs{
         }
     }
     a:hover{
-        color: $mainTextColorDark; 
-		&::before{
-			content: '';
-			color: $mainTextColorDark; 
-		}	
+        color: $mainTextColorDark; 	
     }
 }
 .inner-content-menu.inner-content-menu_list{
 	a:not(.active){
-		margin-left: 21px;
 		position: relative;
-		&::before{
-			content: '';
-			position: absolute;
-			width: 6px;
-			height: 6px;
-			background: url('../img/bg-inner-pages-content/list.png') no-repeat;
-			left: -21px;
-			top: 34px;
-		}
+		padding-left: 21px;
 	}
 	a{
-		&::before{
-			content: '';
-			transition: color 0.25s ease; 
+		i svg path{
+			transition: fill 0.25s ease;
 		}
     }
+	a:hover{
+		i svg path{
+			fill: $mainTextColorDark;
+		}
+    }
+	i{
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		left: 0;
+		top: 18px;
+	}
 }
 
 .main-info{
@@ -1458,6 +1456,19 @@ body.ready section.head .breadcrumbs{
 		height: 440px;
 		top: 80px;
     	left: -125px;
+	}
+}
+#business .main-info{
+	&::after{
+		content: ' ';
+		background-image: url('../img/bg-inner-pages-content/triangle.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: block;
+		width: 280px;
+		height: 280px;
+		top: 160px;
+    	left: -100px;
 	}
 }
 #history{
@@ -1621,7 +1632,8 @@ body.ready section.head .breadcrumbs{
 .inner-row#investments,
 .inner-row#consulting,
 .inner-row#variant,
-.inner-row#competence{
+.inner-row#competence,
+.inner-row#functions{
 	&::before{
         content: '';
 		display: none;
@@ -2060,7 +2072,8 @@ body.ready section.head .breadcrumbs{
 	color: $addTextColor;
 	padding-bottom: 30px;
 }
-#competence{
+#competence,
+#functions{
 	.bunners-block.bunners-block_insert{
 		margin: 40px 0 20px;
 	}
