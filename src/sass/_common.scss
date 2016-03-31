@@ -1236,7 +1236,8 @@ section.head.contacts,
 section.head.avtoram,
 section.head.investoram,
 section.head.for-business,
-section.head.news{
+section.head.news,
+section.head.projects{
     height: 421px;
     position: relative;
     padding: 0;
@@ -1304,6 +1305,9 @@ section.head.for-business{
 }
 section.head.news{
 	background-image: url('../img/bg-inner-pages/bg-news.jpg');
+}
+section.head.projects{
+	background-image: url('../img/bg-inner-pages/bg-projects.jpg');
 }
 
 body.ready section.head,
@@ -1651,7 +1655,8 @@ body.ready section.head .breadcrumbs{
 .inner-row#consulting,
 .inner-row#variant,
 .inner-row#competence,
-.inner-row#functions{
+.inner-row#functions,
+.inner-row#projects{
 	&::before{
         content: '';
 		display: none;
@@ -2276,6 +2281,7 @@ body.ready section.head .breadcrumbs{
 	}
 	.subject-title{
 		width: 100%;
+		transition: color .25s ease;
 	}
 	.subject-text{
 		padding: 10px 0 5px;
@@ -2291,6 +2297,9 @@ body.ready section.head .breadcrumbs{
 }
 .news-block-min:hover{
 	background-color: $addTextColorlight;
+	.subject-title{
+		color: $addTextColor;
+	}
 }
 .pagination{
 	margin: 55px 0 120px;
@@ -2308,4 +2317,124 @@ body.ready section.head .breadcrumbs{
 	span{
 		padding: 0 2px;
 	}
+}
+
+/* styles for projects */
+
+.inner-row_projects{
+	.info-panel{
+		margin-bottom: 0;
+	}
+}
+
+.main-block_projects{
+	width: 67.5%;
+	margin: 0 auto;
+}
+.menu-pills.menu-pills_projects{
+	padding-left: 0;
+	@include font-size(0);
+	li{
+		display: inline-block;
+		margin-right: 22px;
+		a{
+			font-family: 'FuturaNewBook', $font-stack-helvetica;
+		}
+		.industry{
+			border: 1px solid #47001e;
+		}
+		.industry.active,
+		.industry:hover{
+			background-color: #47001e;
+		}
+		.economy{
+			border: 1px solid #2c3e56;
+		}
+		.economy.active,
+		.economy:hover{
+			background-color: #2c3e56;
+		}
+		.hightech{
+			border: 1px solid #2c3e56;
+		}
+		.hightech.active,
+		.hightech:hover{
+			background-color: #003e6f;
+		}
+		.business{
+			border: 1px solid #b39903;
+		}
+		.business.active,
+		.business:hover{
+			background-color: #b39903;
+		}
+		.finance{
+			border: 1px solid #3c1e44;
+		}
+		.finance.active,
+		.finance:hover{
+			background-color: #3c1e44;
+		}
+		.building{
+			border: 1px solid #5a5154;
+		}
+		.building.active,
+		.building:hover{
+			background-color: #5a5154;
+		}
+	}
+}
+.projects-wrap{
+	margin: 37px -20px 70px;
+	@include clearfix;
+}
+.pane-block{
+	width: 50%;
+	box-sizing: border-box;
+	padding: 20px;
+	float: left;
+}
+.pane{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 372px;
+	img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.pane-content{
+		position: absolute;
+		box-sizing: border-box;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+		padding-bottom: 40px;
+	}
+	span{
+		font-family: 'FuturaNewBook', $font-stack-helvetica;
+		@include font-size(1.2);
+		color: #fff;
+		display: inline-block;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		border-radius: 5px;
+		height: 22px;
+		line-height: 22px;
+		padding: 0 10px;
+		background-color: #47001e;
+	}
+}
+.lock{
+	width: 22px;
+//	height: 22px;
+	display: block;
+	float: right;
 }
