@@ -175,6 +175,9 @@ body.ready{
 	a{
 		display: block;
 		transition: opacity .25s ease;
+		svg{
+			height: 50px;
+		}
 		svg path{
 			fill: #d9c39c;
 		}
@@ -558,6 +561,9 @@ a{
     width: 21px;
     position: relative;
     top: 5px;
+	svg{
+		height: 22px;
+	}
 }
 body.ready #fullpage.loaded{
     .section .slider-content::before{
@@ -791,6 +797,7 @@ body.ready{
         a{
             display: inline-block;
             width: 27px;
+			height: 27px;
             padding: 7px;
         }
         svg{
