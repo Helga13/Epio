@@ -2254,15 +2254,29 @@ body.ready section.head .breadcrumbs{
 	margin-top: 25px;
 	@include clearfix;
 }
+
+/* salvatore plugin */
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+/* These are the classes that are going to be applied: */
+.column{ 
+	float: left; 
+}
+.size-1of3{ 
+	width: 33.333%; 
+}
+
 .news-block-min{
 	box-sizing: border-box;
 	padding: 20px;
-	margin-right: 2.9%;
+	margin-right: 10%;
 	margin-bottom: 80px;
-	width: 30.35%; /* 325px/1074px */
-	float: left;
-	display: inline-block;
-	vertical-align: top;
+//	width: 30.35%; /* 325px/1074px */
+//	float: left;
+//	display: inline-block;
+//	vertical-align: top;
 	color: $mainTextColorDark;
 	border-bottom: 1px solid $mainTextColor;
 	transition: background-color .25s ease;
