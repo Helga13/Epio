@@ -84,6 +84,9 @@ hr{
 	border: none;
 	margin: 16px 0;
 }
+hr.grey{
+	background-color: #717271;
+}
 .disabled{
 	opacity: .5;
 	cursor: default;
@@ -2336,7 +2339,7 @@ body.ready section.head .breadcrumbs{
 	@include font-size(0);
 	li{
 		display: inline-block;
-		margin-right: 22px;
+		margin-right: 20px;
 		a{
 			font-family: 'FuturaNewBook', $font-stack-helvetica;
 		}
@@ -2418,7 +2421,11 @@ body.ready section.head .breadcrumbs{
 		padding: 30px;
 		padding-bottom: 40px;
 	}
-	span{
+	.industry,
+	.economy,
+	.hightech,
+	.business,
+	.finance{
 		font-family: 'FuturaNewBook', $font-stack-helvetica;
 		@include font-size(1.2);
 		color: #fff;
@@ -2430,6 +2437,23 @@ body.ready section.head .breadcrumbs{
 		line-height: 22px;
 		padding: 0 10px;
 		background-color: #47001e;
+		margin-bottom: 85px;
+	}
+	.economy{
+		background-color: #2c3e56;
+	}
+	.hightech{
+		background-color: #003e6f;
+	}
+	.subject-text{
+		color: $mainTextColor;
+		padding-top: 20px;
+	}
+	.business{
+		background-color: #b39903;
+	}
+	.finance{
+		background-color: #3c1e44;
 	}
 }
 .lock{
@@ -2437,4 +2461,23 @@ body.ready section.head .breadcrumbs{
 //	height: 22px;
 	display: block;
 	float: right;
+}
+
+.rel{
+	position: absolute;
+    bottom: 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+    left: 30px;
+    right: 30px;
+	span{
+		font-family: 'MinionPro-Regular', $font-stack-helvetica;
+        @include font-size(1.8);
+        @include line-height(2.4);
+		color: $mainTextColor;
+		padding-top: 10px;
+		float: left;
+		padding-right: 20px;
+		//width: auto;
+	}
 }
