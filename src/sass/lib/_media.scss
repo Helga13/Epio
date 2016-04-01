@@ -629,3 +629,42 @@
 		@include font-size(4.201);
 	}
 }
+
+@media only screen and (max-width : 1606px) {
+	.right-col.padding-modifier{
+//    .subject-title{
+//        width: 100%;
+//        padding-bottom: 35px;
+//    }
+    .right-text{
+//        width: 30.79%; /* 311px/1010px */ 
+        width: 45%; /* 311px/1010px */ 
+    }
+//    .left-text{
+//        overflow: hidden;
+//        padding-right: 1.98%; /* 20px/1010px */
+//    }
+//    .subject-text{
+//        padding-bottom: 27px;
+//    }
+//    .subject-text:nth-child(3){
+//        width: 100%;
+//    }
+	}
+}
+
+@media only screen and (max-width : 1385px) {
+	.right-col.padding-modifier{
+		.right-text{ 
+			width: 55%; /* 311px/1010px */ 
+		}
+	}
+}
+
+@media only screen and (max-width : 1135px) {
+	.right-col.padding-modifier{
+		.right-text{ 
+			width: 65%; /* 311px/1010px */ 
+		}
+	}
+}
