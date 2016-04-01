@@ -668,3 +668,27 @@
 		}
 	}
 }
+
+@media only screen and (max-width : 1350px) {
+	#map-canvas-where{
+		height: 800px;
+	}
+	.write-to-us{
+		bottom: 40px;
+		.info-panel.with-button{
+			height: 200px;
+			p{
+				padding: 50px 20px 50px 24%;
+				&::before{
+					top: 33px;
+				}
+			}
+			a.button{
+				margin: 73px 0;
+			}
+		}
+	}
+	
+}
+
+
