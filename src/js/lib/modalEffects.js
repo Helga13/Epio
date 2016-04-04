@@ -47,7 +47,13 @@ var ModalEffects = (function() {
 				}
 			});
 
-			close.addEventListener( 'click', function( ev ) {
+//			close.addEventListener( 'click', function( ev ) {
+//				$('body').css({'overflow': 'auto'});
+//				ev.stopPropagation();
+//				removeModalHandler();
+//			});
+			
+			$('.md-close').on( 'click', function( ev ) {
 				$('body').css({'overflow': 'auto'});
 				ev.stopPropagation();
 				removeModalHandler();
