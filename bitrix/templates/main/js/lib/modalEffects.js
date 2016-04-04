@@ -34,7 +34,10 @@ var ModalEffects = (function() {
 			el.addEventListener( 'click', function( ev ) {
 				classie.add( modal, 'md-show' );
 				$('body').css({'overflow': 'hidden'});
-				overlay.removeEventListener( 'click', removeModalHandler );
+				$('.md-overlay').on('click', function( ev ){
+					removeModalHandler();
+				});
+//				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', function( ev ){
 					$('body').css({'overflow': 'auto'});
 					removeModalHandler();

@@ -6184,7 +6184,10 @@ var ModalEffects = (function() {
 			el.addEventListener( 'click', function( ev ) {
 				classie.add( modal, 'md-show' );
 				$('body').css({'overflow': 'hidden'});
-				overlay.removeEventListener( 'click', removeModalHandler );
+				$('.md-overlay').on('click', function( ev ){
+					removeModalHandler();
+				});
+//				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', function( ev ){
 					$('body').css({'overflow': 'auto'});
 					removeModalHandler();
@@ -6494,7 +6497,7 @@ $(document).ready(function () {
 	
 	// input mask
 	
-	$('#phone').inputmask({"mask": "+375(99) 999-99-99"});
+	$('#phone, #phone1').inputmask({"mask": "+375(99) 999-99-99"});
     
 });
 if(document.getElementById('map-canvas-where')){

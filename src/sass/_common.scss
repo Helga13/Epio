@@ -2632,7 +2632,8 @@ body.ready section.head .breadcrumbs{
 	float: right;
 }
 
-#feedback{
+#feedback,
+#sign-up{
 	width: 50%;
 	.md-close{
 		margin-top: 10px;
@@ -2712,6 +2713,9 @@ input:active{
 	letter-spacing: 0.199em;
 	margin-top: 40px;
 	color: #fff;
+	.icon-arr {
+		top: 7px;
+	}
 }
 
 .contact-form, 
