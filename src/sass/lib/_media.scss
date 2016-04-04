@@ -690,3 +690,39 @@
 	}
 	
 }
+
+@media only screen and (max-width : 1775px) {
+	.bunners-block.bunners-block_insert{
+		.banners-item{
+			padding-right: 5%;
+			.number{
+				@include font-size(6.001);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 1332px) {
+//	.inner{
+		.left-col{
+			padding-left: 5.375%;
+		}
+		.inner-content .right-col{
+			padding-right: 5.375%;
+		}
+//	}
+}
+
+@media only screen and (max-width : 1239px) {
+	.bunners-block.bunners-block_insert{
+		.banners-item{
+			padding-right: 3%;
+			.number{
+				@include font-size(5.401);
+			}
+		}
+	}
+	.inner-article{
+		width: 55.75%;
+	}
+}

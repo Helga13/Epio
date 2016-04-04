@@ -35,6 +35,7 @@ var ModalEffects = (function() {
 				classie.add( modal, 'md-show' );
 				$('body').css({'overflow': 'hidden'});
 				$('.md-overlay').on('click', function( ev ){
+					$('body').css({'overflow': 'auto'});
 					removeModalHandler();
 				});
 //				overlay.removeEventListener( 'click', removeModalHandler );
