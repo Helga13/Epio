@@ -1248,7 +1248,8 @@ section.head.avtoram,
 section.head.investoram,
 section.head.for-business,
 section.head.news,
-section.head.projects{
+section.head.projects,
+section.head.not-found{
     height: 421px;
     position: relative;
     padding: 0;
@@ -1319,6 +1320,9 @@ section.head.news{
 }
 section.head.projects{
 	background-image: url('../img/bg-inner-pages/bg-projects.jpg');
+}
+section.head.not-found{
+	background-image: url('../img/bg-inner-pages/bg-not-found.jpg');
 }
 
 body.ready section.head,
@@ -2537,20 +2541,105 @@ body.ready section.head .breadcrumbs{
 	}
 }
 
-/* modals for progects.html page */
+/* 404.html */
+
+.not-found-content{
+	box-sizing: border-box;
+	padding-left: 50.625%;
+	margin: 260px 0 125px;
+	p{
+		font-family: 'MinionPro-Semibold', $font-stack-helvetica;
+        @include font-size(4.801);
+        @include line-height(6.001);
+		color: $mainTextColorDark;
+		position: relative;
+		&::before{
+			content: '404';
+			position: absolute;
+			top: -45px;
+			left: -405px;
+			font-family: 'FuturaNewBold', $font-stack-helvetica;
+			@include font-size(30.004);
+			@include line-height(1.8);
+			color: $addTextColorlight;
+			z-index: -1;
+		}
+	}
+}
+
+/* modals window */
 
 .md-modal {
     position: fixed;
-    top: 6.25%;
+    top: 100px;
     left: 50%;
-    width: 50%;
-    max-width: 630px;
-    min-width: 320px;
-    height: auto;
+//    width: 50%;
+    width: 48.125%;
+    height: 90%;
     z-index: 2000;
     visibility: hidden;
     backface-visibility: hidden;
     transform: translateX(-50%) translateY(-6.25%);
+}
+
+.md-content{
+	background-color: #fff;
+	.pane-content{
+		color: $addTextColor;
+		padding: 30px 40px 40px 40px;
+		padding: 30px 40px 40px 40px;
+		.cat-text{
+			color: $addTextColor;
+			@include font-size(4.001);
+        	@include line-height(4.3);
+		}
+		.subject-text{
+			font-family: 'MinionPro-Regular', $font-stack-helvetica;
+			@include font-size(1.8);
+			@include line-height(2.4);
+			padding-top: 15px;
+		}
+		.rel {
+			left: 40px;
+			right: 40px;
+		}
+	}
+	.cat-content.cat-content_modal{
+		color: $mainTextColorDark;
+		padding: 48px 40px 40px 40px;
+		.subject-text{
+			font-family: 'MinionPro-Regular', $font-stack-helvetica;
+			@include font-size(1.8);
+			@include line-height(2.6);
+			padding-top: 20px;
+		}
+		.quote{
+			width: 90.9%;
+    		float: right;
+			margin-top: 70px;
+			margin-bottom: 3px;
+			p{
+				@include font-size(2.0);
+				@include line-height(3.0);
+				&::before{
+					width: 50px;
+					height: 50px;
+					top: -25px;
+					left: -35px;
+				}	
+			}
+			.username{
+				@include font-size(2.4);
+				@include line-height(1.6);
+				padding-top: 10px;
+			}
+			.custom-user__position.tags{
+				@include font-size(1.198);
+				@include line-height(1.6);
+				padding-top: 20px;
+			}
+		}
+	}
 }
  
 .md-show {
@@ -2574,30 +2663,42 @@ body.ready section.head .breadcrumbs{
     opacity: 1;
     visibility: visible;
 }
-.md-perspective,
-.md-perspective body {
+.md-perspective{
     height: 100%;
     overflow: hidden;
 }
- 
-.md-perspective body  {
-    background: #222;
-    perspective: 600px;
-}
- 
-.container {
-    background: #e74c3c;
-    min-height: 100%;
-}
 
 /* Effect 1: Fade in and scale up */
-.md-effect-1 .md-content {
+.md-content {
 	transform: scale(0.7);
 	opacity: 0;
+	height: 100%;
+	overflow: auto;
 	transition: all 0.25s;
 }
 
-.md-show.md-effect-1 .md-content {
+.md-show .md-content {
 	transform: scale(1);
 	opacity: 1;
+}
+
+.md-close{
+	height: 31px;
+	width: 31px;
+	float: right;
+}
+.get-full-assay{
+	background-color: $addTextColor;
+	height: 117px;
+	line-height: 117px;
+	width: 100%;
+	text-align: center;
+	.cat-text{
+		font-family: 'FuturaNewHeavy', $font-stack-helvetica;
+		@include font-size(1.198);
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 0.199em;
+		display: inline-block;
+	}
 }

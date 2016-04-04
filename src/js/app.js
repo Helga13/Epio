@@ -100,7 +100,7 @@ $(document).ready(function () {
 	$(window).resize();
 	
 	
-	$('a.disabled, a.pane-block').click(function(e) {
+	$('a.disabled, a.pane-block, a.md-close').click(function(e) {
         e.preventDefault();
 	});
 	
