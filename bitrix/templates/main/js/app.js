@@ -63,7 +63,7 @@ $(document).ready(function () {
 			$('#header').removeClass('toggle');
 			//$('.menu-inner').css({'display': 'none'});
 			if($('html').hasClass('fp-enabled')){
-				console.log(true);
+//				console.log(true);
 			}else{
 				$('#fullpage').fullpage({
 					verticalCentered: false,

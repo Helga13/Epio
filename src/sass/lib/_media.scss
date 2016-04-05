@@ -691,12 +691,12 @@
 	
 }
 
-@media only screen and (max-width : 1775px) {
+@media only screen and (max-width : 1790px) {
 	.bunners-block.bunners-block_insert{
 		.banners-item{
 			padding-right: 5%;
 			.number{
-				@include font-size(6.001);
+				@include font-size(5.901);
 			}
 		}
 	}
@@ -717,15 +717,18 @@
 	}
 }
 
-@media only screen and (max-width : 1239px) {
+@media only screen and (max-width : 1250px) {
 	.bunners-block.bunners-block_insert{
 		.banners-item{
 			padding-right: 3%;
 			.number{
-				@include font-size(5.401);
+				@include font-size(5.201);
 			}
 		}
 	}
+}
+
+@media only screen and (max-width : 1239px) {
 	.inner-article{
 		width: 57.75%;
 	}
