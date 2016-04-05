@@ -706,7 +706,7 @@
 		.banners-item{
 			padding-right: 5%;
 			.number{
-				@include font-size(5.601);
+				@include font-size(5.301);
 			}
 		}
 	}
@@ -732,9 +732,12 @@
 		.banners-item{
 			padding-right: 3%;
 			.number{
-				@include font-size(5.201);
+				@include font-size(5.101);
 			}
 		}
+	}
+	.info-panel.with-button{
+		width: 64.875%;
 	}
 }
 
