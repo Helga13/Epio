@@ -359,6 +359,12 @@
 //		margin-top: 7.5%;
 //	}
 }
+
+@media only screen and (max-width : 1280px) and (max-height : 550px)  {
+	.custom-row{
+		padding-right: 6.8%;
+	}
+}
 @media only screen and (max-width : 1200px) and (max-height : 720px)  {
     .content, 
     .main-fix-content{
@@ -749,5 +755,10 @@
 @media only screen and (max-width : 1240px) {
 	.no-fixed .left-col.lang{
 		padding-left: 12.375%;
+	}
+}
+@media only screen and (max-width : 1145px) {
+	.left-sidebar .menu-pills{
+		padding-left: 25.86%;
 	}
 }
