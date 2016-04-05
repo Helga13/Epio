@@ -691,12 +691,22 @@
 	
 }
 
+@media only screen and (max-width : 1990px) {
+	.bunners-block.bunners-block_insert{
+		.banners-item{
+			.number{
+				@include font-size(5.801);
+			}
+		}
+	}
+}
+
 @media only screen and (max-width : 1790px) {
 	.bunners-block.bunners-block_insert{
 		.banners-item{
 			padding-right: 5%;
 			.number{
-				@include font-size(5.901);
+				@include font-size(5.601);
 			}
 		}
 	}
