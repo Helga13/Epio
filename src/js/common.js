@@ -6,10 +6,7 @@
 //= lib/classie.js
 //= lib/modalEffects.js
 //= lib/jquery.form-validator.min.js
-//= lib/inputmask/inputmask.min.js
-//= lib/inputmask/inputmask.phone.extensions.min.js
-//= lib/inputmask/inputmask.extensions.min.js
-//= lib/inputmask/jquery.inputmask.min.js
+//= lib/mask.min.js
 
 
 

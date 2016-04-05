@@ -703,14 +703,18 @@
 }
 
 @media only screen and (max-width : 1332px) {
-//	.inner{
-		.left-col{
-			padding-left: 5.375%;
-		}
-		.inner-content .right-col{
-			padding-right: 5.375%;
-		}
-//	}
+	.left-col:not(.lang){
+		padding-left: 5.375%;
+	}
+	.left-col.heading{
+		padding-left: 9.375%;
+	}
+	.inner-content .right-col{
+		padding-right: 5.375%;
+	}
+	.no-fixed .left-col.lang{
+		padding-left: 9.375%;
+	}
 }
 
 @media only screen and (max-width : 1239px) {
@@ -723,6 +727,11 @@
 		}
 	}
 	.inner-article{
-		width: 55.75%;
+		width: 57.75%;
+	}
+}
+@media only screen and (max-width : 1240px) {
+	.no-fixed .left-col.lang{
+		padding-left: 12.375%;
 	}
 }

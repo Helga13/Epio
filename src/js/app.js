@@ -232,6 +232,7 @@ $(document).ready(function () {
 	
 	// input mask
 	
-	$('#phone, #phone1').inputmask({"mask": "+375(99) 999-99-99"});
+//	$('#phone, #phone1').inputmask({"mask": "+375(99) 999-99-99"});
+	$('#phone, #phone1').mask("+375(99) 999-99-99");
     
 });

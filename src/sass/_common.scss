@@ -2625,6 +2625,7 @@ body.ready section.head .breadcrumbs{
 .md-show .md-content {
 	transform: scale(1);
 	opacity: 1;
+	overflow: auto;
 }
 
 .md-close{
