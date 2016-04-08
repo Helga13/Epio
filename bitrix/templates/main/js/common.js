@@ -6257,7 +6257,8 @@ $(document).ready(function () {
     
     // fullPage slider on index page
 	
-    var countSliders = $('#fullpage').find('.section').length;
+    var countSliders;
+		var timeout; $('#fullpage').find('.section').length;
     
     $('#fullpage').fullpage({
         verticalCentered: false,
@@ -6273,12 +6274,19 @@ $(document).ready(function () {
             $('.nav-slider').prepend('<div class="js-nav-current">01</div>'); 
         },
         afterLoad:function(link,index) {
+			timeout = setTimeout(function(){
+				$('.section.active').addClass('anim');
+			},10);
             $('.section .slider-content').fadeIn(1500);
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
             $.fn.fullpage.setScrollingSpeed(0);
         },
         onLeave: function(index, nextIndex, direction){ 
+			clearTimeout(timeout);
+			timeout = setTimeout(function(){
+				$('.section.active').addClass('anim').siblings().removeClass('anim');
+			},10);
             if (countSliders > 9){
                 $('.js-nav-current').text(nextIndex).css('opacity', '0').animate({'opacity': '1'}, 'slow');
             }else{
