@@ -6402,8 +6402,8 @@ $(document).ready(function () {
 	
 	timeout = setTimeout(function () {
             $('.inner-content').addClass('ready');
-        }, 2500);
-	
+        }, 1800);
+	// 2500
 	
 	    $('.animation').each(function() {
         var win             = $(window),
